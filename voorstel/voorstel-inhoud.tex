@@ -1,51 +1,37 @@
 %---------- Inleiding ---------------------------------------------------------
 
-% TODO: Is dit voorstel gebaseerd op een paper van Research Methods die je
-% vorig jaar hebt ingediend? Heb je daarbij eventueel samengewerkt met een
-% andere student?
-% Zo ja, haal dan de tekst hieronder uit commentaar en pas aan.
-
-%\paragraph{Opmerking}
-
-% Dit voorstel is gebaseerd op het onderzoeksvoorstel dat werd geschreven in het
-% kader van het vak Research Methods dat ik (vorig/dit) academiejaar heb
-% uitgewerkt (met medesturent VOORNAAM NAAM als mede-auteur).
-% 
-
 \section{Inleiding}%
 \label{sec:inleiding}
 
-Waarover zal je bachelorproef gaan? Introduceer het thema en zorg dat volgende zaken zeker duidelijk aanwezig zijn:
+Moderne webapplicaties worden meestal ontwikkeld met een sterke focus op de technische functionaliteiten. Hierdoor krijgt gebruiksvriendlijkheid pas laat in het ontwikkelingsproces aandacht, wat leidt tot fouten, frustraties en soms zelfs tot het afhaken van eindgebruikers.
+Dit probleem is duidelijk zichtbaar in de concrete casus van dit onderzoek: een React-gebaseerde webapplicatie waarin gebruikers moeite hebben met het doorlopen van een meerstapsformulier.
 
-\begin{itemize}
-  \item kaderen thema
-  \item de doelgroep
-  \item de probleemstelling en (centrale) onderzoeksvraag
-  \item de onderzoeksdoelstelling
-\end{itemize}
+De doelgroep van dit onderzoek zijn IT-professionals, meer specifiek full-stack developers en software engineers die webapplicaties bouwen met moderne frameworks zoals React.
+Zij zijn verantwoordlijk voor de technische implementatie en de gebruikerservaring. Ze hebben baat bij inzichten over wanneer usability-testing het meest effectief is.
 
-Denk er aan: een typische bachelorproef is \textit{toegepast onderzoek}, wat betekent dat je start vanuit een concrete probleemsituatie in bedrijfscontext, een \textbf{casus}. Het is belangrijk om je onderwerp goed af te bakenen: je gaat voor die \textit{ene specifieke probleemsituatie} op zoek naar een goede oplossing, op basis van de huidige kennis in het vakgebied.
+De probleemstelling luidt dat gebruikers problemen ervaren bij het doorlopen van een meerstapsformulier in een React-applicatie, en dat er geen systematische manier bestaat om gebruikersgedrag vroegtijdig in het ontwikkelingsproces te meten. Hierdoor worden usability-problemen pas laat in het ontwikkelingsproces zichtbaar, wanneer aanpasisngen vaak duur en complex zijn.
 
-De doelgroep moet ook concreet en duidelijk zijn, dus geen algemene of vaag gedefinieerde groepen zoals \emph{bedrijven}, \emph{developers}, \emph{Vlamingen}, enz. Je richt je in elk geval op it-professionals, een bachelorproef is geen populariserende tekst. Eén specifiek bedrijf (die te maken hebben met een concrete probleemsituatie) is dus beter dan \emph{bedrijven} in het algemeen.
+De centrale onderzoekvraag is daarom: Wat is het effect van usability‑tests die vroeg, laat of zowel vroeg als laat in het ontwikkelingsproces worden uitgevoerd op de gebruiksvriendelijkheid van een React‑applicatie, gemeten via Application Insights‑data, taakvoltooiingstijd, fouten en SUS‑scores?
 
-Formuleer duidelijk de onderzoeksvraag! De begeleiders lezen nog steeds te veel voorstellen waarin we geen onderzoeksvraag terugvinden.
-
-Schrijf ook iets over de doelstelling. Wat zie je als het concrete eindresultaat van je onderzoek, naast de uitgeschreven scriptie? Is het een proof-of-concept, een rapport met aanbevelingen, \ldots Met welk eindresultaat kan je je bachelorproef als een succes beschouwen?
-
+De onderzoeksdoelstelling is om te bepalen wanneer usability-testing de grootste impact he\\-eft op de gebruiksvriendelijkheid van een webapplicatie. Het eindresultaat van deze bachelorproef bestaat ut:
+{\begin{itemize}
+  \item een proof-of-concept React-applicatie met geïntegreerde Application Insights
+  \item een datagedreven vergelijking van drie testmomenten
+  \item aanbevelingen voor developers over wanneer usablity-testing het meest waardevol is
+\end{itemize}}
 %---------- Stand van zaken ---------------------------------------------------
 
 \section{Literatuurstudie}%
 \label{sec:literatuurstudie}
 
-Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein, d.w.z.\ een inleidende, doorlopende tekst over het onderzoeksdomein van je bachelorproef. Je steunt daarbij heel sterk op de professionele \emph{vakliteratuur}, en niet zozeer op populariserende teksten voor een breed publiek. Wat is de huidige stand van zaken in dit domein, en wat zijn nog eventuele open vragen (die misschien de aanleiding waren tot je onderzoeksvraag!)?
+Gebruiksvriendelijkheid is een essentieel onderdeel van een kwalitatieve webapplicatie. Volgens ~\autocite{Nielsen2021} bepaalt usability hoe efficiënt, foutloos en tevreden gebruikers taken kunnen uitvoeren. ~\autocite{Norman2013} benadrukt dat kleine ontwerpbeslissingen grote gevolgen kunnen hebben voor gebruikersfouten en frustratie. 
+~\autocite{Krug2014} stelt dat gebruikers intuïtief moeten kunnen navigeren zonder cognitieve belasting, wat vooral belangrijk is bij meerstapsformulieren.
 
-Je mag de titel van deze sectie ook aanpassen (literatuurstudie, stand van zaken, enz.). Zijn er al gelijkaardige onderzoeken gevoerd? Wat concluderen ze? Wat is het verschil met jouw onderzoek?
+~\autocite{SauroLewis2016} beschrijven hoe usability objectief meetbaar kan worden gemaakt via taakvoltooiingstijd, fouten succesratio's en tevredenheidsscores zoals de System Usability Scale (SUS). Deze meetmethoden vormen de basis voor het kwantitatie evalueren van de casusapplicatie.
 
-Verwijs bij elke introductie van een term of bewering over het domein naar de vakliteratuur, bijvoorbeeld~\autocite{Hykes2013}! Denk zeker goed na welke werken je refereert en waarom.
+In het oplossingsdomein tonen ~\autocite{RubinChisnell2008} aan dat usability-tests met kleine groepen gebruikers al waardevolle inzichten opleveren. ~\autocite{GothelfSeiden2016} pleiten voor Lean UX, waarbij testen vroeg in het proces cruciaal zijn om iteratief te verbeteren.~\autocite{Rosenfeld2015} benadrukken het belang van duidelijke information architecture voor navigatie en formulierflows.
 
-Draag zorg voor correcte literatuurverwijzingen! Een bronvermelding hoort thuis \emph{binnen} de zin waar je je op die bron baseert, dus niet er buiten! Maak meteen een verwijzing als je gebruik maakt van een bron. Doe dit dus \emph{niet} aan het einde van een lange paragraaf. Baseer nooit teveel aansluitende tekst op eenzelfde bron.
-
-Als je informatie over bronnen verzamelt in JabRef, zorg er dan voor dat alle nodige info aanwezig is om de bron terug te vinden (zoals uitvoerig besproken in de lessen Research Methods).
+Daarnaast tonen Microsoft-documentaties aan dat Application Insights een krachtuge tool is om gebruikersgedrag automatisch te meten via page views, click events, errors, funnels en time-per)step. Deze datagegevens aanpak maakt het moeglijk om usability-problemen objectief te detecteren en te vergelijken tussen verschillende testmomenten.
 
 % Voor literatuurverwijzingen zijn er twee belangrijke commando's:
 % \autocite{KEY} => (Auteur, jaartal) Gebruik dit als de naam van de auteur
@@ -54,31 +40,88 @@ Als je informatie over bronnen verzamelt in JabRef, zorg er dan voor dat alle no
 %   functie heeft in de zin (bv. ``Uit onderzoek door Doll & Hill (1954) bleek
 %   ...'')
 
-Je mag deze sectie nog verder onderverdelen in subsecties als dit de structuur van de tekst kan verduidelijken.
 
 %---------- Methodologie ------------------------------------------------------
 \section{Methodologie}%
 \label{sec:methodologie}
 
-Hier beschrijf je hoe je van plan bent het onderzoek te voeren. Welke onderzoekstechniek ga je toepassen om elk van je onderzoeksvragen te beantwoorden? Gebruik je hiervoor literatuurstudie, interviews met belanghebbenden (bv.~voor requirements-analyse), experimenten, simulaties, vergelijkende studie, risico-analyse, PoC, \ldots?
+Het onderzoek bestaat uit twee grote componenten: een technisch component en een onderzoekend component.
 
-Valt je onderwerp onder één van de typische soorten bachelorproeven die besproken zijn in de lessen Research Methods (bv.\ vergelijkende studie of risico-analyse)? Zorg er dan ook voor dat we duidelijk de verschillende stappen terug vinden die we verwachten in dit soort onderzoek!
+\subsection{Technisch component (Proof of Concept)}
+De technische basus van dit onderzoek is een React-applicatie met een meerstapsformulier. In deze applicatie wordt Microsoft Application Insights geïntegreerd om automatisch gebruikersinteracties te registreren. Deze tool verzameld onder andere:
+\begin{itemize}
+  \item page views
+  \item click eventsform interactions
+  \item validatiefouten
+  \item time-per-step
+  \item funnels en drop-off-punten
+\end{itemize}
+Deze data vormt de objectieve basis voor het vergelijken van de drie testmomenten.
 
-Vermijd onderzoekstechnieken die geen objectieve, meetbare resultaten kunnen opleveren. Enquêtes, bijvoorbeeld, zijn voor een bachelorproef informatica meestal \textbf{niet geschikt}. De antwoorden zijn eerder meningen dan feiten en in de praktijk blijkt het ook bijzonder moeilijk om voldoende respondenten te vinden. Studenten die een enquête willen voeren, hebben meestal ook geen goede definitie van de populatie, waardoor ook niet kan aangetoond worden dat eventuele resultaten representatief zijn.
+\subsection{Onderoekend component}
+Het onderzoek vergelijkt drie testmomenten in het ontwikkelingsproces:
+\subsubsection{Vroege usability-test (begin van de ontwikkeling)}
+\begin{itemize}
+  \item Kleine groep gebruikers (5-10 personen)
+  \item Taken: het volledige formulier doorlopen
+  \item Metingen: taakvoltooiingstijd, fouten, SUS-score, Insights-data
+  \item Doel: vroeg problemen detecteren en documenteren
+\end{itemize}
 
-Uit dit onderdeel moet duidelijk naar voor komen dat je bachelorproef ook technisch voldoen\-de diepgang zal bevatten. Het zou niet kloppen als een bachelorproef informatica ook door bv.\ een student marketing zou kunnen uitgevoerd worden.
+\subsubsection{Late usability-test (einde van de ontwikkeling)}
+\begin{itemize}
+  \item Zelfde taken en metingen
+  \item Doel: evalueren of de aangebrachte verbeteringen effectief zijn
+\end{itemize}
 
-Je beschrijft ook al welke tools (hardware, software, diensten, \ldots) je denkt hiervoor te gebruiken of te ontwikkelen.
+\subsubsection{Begin én einde (combinatie)}
+\begin{itemize}
+  \item Vergelijking van beide testmomenten
+  \item Analyse van verschillen in
+  \begin{itemize}
+    \item fouten
+    \item tijd
+    \item drop-off
+    \item tevredenheidsscoresInsights-metrics
+  \end{itemize}
+\end{itemize}
 
-Probeer ook een tijdschatting te maken. Hoe lang zal je met elke fase van je onderzoek bezig zijn en wat zijn de concrete \emph{deliverables} in elke fase?
+\subsection{Onderzoekstechnieken}
+\begin{itemize}
+  \item Literatuurstudie om het theoretisch kader te bepalen
+  \item Experimentele casestudy met drie testmomenten
+  \item Dataverzameling via Application Insights
+  \item Vergelijkende analyse van de drie testmomenten
+  \item Proof-of-concept als technische onderbouwingen
+\end{itemize}
+
+\subsection{Tijdsplanning}
+\begin{itemize}
+  \item \textbf{December 2025 -- Januari 2026:} Opzetten van de React-applicatie, integratie van Application Insights en verwerken van feedback op het onderzoeksvoorstel.
+  \item \textbf{Februari 2026:} Uitvoeren van de vroege usabi\\-lity-test (begin van het ontwikkelingsproces) en doorvoeren van eerste verbeteringen.
+  \item \textbf{Maart 2026:} Verwerken van literatuur en methodologie voor de draft-indiening en bespreken met de promotor.
+  \item \textbf{April 2026:} Uitvoeren van de late usability-test (einde van het ontwikkelingsproces) en vergelijken met de vroege testresultaten.
+  \item \textbf{April -- Mei 2026:} Analyseren van alle data en uitwerken van resultaten, conclusies en aanbevelingen.
+  \item \textbf{Mei 2026:} Finaliseren en indienen van de bachelorproef.
+\end{itemize}
 
 %---------- Verwachte resultaten ----------------------------------------------
 \section{Verwacht resultaat, conclusie}%
 \label{sec:verwachte_resultaten}
-
-Hier beschrijf je welke resultaten je verwacht. Als je metingen en simulaties uitvoert, kan je hier al mock-ups maken van de grafieken samen met de verwachte conclusies. Benoem zeker al je assen en de onderdelen van de grafiek die je gaat gebruiken. Dit zorgt ervoor dat je concreet weet welk soort data je moet verzamelen en hoe je die moet meten.
-
-Wat heeft de doelgroep van je onderzoek aan het resultaat? Op welke manier zorgt jouw bachelorproef voor een meerwaarde?
-
-Hier beschrijf je wat je verwacht uit je onderzoek, met de motivatie waarom. Het is \textbf{niet} erg indien uit je onderzoek andere resultaten en conclusies vloeien dan dat je hier beschrijft: het is dan juist interessant om te onderzoeken waarom jouw hypothesen niet overeenkomen met de resultaten.
-
+\subsection{Verwacht resultaat}
+Op basis van de literatuur en de aard van het onderzoek wordt er verwacht dat:
+\begin{itemize}
+  \item Vroege usability-tests meer problemen blootleggen dan late tests
+  \item Late tests vooral bevestigen of verbeteringen effectief zijn
+  \item De combinatie van begin én einde de meest volledige inzichten oplevert
+  \item Application Insight duidelijke patronnen zal vaststellen in:
+  \begin{itemize}
+    \item fouten
+    \item drop-off
+    \item time-per-step
+    \item navigatieproblemen
+  \end{itemize}
+\end{itemize}
+Voor de doelgroep, namelijk full-stack developers, levert dit onderzoek concrete aanbevelingen over wanneer usability-testing het meeste waarde heeft.
+\subsection{Verwachte conclusie}
+Het is waarschijnlijk dat usability-tests die vroeg in het ontwikkelingsproces worden uitgevoerd een grote impact hebben op de uiteindelijke gebruiksvriendelijkheid dan tests die pas op het einde plaatsvinden. Door op beide momenten te testen zal de meest effectieve aanpak ontstaan om webapplicaties gebruikevriendelijker te maken.
