@@ -2,36 +2,36 @@
 
 \section{Inleiding}%
 \label{sec:inleiding}
+Moderne webapplicaties worden meestal ontwikkeld met een sterke focus op de technische functionaliteiten. 
+Zoals \textcite{AntlerDigital2025} aantoont, ligt de nadruk bij moderne webapplicaties vooral op schaalbaarheid, beveiliging en performantie. 
+Ook \textcite{Acropolium2024} bevestigt dat moderne webapplicaties primair worden ontworpen als high-performing en scalable systemen, waardoor gebruiksvriendelijkheid vaak pas laat in het ontwikkelingsproces aandacht krijgt. 
+Dit leidt tot fouten, frustraties en soms zelfs tot het afhaken van eindgebruikers.
 
-Moderne webapplicaties worden meestal ontwikkeld met een sterke focus op de technische functionaliteiten. Hierdoor krijgt gebruiksvriendlijkheid pas laat in het ontwikkelingsproces aandacht, wat leidt tot fouten, frustraties en soms zelfs tot het afhaken van eindgebruikers.
 Dit probleem is duidelijk zichtbaar in de concrete casus van dit onderzoek: een React-gebaseerde webapplicatie waarin gebruikers moeite hebben met het doorlopen van een meerstapsformulier.
 
-De doelgroep van dit onderzoek zijn IT-professionals, meer specifiek full-stack developers en software engineers die webapplicaties bouwen met moderne frameworks zoals React.
-Zij zijn verantwoordlijk voor de technische implementatie en de gebruikerservaring. Ze hebben baat bij inzichten over wanneer usability-testing het meest effectief is.
+De doelgroep van dit onderzoek is IT-professionals, meer specifiek full-stack developers en software engineers die webapplicaties bouwen met moderne frameworks zoals React. 
+Zij zijn verantwoordelijk voor zowel de technische implementatie als de gebruikerservaring en hebben baat bij inzichten over wanneer usability-testing het meest effectief is.
 
-De probleemstelling luidt dat gebruikers problemen ervaren bij het doorlopen van een meerstapsformulier in een React-applicatie, en dat er geen systematische manier bestaat om gebruikersgedrag vroegtijdig in het ontwikkelingsproces te meten. Hierdoor worden usability-problemen pas laat in het ontwikkelingsproces zichtbaar, wanneer aanpasisngen vaak duur en complex zijn.
+De probleemstelling luidt dat gebruikers problemen ervaren bij het doorlopen van een meerstapsformulier in een React-applicatie, en dat er geen systematische manier bestaat om gebruikersgedrag vroegtijdig in het ontwikkelingsproces te meten. 
+Hierdoor worden usability-problemen pas laat in het ontwikkelingsproces zichtbaar, wanneer aanpassingen vaak duur en complex zijn.
 
-De centrale onderzoekvraag is daarom: Wat is het effect van usability‑tests die vroeg, laat of zowel vroeg als laat in het ontwikkelingsproces worden uitgevoerd op de gebruiksvriendelijkheid van een React‑applicatie, gemeten via Application Insights‑data, taakvoltooiingstijd, fouten en SUS‑scores?
+De centrale onderzoeksvraag is daarom: wat is het effect van usability-tests die vroeg, laat of zowel vroeg als laat in het ontwikkelingsproces worden uitgevoerd op de gebruiksvriendelijkheid van een React-applicatie, gemeten via Application Insights-data, taakvoltooiingstijd, fouten en SUS-scores?
 
-De onderzoeksdoelstelling is om te bepalen wanneer usability-testing de grootste impact he\\-eft op de gebruiksvriendelijkheid van een webapplicatie. Het eindresultaat van deze bachelorproef bestaat ut:
-{\begin{itemize}
-  \item een proof-of-concept React-applicatie met geïntegreerde Application Insights
-  \item een datagedreven vergelijking van drie testmomenten
-  \item aanbevelingen voor developers over wanneer usablity-testing het meest waardevol is
-\end{itemize}}
+De onderzoeksdoelstelling is om te bepalen wanneer usability-testing de grootste impact heeft op de gebruiksvriendelijkheid van een webapplicatie. 
+Het eindresultaat van deze bachelorproef bestaat uit een proof-of-concept React-applicatie met geïntegreerde Application Insights, een datagedreven vergelijking van drie testmomenten en aanbevelingen voor developers over wanneer usability-testing het meest waardevol is.
 %---------- Stand van zaken ---------------------------------------------------
 
 \section{Literatuurstudie}%
 \label{sec:literatuurstudie}
 
-Gebruiksvriendelijkheid is een essentieel onderdeel van een kwalitatieve webapplicatie. Volgens ~\autocite{Nielsen2021} bepaalt usability hoe efficiënt, foutloos en tevreden gebruikers taken kunnen uitvoeren. ~\autocite{Norman2013} benadrukt dat kleine ontwerpbeslissingen grote gevolgen kunnen hebben voor gebruikersfouten en frustratie. 
-~\autocite{Krug2014} stelt dat gebruikers intuïtief moeten kunnen navigeren zonder cognitieve belasting, wat vooral belangrijk is bij meerstapsformulieren.
+Gebruiksvriendelijkheid is een essentieel onderdeel van een kwalitatieve webapplicatie. Volgens \textcite{Nielsen2021} bepaalt usability hoe efficiënt, foutloos en tevreden gebruikers taken kunnen uitvoeren. \textcite{Norman2013} benadrukt dat kleine ontwerpbeslissingen grote gevolgen kunnen hebben voor gebruikersfouten en frustratie. 
+\textcite{Krug2014} stelt dat gebruikers intuïtief moeten kunnen navigeren zonder cognitieve belasting, wat vooral belangrijk is bij meerstapsformulieren.
 
-~\autocite{SauroLewis2016} beschrijven hoe usability objectief meetbaar kan worden gemaakt via taakvoltooiingstijd, fouten succesratio's en tevredenheidsscores zoals de System Usability Scale (SUS). Deze meetmethoden vormen de basis voor het kwantitatie evalueren van de casusapplicatie.
+\textcite{SauroLewis2016} beschrijven hoe usability objectief meetbaar kan worden gemaakt via taakvoltooiingstijd, fouten, succesratio's en tevredenheidsscores zoals de System Usability Scale (SUS). Deze meetmethoden vormen de basis voor het kwantitatief evalueren van de casusapplicatie.
 
-In het oplossingsdomein tonen ~\autocite{RubinChisnell2008} aan dat usability-tests met kleine groepen gebruikers al waardevolle inzichten opleveren. ~\autocite{GothelfSeiden2016} pleiten voor Lean UX, waarbij testen vroeg in het proces cruciaal zijn om iteratief te verbeteren.~\autocite{Rosenfeld2015} benadrukken het belang van duidelijke information architecture voor navigatie en formulierflows.
+In het oplossingsdomein tonen \textcite{RubinChisnell2008} aan dat usability-tests met kleine groepen gebruikers al waardevolle inzichten opleveren. \textcite{GothelfSeiden2016} pleiten voor Lean UX, waarbij testen vroeg in het proces cruciaal zijn om iteratief te verbeteren. \textcite{Rosenfeld2015} benadrukken het belang van duidelijke information architecture voor navigatie en formulierflows.
 
-Daarnaast tonen Microsoft-documentaties aan dat Application Insights een krachtuge tool is om gebruikersgedrag automatisch te meten via page views, click events, errors, funnels en time-per)step. Deze datagegevens aanpak maakt het moeglijk om usability-problemen objectief te detecteren en te vergelijken tussen verschillende testmomenten.
+Daarnaast tonen Microsoft-documentaties aan dat Application Insights een krachtige tool is om gebruikersgedrag automatisch te meten via page views, click events, errors, funnels en time-per-step. Deze data-aanpak maakt het mogelijk om usability-problemen objectief te detecteren en te vergelijken tussen verschillende testmomenten.
 
 % Voor literatuurverwijzingen zijn er twee belangrijke commando's:
 % \autocite{KEY} => (Auteur, jaartal) Gebruik dit als de naam van de auteur
@@ -48,52 +48,34 @@ Daarnaast tonen Microsoft-documentaties aan dat Application Insights een krachtu
 Het onderzoek bestaat uit twee grote componenten: een technisch component en een onderzoekend component.
 
 \subsection{Technisch component (Proof of Concept)}
-De technische basus van dit onderzoek is een React-applicatie met een meerstapsformulier. In deze applicatie wordt Microsoft Application Insights geïntegreerd om automatisch gebruikersinteracties te registreren. Deze tool verzameld onder andere:
-\begin{itemize}
-  \item page views
-  \item click eventsform interactions
-  \item validatiefouten
-  \item time-per-step
-  \item funnels en drop-off-punten
-\end{itemize}
-Deze data vormt de objectieve basis voor het vergelijken van de drie testmomenten.
+De technische basis van dit onderzoek is een React-applicatie met een meerstapsformulier. 
+In deze applicatie wordt Microsoft Application Insights geïntegreerd om automatisch gebruikersinteracties te registreren. 
+Deze tool verzamelt verschillende soorten gegevens, waaronder page views, klik- en formulierinteracties, validatiefouten, de tijd die gebruikers per stap nodig hebben en informatie over funnels en drop-off-punten. 
+Deze data vormen de objectieve basis voor het vergelijken van de drie testmomenten.
 
-\subsection{Onderoekend component}
-Het onderzoek vergelijkt drie testmomenten in het ontwikkelingsproces:
+\subsection{Onderzoekend component}
+Het onderzoek vergelijkt drie testmomenten in het ontwikkelingsproces.
+
 \subsubsection{Vroege usability-test (begin van de ontwikkeling)}
-\begin{itemize}
-  \item Kleine groep gebruikers (5-10 personen)
-  \item Taken: het volledige formulier doorlopen
-  \item Metingen: taakvoltooiingstijd, fouten, SUS-score, Insights-data
-  \item Doel: vroeg problemen detecteren en documenteren
-\end{itemize}
+De vroege usability-test wordt uitgevoerd met een kleine groep gebruikers van ongeveer vijf tot tien personen. 
+Zij doorlopen het volledige formulier, waarbij verschillende metingen worden geregistreerd, zoals de taakvoltooiingstijd, het aantal fouten, de SUS-score en de gegevens die via Application Insights worden verzameld. 
+Het doel van deze fase is om problemen zo vroeg mogelijk te detecteren en te documenteren, zodat ze tijdig kunnen worden aangepakt.
 
 \subsubsection{Late usability-test (einde van de ontwikkeling)}
-\begin{itemize}
-  \item Zelfde taken en metingen
-  \item Doel: evalueren of de aangebrachte verbeteringen effectief zijn
-\end{itemize}
+De late usability-test vindt plaats aan het einde van het ontwikkelingsproces en maakt gebruik van dezelfde taken en metingen als de vroege test. 
+In deze fase wordt nagegaan of de aangebrachte verbeteringen effectief zijn en of de gebruikservaring merkbaar is verbeterd ten opzichte van de eerdere testresultaten.
 
 \subsubsection{Begin én einde (combinatie)}
-\begin{itemize}
-  \item Vergelijking van beide testmomenten
-  \item Analyse van verschillen in
-  \begin{itemize}
-    \item fouten
-    \item tijd
-    \item drop-off
-    \item tevredenheidsscoresInsights-metrics
-  \end{itemize}
-\end{itemize}
+In de gecombineerde aanpak worden de resultaten van de vroege en de late usability-test met elkaar vergeleken. 
+Hierbij wordt specifiek gekeken naar verschillen in het aantal fouten, de tijd die gebruikers nodig hebben om het formulier te doorlopen, de momenten waarop gebruikers afhaken en de tevredenheidsscores, aangevuld met de inzichten die worden verzameld via Application Insights. 
+Deze vergelijking maakt het mogelijk om te bepalen welke verbeteringen de grootste impact hebben gehad en hoe het gebruikersgedrag evolueert doorheen het ontwikkelingsproces.
 
 \subsection{Onderzoekstechnieken}
-\begin{itemize}
-  \item Literatuurstudie om het theoretisch kader te bepalen
-  \item Experimentele casestudy met drie testmomenten
-  \item Dataverzameling via Application Insights
-  \item Vergelijkende analyse van de drie testmomenten
-  \item Proof-of-concept als technische onderbouwingen
-\end{itemize}
+Voor dit onderzoek worden verschillende onderzoekstechnieken ingezet. Eerst wordt een literatuurstudie uitgevoerd om het theoretisch kader te bepalen. 
+Vervolgens wordt een experimentele casestudy opgezet waarin drie testmomenten worden onderzocht. 
+De dataverzameling gebeurt via Application Insights, dat gedetailleerde informatie oplevert over gebruikersinteracties. 
+Daarna volgt een vergelijkende analyse van de drie testmomenten om te bepalen welke aanpak de grootste impact heeft. 
+Tot slot wordt een proof-of-concept ontwikkeld als technische onderbouwing van het onderzoek.
 
 \subsection{Tijdsplanning}
 \begin{itemize}
@@ -109,19 +91,12 @@ Het onderzoek vergelijkt drie testmomenten in het ontwikkelingsproces:
 \section{Verwacht resultaat, conclusie}%
 \label{sec:verwachte_resultaten}
 \subsection{Verwacht resultaat}
-Op basis van de literatuur en de aard van het onderzoek wordt er verwacht dat:
-\begin{itemize}
-  \item Vroege usability-tests meer problemen blootleggen dan late tests
-  \item Late tests vooral bevestigen of verbeteringen effectief zijn
-  \item De combinatie van begin én einde de meest volledige inzichten oplevert
-  \item Application Insight duidelijke patronnen zal vaststellen in:
-  \begin{itemize}
-    \item fouten
-    \item drop-off
-    \item time-per-step
-    \item navigatieproblemen
-  \end{itemize}
-\end{itemize}
-Voor de doelgroep, namelijk full-stack developers, levert dit onderzoek concrete aanbevelingen over wanneer usability-testing het meeste waarde heeft.
+Op basis van de literatuur en de aard van het onderzoek wordt verwacht dat vroege usability-tests meer problemen aan het licht brengen dan tests die pas later in het ontwikkelingsproces plaatsvinden. 
+Late tests zullen vooral dienen om te bevestigen of de aangebrachte verbeteringen effectief zijn. 
+Daarnaast wordt ervan uitgegaan dat een combinatie van testen aan het begin én aan het einde van het ontwikkelingsproces de meest volledige inzichten oplevert. 
+Verder wordt verwacht dat Application Insights duidelijke patronen zal vaststellen in het aantal fouten, de momenten waarop gebruikers afhaken, de tijd die nodig is om elke stap te voltooien en de navigatieproblemen die zich voordoen. 
+Voor de doelgroep, namelijk full-stack developers, levert dit onderzoek concrete aanbevelingen op over het moment waarop usability-testing de meeste waarde heeft.
+
 \subsection{Verwachte conclusie}
-Het is waarschijnlijk dat usability-tests die vroeg in het ontwikkelingsproces worden uitgevoerd een grote impact hebben op de uiteindelijke gebruiksvriendelijkheid dan tests die pas op het einde plaatsvinden. Door op beide momenten te testen zal de meest effectieve aanpak ontstaan om webapplicaties gebruikevriendelijker te maken.
+Het is waarschijnlijk dat usability-tests die vroeg in het ontwikkelingsproces worden uitgevoerd een grotere impact hebben op de uiteindelijke gebruiksvriendelijkheid dan tests die pas op het einde plaatsvinden. 
+Door zowel aan het begin als aan het einde van het ontwikkelingsproces te testen, ontstaat de meest effectieve aanpak om webapplicaties gebruiksvriendelijker te maken.
