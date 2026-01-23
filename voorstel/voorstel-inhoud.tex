@@ -2,12 +2,10 @@
 
 \section{Inleiding}%
 \label{sec:inleiding}
-Moderne webapplicaties worden meestal ontwikkeld met een sterke focus op de technische functionaliteiten. 
-Zoals \textcite{AntlerDigital2025} aantoont, ligt de nadruk bij moderne webapplicaties vooral op schaalbaarheid, beveiliging en performantie. 
-Ook \textcite{Acropolium2024} bevestigt dat moderne webapplicaties primair worden ontworpen als high-performing en scalable systemen, waardoor gebruiksvriendelijkheid vaak pas laat in het ontwikkelingsproces aandacht krijgt. 
-Dit leidt tot fouten, frustraties en soms zelfs tot het afhaken van eindgebruikers.
+Moderne webapplicaties worden meestal ontwikkeld met een sterke focus op functionele en technische vereisten. 
+Volgens \textcite{Fernandez2011} ontbreekt het in requirements engineering vaak aan voldoende aandacht voor usability-aspecten, waardoor gebruiksvriendelijkheid pas in latere ontwikkelingsfasen wordt geïntegreerd. \textcite{Valentim2017} bevestigen dat usability-evaluaties bij webapplicaties doorgaans pas tijdens de implementatiefase plaatsvinden in plaats van vroeg in het ontwikkelingsproces. Dit leidt tot fouten, frustraties en soms zelfs tot het afhaken van eindgebruikers.
 
-Dit probleem is duidelijk zichtbaar in de concrete casus van dit onderzoek: een React-gebaseerde webapplicatie waarin gebruikers moeite hebben met het doorlopen van een meerstapsformulier.
+Dit probleem is duidelijk zichtbaar in de concrete casus van dit onderzoek: een geanommizeerde React-gebaseerde webapplicatie voor online inschrijving, waarin gebruikers frequent afhaken bij een meerstapsformulier met client site validatie
 
 De doelgroep van dit onderzoek is IT-professionals, meer specifiek full-stack developers en software engineers die webapplicaties bouwen met moderne frameworks zoals React. 
 Zij zijn verantwoordelijk voor zowel de technische implementatie als de gebruikerservaring en hebben baat bij inzichten over wanneer usability-testing het meest effectief is.
@@ -16,6 +14,10 @@ De probleemstelling luidt dat gebruikers problemen ervaren bij het doorlopen van
 Hierdoor worden usability-problemen pas laat in het ontwikkelingsproces zichtbaar, wanneer aanpassingen vaak duur en complex zijn.
 
 De centrale onderzoeksvraag is daarom: wat is het effect van usability-tests die vroeg, laat of zowel vroeg als laat in het ontwikkelingsproces worden uitgevoerd op de gebruiksvriendelijkheid van een React-applicatie, gemeten via Application Insights-data, taakvoltooiingstijd, fouten en SUS-scores?
+
+Om deze centrale vraag te kunnen beantwoorden, wordt het onderzoek opgesplitst in deelvragen die zowel het probleemdomein als het oplossingsdomein dekken.
+Binnen het probleemdomein worden de volgende vragen onderzocht: Welke usability-problemen doen zich voor in het huidige meerstapsformulier? Welke fouten, drop-off-momenten en inefficiënties ervaren gebruikers en waarom worden deze problemen pas laat in het ontwikkelingsproces zichtbaar? Ook wordt nagegaan welke beperkingen de huidige manier van testen en meten met zich meebrengt en waarom deze aanpak onvoldoende inzicht biedt in vroegtijdige gebruikersproblemen.
+In het oplossingsdomein staan andere vragen centraal: Welk effect heeft een vroege usability-test op de gebruiksvriendelijkheid van de applicatie? Welk effect heeft een late test en in welke mate levert een combinatie van beide testmomenten aanvullende inzichten op? Hierbij wordt specifiek onderzocht wat de verschillen zijn in fouten, taakvoltooiingstijd, drop-off, tevredenheidsscores en Application Insights-metrics tussen de drie testmomenten, of deze verschillen statistisch significant zijn en welke aanpak uiteindelijk de grootste verbetering oplevert.
 
 De onderzoeksdoelstelling is om te bepalen wanneer usability-testing de grootste impact heeft op de gebruiksvriendelijkheid van een webapplicatie. 
 Het eindresultaat van deze bachelorproef bestaat uit een proof-of-concept React-applicatie met geïntegreerde Application Insights, een datagedreven vergelijking van drie testmomenten en aanbevelingen voor developers over wanneer usability-testing het meest waardevol is.
@@ -42,51 +44,39 @@ Daarnaast tonen Microsoft-documentaties aan dat Application Insights een krachti
 
 
 %---------- Methodologie ------------------------------------------------------
-\section{Methodologie}%
+\section{Methodologie}
 \label{sec:methodologie}
 
-Het onderzoek bestaat uit twee grote componenten: een technisch component en een onderzoekend component.
+Het onderzoek bestaat uit twee grote componenten: een technisch component en een onderzoekend component. Daarnaast wordt binnen de methodologie een onderscheid gemaakt tussen het probleemdomein en het oplossingsdomein, zodat zowel de aard van het probleem als de aanpak ervan duidelijk afgebakend zijn.
+In het probleemdomein wordt onderzocht welke usability-problemen zich voordoen in het huidige meerstapsformulier, welke fouten, drop-off-momenten en inefficiënties gebruikers ervaren en waarom deze problemen pas laat in het ontwikkelingsproces zichtbaar worden. Verder wordt nagegaan welke beperkingen de huidige manier van testen en meten met zich meebrengt en waarom deze aanpak onvoldoende inzicht biedt in vroegtijdige gebruikersproblemen.
+
+In het oplossingsdomein wordt vervolgens onderzocht welk effect een vroege usability-test heeft op de gebruiksvriendelijkheid van de applicatie, welk effect een late test heeft en in welke mate een combinatie van beide testmomenten aanvullende inzichten oplevert. Hierbij wordt specifiek gekeken naar verschillen in fouten, taakvoltooiingstijd, drop-off, tevredenheidsscores en Application Insights-metrics, en wordt bepaald of deze verschillen statistisch significant zijn. Op basis hiervan wordt nagegaan welke aanpak de grootste verbetering oplevert.
 
 \subsection{Technisch component (Proof of Concept)}
-De technische basis van dit onderzoek is een React-applicatie met een meerstapsformulier. 
-In deze applicatie wordt Microsoft Application Insights geïntegreerd om automatisch gebruikersinteracties te registreren. 
-Deze tool verzamelt verschillende soorten gegevens, waaronder page views, klik- en formulierinteracties, validatiefouten, de tijd die gebruikers per stap nodig hebben en informatie over funnels en drop-off-punten. 
-Deze data vormen de objectieve basis voor het vergelijken van de drie testmomenten.
+
+De technische basis van dit onderzoek is een React-applicatie met een meerstapsformulier. In deze applicatie wordt Microsoft Application Insights geïntegreerd om automatisch gebruikersinteracties te registreren. Deze tool verzamelt verschillende soorten gegevens, waaronder page views, klik- en formulierinteracties, validatiefouten, de tijd die gebruikers per stap nodig hebben en informatie over funnels en drop-off-punten. Deze data vormen de objectieve basis voor het vergelijken van de drie testmomenten.
 
 \subsection{Onderzoekend component}
-Het onderzoek vergelijkt drie testmomenten in het ontwikkelingsproces.
 
-\subsubsection{Vroege usability-test (begin van de ontwikkeling)}
-De vroege usability-test wordt uitgevoerd met een kleine groep gebruikers van ongeveer vijf tot tien personen. 
-Zij doorlopen het volledige formulier, waarbij verschillende metingen worden geregistreerd, zoals de taakvoltooiingstijd, het aantal fouten, de SUS-score en de gegevens die via Application Insights worden verzameld. 
-Het doel van deze fase is om problemen zo vroeg mogelijk te detecteren en te documenteren, zodat ze tijdig kunnen worden aangepakt.
+Het onderzoek vergelijkt drie testmomenten in het ontwikkelingsproces. De vroege usability-test wordt uitgevoerd met een kleine groep gebruikers van ongeveer vijf tot tien personen. Zij doorlopen het volledige formulier, waarbij verschillende metingen worden geregistreerd, zoals de taakvoltooiingstijd, het aantal fouten, de SUS-score en de gegevens die via Application Insights worden verzameld. Het doel van deze fase is om problemen zo vroeg mogelijk te detecteren en te documenteren, zodat ze tijdig kunnen worden aangepakt.
 
-\subsubsection{Late usability-test (einde van de ontwikkeling)}
-De late usability-test vindt plaats aan het einde van het ontwikkelingsproces en maakt gebruik van dezelfde taken en metingen als de vroege test. 
-In deze fase wordt nagegaan of de aangebrachte verbeteringen effectief zijn en of de gebruikservaring merkbaar is verbeterd ten opzichte van de eerdere testresultaten.
+De late usability-test vindt plaats aan het einde van het ontwikkelingsproces en maakt gebruik van dezelfde taken en metingen als de vroege test. In deze fase wordt nagegaan of de aangebrachte verbeteringen effectief zijn en of de gebruikservaring merkbaar is verbeterd ten opzichte van de eerdere testresultaten.
 
-\subsubsection{Begin én einde (combinatie)}
-In de gecombineerde aanpak worden de resultaten van de vroege en de late usability-test met elkaar vergeleken. 
-Hierbij wordt specifiek gekeken naar verschillen in het aantal fouten, de tijd die gebruikers nodig hebben om het formulier te doorlopen, de momenten waarop gebruikers afhaken en de tevredenheidsscores, aangevuld met de inzichten die worden verzameld via Application Insights. 
-Deze vergelijking maakt het mogelijk om te bepalen welke verbeteringen de grootste impact hebben gehad en hoe het gebruikersgedrag evolueert doorheen het ontwikkelingsproces.
+In de gecombineerde aanpak worden de resultaten van de vroege en de late usability-test met elkaar vergeleken. Hierbij wordt specifiek gekeken naar verschillen in het aantal fouten, de tijd die gebruikers nodig hebben om het formulier te doorlopen, de momenten waarop gebruikers afhaken en de tevredenheidsscores, aangevuld met de inzichten die worden verzameld via Application Insights. Deze vergelijking maakt het mogelijk om te bepalen welke verbeteringen de grootste impact hebben gehad en hoe het gebruikersgedrag evolueert doorheen het ontwikkelingsproces.
 
 \subsection{Onderzoekstechnieken}
-Voor dit onderzoek worden verschillende onderzoekstechnieken ingezet. Eerst wordt een literatuurstudie uitgevoerd om het theoretisch kader te bepalen. 
-Vervolgens wordt een experimentele casestudy opgezet waarin drie testmomenten worden onderzocht. 
-De dataverzameling gebeurt via Application Insights, dat gedetailleerde informatie oplevert over gebruikersinteracties. 
-Daarna volgt een vergelijkende analyse van de drie testmomenten om te bepalen welke aanpak de grootste impact heeft. 
-Tot slot wordt een proof-of-concept ontwikkeld als technische onderbouwing van het onderzoek.
 
-\subsection{Tijdsplanning}
-\begin{itemize}
-  \item \textbf{December 2025 -- Januari 2026:} Opzetten van de React-applicatie, integratie van Application Insights en verwerken van feedback op het onderzoeksvoorstel.
-  \item \textbf{Februari 2026:} Uitvoeren van de vroege usabi\\-lity-test (begin van het ontwikkelingsproces) en doorvoeren van eerste verbeteringen.
-  \item \textbf{Maart 2026:} Verwerken van literatuur en methodologie voor de draft-indiening en bespreken met de promotor.
-  \item \textbf{April 2026:} Uitvoeren van de late usability-test (einde van het ontwikkelingsproces) en vergelijken met de vroege testresultaten.
-  \item \textbf{April -- Mei 2026:} Analyseren van alle data en uitwerken van resultaten, conclusies en aanbevelingen.
-  \item \textbf{Mei 2026:} Finaliseren en indienen van de bachelorproef.
-\end{itemize}
+Voor dit onderzoek worden verschillende onderzoekstechnieken ingezet. Eerst wordt een literatuurstudie uitgevoerd om het theoretisch kader te bepalen. Vervolgens wordt een experimentele casestudy opgezet waarin drie testmomenten worden onderzocht. De dataverzameling gebeurt via Application Insights, dat gedetailleerde informatie oplevert over gebruikersinteracties. Daarna volgt een vergelijkende analyse van de drie testmomenten om te bepalen welke aanpak de grootste impact heeft. Tot slot wordt een proof-of-concept ontwikkeld als technische onderbouwing van het onderzoek.
 
+Daarnaast worden in dit onderzoek een nulhypothese en een alternatieve hypothese geformuleerd. De nulhypothese (H₀) stelt dat er geen significant verschil bestaat in gebruiksvriendelijkheid tussen de drie testmomenten. Dit betekent dat de gemeten fouten, taakvoltooiingstijd, drop-off, SUS-scores en Application Insights-metrics niet op een betekenisvolle manier van elkaar verschillen. De alternatieve hypothese (H₁) stelt dat er wel een significant verschil bestaat tussen de testmomenten en dat het moment waarop usability-testing wordt uitgevoerd een meetbare impact heeft op de uiteindelijke gebruiksvriendelijkheid.
+
+Om deze hypothesen te toetsen wordt een statistische analyse uitgevoerd op de verzamelde gegevens. Hiervoor wordt een eenweg-ANOVA gebruikt om te bepalen of de verschillen tussen de drie groepen significant zijn. De beslissing om de nulhypothese te verwerpen of te behouden gebeurt op basis van de p-waarde, waarbij een drempel van p < 0.05 wordt gehanteerd. Indien de ANOVA een significant resultaat oplevert, wordt een post-hoc Tukey HSD-test uitgevoerd om te bepalen tussen welke testmomenten de verschillen zich precies bevinden.
+
+\subsection{tijdsplanning}
+Het onderzoek wordt uitgevoerd tussen januari en mei 2026, waarbij verschillende fasen elkaar opvolgen. In januari en februari 2026 ligt de focus op het opzetten van de React-applicatie met de integratie van Application Insights, het uitvoeren van de literatuurstudie en het verwerken van feedback op het onderzoeksvoorstel. Parallel hieraan wordt in februari de applicatie verder ontwikkeld en het meerstapsformulier technisch voorbereid.
+Begin maart 2026 vindt de eerste usability-test plaats, waarbij een kleine groep gebruikers het formulier doorloopt en de eerste data via Application Insights wordt verzameld. Op basis van deze resultaten worden direct verbeteringen doorgevoerd in de applicatie. In de loop van maart worden deze aanpassingen geïmplementeerd en wordt de methodologie verder verfijnd in voorbereiding op de draft-indiening.
+In april 2026 wordt de late usability-test uitgevoerd met een vergelijkbare groep gebruikers, waarbij dezelfde taken en metingen worden gebruikt als tijdens de vroege test. Deze fase maakt het mogelijk om te evalueren of de aangebrachte verbeteringen effectief zijn geweest. De periode april-mei 2026 is gereserveerd voor de analyse van alle verzamelde data, het uitwerken van de resultaten, het formuleren van conclusies en het opstellen van concrete aanbevelingen voor developers.
+In mei 2026 wordt de bachelorproef gefinaliseerd en ingediend, inclusief de volledige rapportering van de casestudy, de statistische analyse en de proof-of-concept applicatie.
 %---------- Verwachte resultaten ----------------------------------------------
 \section{Verwacht resultaat, conclusie}%
 \label{sec:verwachte_resultaten}
