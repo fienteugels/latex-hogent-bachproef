@@ -4,47 +4,34 @@
 
 \chapter{\IfLanguageName{dutch}{Inleiding}{Introduction}}%
 \label{ch:inleiding}
+Webapplicaties vormen een essentieel onderdeel van moderne digitale dienstverlening. Naarmate organisaties steeds meer processen digitaliseren, groeit het belang van gebruiksvriendelijkheid als kwaliteitscriterium. Een webapplicatie die technisch correct functioneert maar moeilijk te gebruiken is, leidt tot frustratie, fouten en afhaken van gebruikers. Verschillende studies tonen aan dat ontwikkelteams nog steeds een sterke focus leggen op functionele en technische vereisten, terwijl usability‑aspecten vaak pas laat in het ontwikkelingsproces aandacht krijgen. Fernandez, Insfran en Abrahão stellen dat usability in requirements engineering structureel onderbelicht blijft, waardoor problemen pas zichtbaar worden wanneer de applicatie al grotendeels ontwikkeld is \autocite{Fernandez2011}. Dit wordt bevestigd door Valentim, Silva en Conte, die aantonen dat usability‑evaluaties in webprojecten doorgaans pas plaatsvinden tijdens of na de implementatiefase \autocite{Valentim2018}.
+Het te laat identificeren van usability‑problemen heeft belangrijke gevolgen. Volgens Boehm stijgen de kosten van aanpassingen exponentieel naarmate men later in de ontwikkelingscyclus ingrijpt \autocite{Boehm1981}. Problemen die vroeg gedetecteerd worden, zijn relatief eenvoudig op te lossen, terwijl dezelfde problemen in een latere fase leiden tot herontwerp, extra ontwikkeltijd en hogere kosten. Bovendien heeft late detectie een negatieve impact op de gebruikerservaring, wat kan resulteren in lagere adoptie, verminderde efficiëntie en een daling van de algemene tevredenheid.
+Deze problematiek is duidelijk zichtbaar in de casus die centraal staat in deze bachelorproef: een geanonimiseerde React‑gebaseerde webapplicatie voor online inschrijving. In deze applicatie haken gebruikers frequent af tijdens het doorlopen van een meerstapsformulier met client‑side validatie. Meerstapsformulieren zijn bijzonder gevoelig voor usability‑problemen, onder meer door cognitieve belasting, validatiefouten en onduidelijke navigatie. Norman benadrukt dat kleine ontwerpbeslissingen grote gevolgen kunnen hebben voor gebruikersfouten en frustratie \autocite{Norman2013}. Krug stelt dat gebruikers intuïtief moeten kunnen navigeren zonder onnodige cognitieve belasting \autocite{Krug2014}. Empirisch onderzoek toont aan dat multi‑step forms vaak leiden tot hogere drop‑off‑percentages wanneer de structuur, feedback of foutafhandeling niet optimaal is \autocite{MultiStepForms2019}.
+Telemetry‑tools zoals Microsoft Application Insights bieden nieuwe mogelijkheden om gebruikersgedrag objectief te meten. Deze tools registreren onder meer page views, click events, validatiefouten, funnels en time‑per‑step, waardoor een gedetailleerd beeld ontstaat van hoe gebruikers door een applicatie navigeren \autocite{MicrosoftAI,TelemetryUX2023}. Door deze data te combineren met traditionele usability‑metingen ontstaat een rijker en betrouwbaarder inzicht in de gebruiksvriendelijkheid van een applicatie.
 
-De inleiding moet de lezer net genoeg informatie verschaffen om het onderwerp te begrijpen en in te zien waarom de onderzoeksvraag de moeite waard is om te onderzoeken. In de inleiding ga je literatuurverwijzingen beperken, zodat de tekst vlot leesbaar blijft. Je kan de inleiding verder onderverdelen in secties als dit de tekst verduidelijkt. Zaken die aan bod kunnen komen in de inleiding~\autocite{Pollefliet2011}:
-
-\begin{itemize}
-  \item context, achtergrond
-  \item afbakenen van het onderwerp
-  \item verantwoording van het onderwerp, methodologie
-  \item probleemstelling
-  \item onderzoeksdoelstelling
-  \item onderzoeksvraag
-  \item \ldots
-\end{itemize}
 
 \section{\IfLanguageName{dutch}{Probleemstelling}{Problem Statement}}%
 \label{sec:probleemstelling}
-
-Uit je probleemstelling moet duidelijk zijn dat je onderzoek een meerwaarde heeft voor een concrete doelgroep. De doelgroep moet goed gedefinieerd en afgelijnd zijn. Doelgroepen als ``bedrijven,'' ``KMO's'', systeembeheerders, enz.~zijn nog te vaag. Als je een lijstje kan maken van de personen/organisaties die een meerwaarde zullen vinden in deze bachelorproef (dit is eigenlijk je steekproefkader), dan is dat een indicatie dat de doelgroep goed gedefinieerd is. Dit kan een enkel bedrijf zijn of zelfs één persoon (je co-promotor/opdrachtgever).
+Het centrale probleem in deze bachelorproef is dat gebruikers problemen ervaren bij het doorlopen van een meerstapsformulier in een React‑applicatie, terwijl er geen systematische manier bestaat om gebruikersgedrag vroegtijdig te meten. Hierdoor worden usability‑problemen pas laat zichtbaar, wanneer aanpassingen meer tijd en middelen vergen. De doelgroep van dit onderzoek bestaat uit IT‑professionals, in het bijzonder full‑stack developers en software engineers die verantwoordelijk zijn voor zowel de technische implementatie als de gebruikerservaring van webapplicaties. Voor deze doelgroep is het essentieel om te weten wanneer usability‑testing het meest effectief is: vroeg, laat of op beide momenten.
 
 \section{\IfLanguageName{dutch}{Onderzoeksvraag}{Research question}}%
 \label{sec:onderzoeksvraag}
-
-Wees zo concreet mogelijk bij het formuleren van je onderzoeksvraag. Een onderzoeksvraag is trouwens iets waar nog niemand op dit moment een antwoord heeft (voor zover je kan nagaan). Het opzoeken van bestaande informatie (bv. ``welke tools bestaan er voor deze toepassing?'') is dus geen onderzoeksvraag. Je kan de onderzoeksvraag verder specifiëren in deelvragen. Bv.~als je onderzoek gaat over performantiemetingen, dan 
+De centrale onderzoeksvraag luidt:
+Wat is het effect van usability‑tests die vroeg, laat of zowel vroeg als laat in het ontwikkelingsproces worden uitgevoerd op de gebruiksvriendelijkheid van een React‑applicatie, gemeten via Application Insights‑data, taakvoltooiingstijd, fouten en SUS‑scores?
+Deze vraag wordt verder opgesplitst in deelvragen binnen het probleem‑ en oplossingsdomein.
 
 \section{\IfLanguageName{dutch}{Onderzoeksdoelstelling}{Research objective}}%
 \label{sec:onderzoeksdoelstelling}
+Het doel van deze bachelorproef is om empirisch vast te stellen wanneer usability-testing de grootste impact heeft op de gebruiksvriendelijkheid van een webapplicatie. Het onderzoek levert:
 
-Wat is het beoogde resultaat van je bachelorproef? Wat zijn de criteria voor succes? Beschrijf die zo concreet mogelijk. Gaat het bv.\ om een proof-of-concept, een prototype, een verslag met aanbevelingen, een vergelijkende studie, enz.
+\begin{itemize}
+  \item wetenschappelijke meerwaarde door een lacune in de literatuur te vullen rond de timing van usability-tests en de combinatie met telemetry-data;
+  \item praktische meerwaarde door ontwikkelteams concrete aanbevelingen te bieden over wanneer usability-testing het meest effectief is;
+  \item technische meerwaarde door een proof-of-concept React-applicatie te ontwikkelen met geïntegreerde Application Insights.
+\end{itemize}
 
 \section{\IfLanguageName{dutch}{Opzet van deze bachelorproef}{Structure of this bachelor thesis}}%
 \label{sec:opzet-bachelorproef}
-
-% Het is gebruikelijk aan het einde van de inleiding een overzicht te
-% geven van de opbouw van de rest van de tekst. Deze sectie bevat al een aanzet
-% die je kan aanvullen/aanpassen in functie van je eigen tekst.
-
-De rest van deze bachelorproef is als volgt opgebouwd:
-
-In Hoofdstuk~\ref{ch:stand-van-zaken} wordt een overzicht gegeven van de stand van zaken binnen het onderzoeksdomein, op basis van een literatuurstudie.
-
-In Hoofdstuk~\ref{ch:methodologie} wordt de methodologie toegelicht en worden de gebruikte onderzoekstechnieken besproken om een antwoord te kunnen formuleren op de onderzoeksvragen.
-
-% TODO: Vul hier aan voor je eigen hoofstukken, één of twee zinnen per hoofdstuk
-
-In Hoofdstuk~\ref{ch:conclusie}, tenslotte, wordt de conclusie gegeven en een antwoord geformuleerd op de onderzoeksvragen. Daarbij wordt ook een aanzet gegeven voor toekomstig onderzoek binnen dit domein.
+In Hoofdstuk~\ref{ch:stand-van-zaken} wordt de bestaande literatuur besproken over usability, multi‑step forms, React‑applicaties en telemetry‑gebaseerde metingen.
+In Hoofdstuk~\ref{ch:methodologie} wordt de methodologie toegelicht, inclusief de opzet van de usability‑tests, de dataverzameling en de statistische analyse.
+In Hoofdstuk~\ref{ch:conclusie} worden de resultaten samengevat, wordt een antwoord geformuleerd op de onderzoeksvraag en worden aanbevelingen voor toekomstig onderzoek geformuleerd.

@@ -5,26 +5,42 @@
 \chapter{\IfLanguageName{dutch}{Methodologie}{Methodology}}%
 \label{ch:methodologie}
 
-%% TODO: In dit hoofstuk geef je een korte toelichting over hoe je te werk bent
-%% gegaan. Verdeel je onderzoek in grote fasen, en licht in elke fase toe wat
-%% de doelstelling was, welke deliverables daar uit gekomen zijn, en welke
-%% onderzoeksmethoden je daarbij toegepast hebt. Verantwoord waarom je
-%% op deze manier te werk gegaan bent.
-%% 
-%% Voorbeelden van zulke fasen zijn: literatuurstudie, opstellen van een
-%% requirements-analyse, opstellen long-list (bij vergelijkende studie),
-%% selectie van geschikte tools (bij vergelijkende studie, "short-list"),
-%% opzetten testopstelling/PoC, uitvoeren testen en verzamelen
-%% van resultaten, analyse van resultaten, ...
-%%
-%% !!!!! LET OP !!!!!
-%%
-%% Het is uitdrukkelijk NIET de bedoeling dat je het grootste deel van de corpus
-%% van je bachelorproef in dit hoofstuk verwerkt! Dit hoofdstuk is eerder een
-%% kort overzicht van je plan van aanpak.
-%%
-%% Maak voor elke fase (behalve het literatuuronderzoek) een NIEUW HOOFDSTUK aan
-%% en geef het een gepaste titel.
+\section{\IfLanguageName{dutch}{Onderzoeksopzet}{Research Design}}
+Dit onderzoek volgt een experimenteel onderzoeksdesign waarin drie testmomenten met elkaar worden vergeleken: een vroege usability‑test, een late usability‑test en een gecombineerde analyse van beide. Het doel is om vast te stellen of het moment waarop usability‑testing wordt uitgevoerd een significante impact heeft op de gebruiksvriendelijkheid van een React‑gebaseerde webapplicatie. De studie combineert traditionele usability‑metingen met datagedreven telemetry‑analyse via Microsoft Application Insights. Deze gemengde methode maakt het mogelijk om zowel kwalitatieve als kwantitatieve inzichten te verkrijgen en om verschillen tussen testmomenten statistisch te toetsen.
+Het onderzoek bestaat uit twee grote componenten. Het technisch component omvat de ontwikkeling van een proof‑of‑concept React‑applicatie met geïntegreerde Application Insights. Het onderzoekend component omvat de uitvoering van de usability‑tests, de dataverzameling, de statistische analyse en de interpretatie van de resultaten. Door deze twee componenten te combineren, wordt een volledig beeld gevormd van zowel het gebruikersgedrag als de impact van ontwerpwijzigingen doorheen het ontwikkelingsproces.
 
-\lipsum[21-25]
+
+\section{\IfLanguageName{dutch}{Steekproef en rekrutering}{Sampling and Recruitment}}
+De steekproef bestaat uit twee onafhankelijke groepen gebruikers: één voor de vroege usability‑test en één voor de late usability‑test. Elke groep omvat vijf tot tien deelnemers, wat in lijn ligt met de aanbevelingen van Rubin en Chisnell, die aangeven dat kleine groepen al voldoende zijn om de meeste usability‑problemen te identificeren \autocite{RubinChisnell2008}. De deelnemers worden gerekruteerd via een online oproep op sociale media, waarbij geïnteresseerden zich kunnen registreren via een formulier.
+De toewijzing aan de vroege of late testgroep gebeurt volledig willekeurig, zoals aanbevolen door de promotor. Randomisatie vermindert het risico op systematische verschillen tussen de groepen en verhoogt de interne validiteit van het onderzoek. Na de dataverzameling wordt een Durbin–Watson‑test uitgevoerd om te controleren of de residuen van beide groepen onafhankelijk zijn, wat een belangrijke voorwaarde is voor de ANOVA‑analyse.
+Als inclusiecriterium geldt dat deelnemers voldoende Nederlands moeten beheersen. De applicatie en de instructies zijn Nederlandstalig, waardoor taalvaardigheid een potentiële confounder vormt. Door anderstalige deelnemers uit te sluiten, wordt taalgerelateerde bias vermeden en wordt de betrouwbaarheid van de resultaten verhoogd.
+
+
+\section{\IfLanguageName{dutch}{Technisch component: Proof-of-Concept}{Technical Component: Proof of Concept}}
+Het technisch component bestaat uit de ontwikkeling van een React‑gebaseerde webapplicatie met een meerstapsformulier. De applicatie is ontworpen om typische usability‑problemen te simuleren die vaak voorkomen in real‑world webapplicaties, zoals validatiefouten, onduidelijke navigatie en variabele taakcomplexiteit. De keuze voor een webapplicatie is gebaseerd op de feedback van de promotor, die aangeeft dat een responsive webapplicatie voldoende is en dat een mobiele applicatie geen meerwaarde biedt binnen de scope van deze bachelorproef.
+Microsoft Application Insights wordt geïntegreerd om gebruikersinteracties automatisch te registreren. De tool verzamelt gegevens over page views, click events, validatiefouten, time‑per‑step, funnels en navigatiepaden \autocite{MicrosoftAI}. Deze data worden gebruikt om objectieve verschillen tussen de testmomenten te analyseren. De configuratie omvat het definiëren van custom events, het opzetten van funnels voor het meerstapsformulier en het exporteren van ruwe data voor statistische analyse.
+
+
+\section{\IfLanguageName{dutch}{Onderzoekend component: Usability-tests}{Research Component: Usability Testing}}
+De usability‑tests worden uitgevoerd in twee fasen. In de vroege testfase doorlopen deelnemers een eerste versie van het meerstapsformulier. Tijdens deze sessies worden taakvoltooiingstijd, fouten, drop‑off‑momenten en SUS‑scores geregistreerd. Daarnaast worden alle interacties automatisch gelogd via Application Insights. De resultaten van deze fase worden gebruikt om verbeteringen aan te brengen in de applicatie.
+In de late testfase doorlopen nieuwe deelnemers de verbeterde versie van de applicatie. Dezelfde metingen worden opnieuw uitgevoerd, zodat verschillen tussen de vroege en late testmomenten kunnen worden vastgesteld. Door twee onafhankelijke groepen te gebruiken, wordt vermeden dat deelnemers leren van eerdere interacties, wat de interne validiteit verhoogt.
+De gecombineerde analyse omvat een vergelijking van beide testmomenten op basis van zowel traditionele usability‑metingen als telemetry‑data. Deze aanpak maakt het mogelijk om te bepalen welke verbeteringen de grootste impact hebben gehad en hoe gebruikersgedrag evolueert doorheen het ontwikkelingsproces.
+
+
+\section{\IfLanguageName{dutch}{Onderzoekstechnieken en dataverzameling}{Research Techniques and Data Collection}}
+De dataverzameling bestaat uit drie categorieën: traditionele usability‑metingen, telemetry‑data en subjectieve tevredenheidsscores. Traditionele metingen omvatten taakvoltooiingstijd, foutfrequentie en drop‑off‑momenten, zoals beschreven door Sauro en Lewis \autocite{SauroLewis2016}. Telemetry‑data worden verzameld via Application Insights en omvatten page views, click events, validatiefouten en time‑per‑step. De System Usability Scale wordt gebruikt om de subjectieve tevredenheid van gebruikers te meten.
+Alle data worden geanonimiseerd opgeslagen en verwerkt. De ruwe telemetry‑data worden geëxporteerd naar een analyseomgeving waarin statistische tests worden uitgevoerd. De combinatie van kwalitatieve observaties, kwantitatieve metingen en geautomatiseerde telemetry‑data zorgt voor een robuust en multidimensionaal beeld van de gebruiksvriendelijkheid van de applicatie.
+
+\section{\IfLanguageName{dutch}{Statistische analyse}{Statistical Analysis}}
+Om te bepalen of er significante verschillen bestaan tussen de vroege en late testmomenten, wordt een eenweg‑ANOVA uitgevoerd. Deze test is geschikt voor het vergelijken van gemiddelden tussen twee of meer onafhankelijke groepen. De nulhypothese stelt dat er geen significant verschil bestaat tussen de testmomenten, terwijl de alternatieve hypothese stelt dat er wel een verschil is. De drempelwaarde voor significantie wordt vastgesteld op p<0.05, zoals gebruikelijk in sociaal‑wetenschappelijk onderzoek.
+Indien de ANOVA een significant resultaat oplevert, wordt een post‑hoc Tukey HSD‑test uitgevoerd om te bepalen tussen welke testmomenten de verschillen zich bevinden. Voorafgaand aan de ANOVA worden de assumpties van normaliteit, homogeniteit van varianties en onafhankelijkheid gecontroleerd. De Durbin–Watson‑test wordt gebruikt om de onafhankelijkheid van residuen te bevestigen, zoals aanbevolen door de promotor.
+
+\section{\IfLanguageName{dutch}{Validiteit en betrouwbaarheid}{Validity and Reliability}}
+Om de interne validiteit te waarborgen, worden deelnemers willekeurig toegewezen aan de vroege of late testgroep. Door twee onafhankelijke groepen te gebruiken, wordt vermeden dat deelnemers leren van eerdere interacties. De externe validiteit wordt ondersteund door het gebruik van realistische taken en een applicatie die representatief is voor moderne webapplicaties.
+Betrouwbaarheid wordt verhoogd door gestandaardiseerde procedures te gebruiken voor alle testsessies. De instructies, taken en meetmethoden zijn identiek voor beide groepen. Telemetry‑data worden automatisch verzameld, waardoor meetfouten worden geminimaliseerd. Mogelijke bias, zoals taalbias, wordt gecontroleerd door enkel Nederlandstalige deelnemers toe te laten.
+
+\section{\IfLanguageName{dutch}{Ethische overwegingen}{Ethical Considerations}}
+Alle deelnemers worden vooraf geïnformeerd over het doel van het onderzoek, de aard van de taken en de manier waarop hun gegevens worden verwerkt. Deelname is vrijwillig en deelnemers kunnen op elk moment stoppen. Alle data worden geanonimiseerd opgeslagen en uitsluitend gebruikt voor onderzoeksdoeleinden.
+
+
 

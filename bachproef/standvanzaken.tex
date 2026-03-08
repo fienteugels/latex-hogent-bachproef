@@ -1,51 +1,21 @@
 \chapter{\IfLanguageName{dutch}{Stand van zaken}{State of the art}}%
 \label{ch:stand-van-zaken}
 
-% Tip: Begin elk hoofdstuk met een paragraaf inleiding die beschrijft hoe
-% dit hoofdstuk past binnen het geheel van de bachelorproef. Geef in het
-% bijzonder aan wat de link is met het vorige en volgende hoofdstuk.
+% TODO: schrijf hier je literatuurstudie
+\section{\IfLanguageName{dutch}{Usability als kwaliteitscriterium}{Usability as a Quality Criterion}} 
+Usability vormt een fundamenteel onderdeel van de kwaliteit van moderne webapplicaties en bepaalt in welke mate gebruikers efficiënt, effectief en met tevredenheid taken kunnen uitvoeren binnen een digitale omgeving. Nielsen beschrijft usability aan de hand van vijf kerncomponenten: learnability, efficiency, memorability, errors en satisfaction, die samen de totale gebruikservaring vormgeven \autocite{Nielsen2021}. Norman benadrukt dat gebruiksvriendelijkheid niet uitsluitend afhankelijk is van visuele vormgeving, maar vooral van de mate waarin een systeem aansluit bij de mentale modellen van gebruikers. Wanneer een interface niet overeenkomt met deze verwachtingen, ontstaan fouten, frustratie en inefficiëntie \autocite{Norman2013}. Krug stelt dat een goed ontworpen interface intuïtief moet aanvoelen en geen onnodige cognitieve belasting mag veroorzaken, omdat gebruikers anders afhaken of verkeerde handelingen uitvoeren \autocite{Krug2014}. Deze inzichten tonen aan dat usability een multidimensionaal concept is dat zowel cognitieve, technische als ontwerpgerelateerde factoren omvat.
 
-% Pas na deze inleidende paragraaf komt de eerste sectiehoofding.
+\section{\IfLanguageName{dutch}{Methoden voor het meten van usability}{Methods for Measuring Usability}} 
+Het meten van usability gebeurt traditioneel via een combinatie van kwalitatieve en kwantitatieve methoden. Sauro en Lewis beschrijven hoe taakvoltooiingstijd, foutfrequentie, succesratio’s en subjectieve tevredenheidsscores zoals de System Usability Scale (SUS) een betrouwbaar en reproduceerbaar beeld geven van de gebruiksvriendelijkheid van een systeem \autocite{SauroLewis2016}. Deze methoden worden wereldwijd toegepast in UX‑onderzoek en vormen ook in deze bachelorproef een belangrijk onderdeel van de evaluatie. Traditionele usability‑tests hebben echter beperkingen. Ze zijn tijdsintensief, vereisen moderatie en leveren vaak beperkte kwantitatieve data op. Bovendien kunnen observatoren onbewust invloed uitoefenen op het gedrag van deelnemers, wat de betrouwbaarheid van de resultaten kan verminderen. Deze beperkingen verklaren waarom steeds meer onderzoek aandacht heeft voor datagedreven benaderingen die gebruikersgedrag automatisch registreren.
 
-Dit hoofdstuk bevat je literatuurstudie. De inhoud gaat verder op de inleiding, maar zal het onderwerp van de bachelorproef *diepgaand* uitspitten. De bedoeling is dat de lezer na lezing van dit hoofdstuk helemaal op de hoogte is van de huidige stand van zaken (state-of-the-art) in het onderzoeksdomein. Iemand die niet vertrouwd is met het onderwerp, weet nu voldoende om de rest van het verhaal te kunnen volgen, zonder dat die er nog andere informatie moet over opzoeken \autocite{Pollefliet2011}.
+\section{\IfLanguageName{dutch}{Timing van usability-testing}{Timing of Usability Testing}}
+Hoewel er brede consensus bestaat dat usability‑testing noodzakelijk is, is er opvallend weinig empirisch onderzoek naar het optimale moment waarop deze tests moeten worden uitgevoerd. Rubin en Chisnell stellen dat usability‑problemen het goedkoopst en snelst op te lossen zijn wanneer ze vroeg in het ontwikkelingsproces worden gedetecteerd \autocite{RubinChisnell2008}. Boehm toont aan dat de kosten van aanpassingen exponentieel stijgen naarmate men later in de ontwikkelingscyclus ingrijpt, wat het belang van vroeg testen verder onderstreept \autocite{Boehm1981}. Binnen Lean UX pleiten Gothelf en Seiden voor een iteratieve aanpak waarbij testen en verbeteren cyclisch plaatsvinden, zodat problemen continu worden opgespoord en opgelost \autocite{GothelfSeiden2016}. Vroege tests identificeren vooral conceptuele en structurele problemen, zoals onduidelijke navigatie, verwarrende flows of ontbrekende feedback. Late tests daarentegen richten zich op het valideren van de uiteindelijke gebruikservaring en het opsporen van resterende fouten. De bestaande literatuur suggereert dat beide testmomenten waardevolle maar verschillende inzichten opleveren, maar er is nauwelijks onderzoek dat deze twee systematisch met elkaar vergelijkt. Dit vormt een duidelijke lacune in het onderzoeksdomein.
 
-Je verwijst bij elke bewering die je doet, vakterm die je introduceert, enz.\ naar je bronnen. In \LaTeX{} kan dat met het commando \texttt{$\backslash${textcite\{\}}} of \texttt{$\backslash${autocite\{\}}}. Als argument van het commando geef je de ``sleutel'' van een ``record'' in een bibliografische databank in het Bib\LaTeX{}-formaat (een tekstbestand). Als je expliciet naar de auteur verwijst in de zin (narratieve referentie), gebruik je \texttt{$\backslash${}textcite\{\}}. Soms is de auteursnaam niet expliciet een onderdeel van de zin, dan gebruik je \texttt{$\backslash${}autocite\{\}} (referentie tussen haakjes). Dit gebruik je bv.~bij een citaat, of om in het bijschrift van een overgenomen afbeelding, broncode, tabel, enz. te verwijzen naar de bron. In de volgende paragraaf een voorbeeld van elk.
+\section{\IfLanguageName{dutch}{Usability-uitdagingen in webapplicaties en meerstapsformulieren}{Usability Challenges in Web Applications and Multi-step Forms}} 
+Binnen de context van webapplicaties vormen meerstapsformulieren een bijzonder relevant onderzoeksobject. Deze formulieren worden vaak gebruikt om complexe processen op te splitsen in kleinere, behapbare stappen, wat de cognitieve belasting voor gebruikers kan verminderen. Onderzoek toont aan dat multi‑step forms de perceptie van complexiteit verlagen en de kans op afhaken verminderen wanneer ze correct worden ontworpen \autocite{BargasAvila2019}. Toch blijven ze gevoelig voor usability‑problemen, zoals inconsistente validatie, verwarrende foutmeldingen, onduidelijke progress indicators en onverwachte navigatie. Deze problemen worden versterkt wanneer de technische implementatie complex is, zoals bij React‑applicaties. React maakt intensief gebruik van component‑gebaseerde architectuur en state management, wat kan leiden tot onverwachte interacties tussen componenten, verlies van ingevoerde gegevens of inconsistente foutafhandeling wanneer state niet correct wordt beheerd. De officiële React‑documentatie benadrukt dat formulieren in React extra aandacht vereisen voor toegankelijkheid, validatie en feedback, omdat gebruikers anders snel afhaken \autocite{ReactForms2024}. Deze inzichten tonen aan dat meerstapsformulieren binnen React een verhoogd risico op usability‑problemen hebben, wat de relevantie van dit onderzoek verder versterkt.
 
-\textcite{Knuth1998} schreef een van de standaardwerken over sorteer- en zoekalgoritmen. Experten zijn het erover eens dat cloud computing een interessante opportuniteit vormen, zowel voor gebruikers als voor dienstverleners op vlak van informatietechnologie~\autocite{Creeger2009}.
+\section{\IfLanguageName{dutch}{Telemetry en datagedreven UX-analyse}{Telemetry and Data-driven UX Analysis}} 
+Naast traditionele usability‑tests wint datagedreven UX‑analyse aan belang. Telemetry‑tools zoals Microsoft Application Insights bieden de mogelijkheid om gebruikersgedrag automatisch en objectief te registreren. Deze tools verzamelen gegevens over page views, click events, validatiefouten, funnels, time‑per‑step en navigatiepaden, waardoor een gedetailleerd beeld ontstaat van hoe gebruikers door een applicatie navigeren \autocite{MicrosoftAI}. Microsoft benadrukt dat telemetry een krachtig instrument is om UX‑problemen te detecteren die in traditionele tests onopgemerkt blijven, zoals subtiele navigatiepatronen, onverwachte drop‑off‑momenten of herhaalde validatiefouten \autocite{TelemetryUX2023}. Telemetry biedt bovendien de mogelijkheid om grote hoeveelheden data te verzamelen zonder extra testkosten, wat vooral waardevol is in latere ontwikkelingsfasen of bij A/B‑testing. Toch heeft telemetry beperkingen. Het kan niet verklaren waarom gebruikers fouten maken, het biedt geen inzicht in cognitieve processen en het detecteert geen problemen die niet tot interactie leiden. Daarom wordt in de literatuur aanbevolen om telemetry te combineren met traditionele usability‑tests, zodat zowel kwalitatieve als kwantitatieve inzichten worden verkregen.
 
-Let er ook op: het \texttt{cite}-commando voor de punt, dus binnen de zin. Je verwijst meteen naar een bron in de eerste zin die erop gebaseerd is, dus niet pas op het einde van een paragraaf.
-
-\begin{figure}
-  \centering
-  \includegraphics[width=0.8\textwidth]{grail.jpg}
-  \caption[Voorbeeld figuur.]{\label{fig:grail}Voorbeeld van invoegen van een figuur. Zorg altijd voor een uitgebreid bijschrift dat de figuur volledig beschrijft zonder in de tekst te moeten gaan zoeken. Vergeet ook je bronvermelding niet!}
-\end{figure}
-
-\begin{listing}
-  \begin{minted}{python}
-    import pandas as pd
-    import seaborn as sns
-
-    penguins = sns.load_dataset('penguins')
-    sns.relplot(data=penguins, x="flipper_length_mm", y="bill_length_mm", hue="species")
-  \end{minted}
-  \caption[Voorbeeld codefragment]{Voorbeeld van het invoegen van een codefragment.}
-\end{listing}
-
-\lipsum[7-20]
-
-\begin{table}
-  \centering
-  \begin{tabular}{lcr}
-    \toprule
-    \textbf{Kolom 1} & \textbf{Kolom 2} & \textbf{Kolom 3} \\
-    $\alpha$         & $\beta$          & $\gamma$         \\
-    \midrule
-    A                & 10.230           & a                \\
-    B                & 45.678           & b                \\
-    C                & 99.987           & c                \\
-    \bottomrule
-  \end{tabular}
-  \caption[Voorbeeld tabel]{\label{tab:example}Voorbeeld van een tabel.}
-\end{table}
-
+\section{\IfLanguageName{dutch}{Synthese}{Synthesis}} 
+Wanneer de literatuur over usability, multi‑step forms, React‑applicaties en telemetry wordt samengebracht, ontstaat een duidelijk beeld van een belangrijke lacune. Hoewel er veel onderzoek bestaat naar usability‑methoden en naar de voordelen van vroeg testen, is er nauwelijks empirisch onderzoek dat vroege en late usability‑tests systematisch met elkaar vergelijkt. Er is evenmin onderzoek dat deze vergelijking uitvoert binnen de context van React‑applicaties of dat traditionele usability‑metingen combineert met telemetry‑data uit Application Insights. Deze lacune vormt de kern van deze bachelorproef. Door een React‑applicatie te ontwikkelen met geïntegreerde telemetry, usability‑tests uit te voeren op twee verschillende momenten en de resultaten statistisch te analyseren, levert dit onderzoek nieuwe inzichten op in de impact van testtiming op de uiteindelijke gebruiksvriendelijkheid van webapplicaties.
