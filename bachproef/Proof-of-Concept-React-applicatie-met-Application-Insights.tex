@@ -1,0 +1,88 @@
+%%=============================================================================
+%% Proof-of-Concept: React-applicatie met Application Insights
+%%=============================================================================
+
+\chapter{\IfLanguageName{dutch}{Proof-of-Concept: React-applicatie met Application Insights}{Proof-of-Concept: React Application with Application Insights}}%
+\label{ch:poc}
+
+\section{\IfLanguageName{dutch}{Opzet van de applicatie}{Application Setup}}
+
+Als basis voor dit onderzoek werd een proof-of-concept React-applicatie ontwikkeld die drie meerstapsformulieren bevat. De applicatie werd gebouwd met als doel het effect van usability-testen op verschillende momenten in het ontwikkelingsproces te kunnen meten aan de hand van echte gebruikersinteracties. De broncode is beschikbaar via GitHub\footnote{\url{https://github.com/fienteugels/fien-teugels-BAP}}.
+
+De applicatie bestaat uit drie onafhankelijke formulieren, elk met een eigen thema en doelgroep:
+
+\begin{itemize}
+  \item \textbf{Form A — Reisaanvraag:} een meerstapsformulier waarmee gebruikers een reisaanvraag kunnen indienen. Het formulier omvat negen stappen en bevat conditionele logica op basis van het gekozen reistype, continent en vervoersmiddel.
+  \item \textbf{Form B — Evenementregistratie:} een meerstapsformulier voor het registreren van een evenement. Het formulier telt tien stappen en past de vragen aan op basis van het gekozen evenementtype (festival, conferentie, sportevenement, \ldots).
+  \item \textbf{Form C — Verblijfsaanvraag:} een meerstapsformulier voor een verblijfsaanvraag. Het formulier telt tien stappen en 65 invulvelden, waarvan een deel conditioneel is op basis van het gekozen verblijfstype.
+\end{itemize}
+
+Elk formulier is bereikbaar via een afzonderlijke route binnen de applicatie en maakt gebruik van een gedeelde formuliercomponent.
+
+\section{\IfLanguageName{dutch}{Formulierarchitectuur}{Form Architecture}}
+
+De drie formulieren zijn gebouwd bovenop een herbruikbare \texttt{FormShell}-component. Deze component beheert de staptoestand, de navigatielogica (volgende stap, vorige stap, validatie) en de verzending van telemetry-events naar Application Insights. Door de logica te centraliseren in één component wordt consistentie gegarandeerd over alle formulieren heen en kan telemetry uniform worden bijgehouden.
+
+Elk formulier geeft een uniek \texttt{formId} mee aan de \texttt{FormShell}-component. Dit prefix wordt gebruikt bij alle gegenereerde Application Insights-events, zodat de data per formulier kan worden gefilterd. De stappen van een formulier worden gedefinieerd als een array van componenten, waarbij elke stap zijn eigen validatieregels en conditionele weergavelogica bevat.
+
+Conditionele velden worden getoond of verborgen op basis van eerder ingegeven antwoorden via de \texttt{useState}- en \texttt{useEffect}-hooks van React. Wanneer een antwoord een tegenstrijdige combinatie vormt met een eerder antwoord, verschijnt een inline waarschuwing zonder de gebruiker te blokkeren.
+
+\section{\IfLanguageName{dutch}{Integratie met Microsoft Application Insights}{Integration with Microsoft Application Insights}}
+
+Elke gebruikersinteractie die relevant is voor de usability-analyse wordt automatisch doorgestuurd naar Microsoft Application Insights via de \texttt{@microsoft/applicationinsights-web} SDK. Application Insights fungeert als de centrale dataverzamelplaats voor alle telemetry en maakt het mogelijk om via Kusto Query Language (KQL) gerichte analyses uit te voeren op de verzamelde data.
+
+\subsection{\IfLanguageName{dutch}{Geregistreerde events}{Tracked Events}}
+
+Tabel~\ref{tab:ai-events} geeft een overzicht van alle custom events die door de applicatie worden bijgehouden, met hun naamgeving op basis van het \texttt{formId}-prefix.
+
+\begin{table}[h]
+  \centering
+  \caption[Custom Application Insights events]{Overzicht van de custom events per formulier}
+  \label{tab:ai-events}
+  \begin{tabular}{lp{8cm}}
+    \hline
+    \textbf{Event (prefix\_Naam)} & \textbf{Beschrijving} \\
+    \hline
+    \texttt{FormX\_StepView}             & Gebruiker bekijkt een stap; registreert het stapnummer en de sessie-ID. \\
+    \texttt{FormX\_StepComplete}         & Gebruiker voltooit een stap succesvol; registreert de doorlooptijd in milliseconden. \\
+    \texttt{FormX\_StepBack}             & Gebruiker navigeert terug naar een vorige stap. \\
+    \texttt{FormX\_StepValidationFailed} & Validatie mislukt op een stap; registreert het stapnummer en het type fout. \\
+    \texttt{FormX\_FieldChange}          & Gebruiker wijzigt een veldwaarde; registreert de veldnaam. \\
+    \texttt{FormX\_DropOff}             & Gebruiker verlaat het formulier zonder het te voltooien; registreert de laatste stap. \\
+    \texttt{FormX\_FormSubmitted}        & Gebruiker dient het formulier succesvol in. \\
+    \texttt{FormX\_FeedbackSubmitted}    & Gebruiker dient het in-app feedbackformulier in; bevat rating en NPS-score. \\
+    \hline
+  \end{tabular}
+\end{table}
+
+Waarbij \texttt{FormX} het prefix is van het betreffende formulier, bijvoorbeeld \texttt{FormA}, \texttt{FormB} of \texttt{FormC}.
+
+De events bevatten naast de naam ook een \texttt{session\_Id} waarmee alle interacties van één gebruiker kunnen worden gekoppeld. Dit maakt het mogelijk om volledige gebruikerssessies te reconstrueren en funnel-analyses uit te voeren per sessie in plaats van per losse paginaweergave.
+
+\subsection{\IfLanguageName{dutch}{Kusto-queries voor analyse}{Kusto Queries for Analysis}}
+
+De telemetry-data werd geanalyseerd via KQL-queries in de Azure Portal (Logboeken). De volgende queries werden gebruikt om de drie kernmetrics te berekenen:
+
+\begin{itemize}
+  \item \textbf{Voltooiingsratio en funnel:} telt het aantal unieke sessies per stap op basis van \texttt{StepComplete}-events, waarna de drop-off per stap zichtbaar wordt.
+  \item \textbf{Gemiddelde stap-doorlooptijd:} berekent per stap de gemiddelde duur in milliseconden op basis van de \texttt{duration\_ms}-eigenschap van \texttt{StepComplete}-events.
+  \item \textbf{Validatiefouten per sessie:} telt het aantal \texttt{StepValidationFailed}-events per sessie en berekent het gemiddelde over alle sessies.
+\end{itemize}
+
+\section{\IfLanguageName{dutch}{In-app feedbackformulier}{In-app Feedback Form}}
+
+Na het indienen van elk formulier krijgt de gebruiker automatisch een kort feedbackformulier te zien. Dit formulier bevraagt:
+
+\begin{itemize}
+  \item een algemene beoordeling op een schaal van 1 tot 5;
+  \item de ervaren moeite bij het invullen;
+  \item de geschatte invultijd;
+  \item de duidelijkheid van de stapindicatie;
+  \item de beoordeling van waarschuwingen bij tegenstrijdige combinaties;
+  \item de beoordeling van de conditionele velden;
+  \item de vlottheid van de navigatie;
+  \item open vragen over verwarring en verbeterpunten;
+  \item een NPS-score (0–10).
+\end{itemize}
+
+De antwoorden worden via het \texttt{FormX\_FeedbackSubmitted}-event als JSON opgeslagen in Application Insights en zijn opvraagbaar via dezelfde KQL-interface. Dit zorgt ervoor dat kwantitatieve telemetry en subjectieve feedback aan dezelfde sessie kunnen worden gekoppeld.

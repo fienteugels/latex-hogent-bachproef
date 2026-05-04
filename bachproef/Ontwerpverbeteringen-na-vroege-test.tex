@@ -1,0 +1,143 @@
+%%=============================================================================
+%% Ontwerpverbeteringen na vroege test
+%%=============================================================================
+
+\chapter{\IfLanguageName{dutch}{Ontwerpverbeteringen na de vroege test}{Design Improvements After the Early Test}}%
+\label{ch:ontwerpverbeteringen}
+
+\section{\IfLanguageName{dutch}{Inleiding}{Introduction}}
+
+Op basis van de usability-problemen die werden geïdentificeerd tijdens de vroege test (zie Hoofdstuk~\ref{ch:vroege-usability-test}) werd een verbeteringssprint uitgevoerd. De problemen uit Form~A (reisaanvraag) en Form~B (evenementregistratie) dienden als input voor concrete aanpassingen aan de applicatie. Deze verbeteringen werden vervolgens verwerkt in de formulieren die in de late test worden geëvalueerd: Form~B wordt hertest en Form~C (verblijfsaanvraag) werd van meet af aan ontwikkeld met de geleerde lessen.
+
+In dit hoofdstuk worden de doorgevoerde aanpassingen per geïdentificeerd probleem besproken. Per verbetering wordt aangegeven wat het oorspronkelijke probleem was, welke aanpassing werd doorgevoerd en wat het verwachte effect is op de gebruiksvriendelijkheid.
+
+\section{\IfLanguageName{dutch}{Verbeteringen op basis van Form A}{Improvements Based on Form A}}
+
+\subsection{\IfLanguageName{dutch}{Alfabetische landenlijst met correcte continentfiltering}{Alphabetical Country List with Correct Continent Filtering}}
+
+\textbf{Probleem:} De landenlijst was niet alfabetisch gesorteerd en toonde landen van alle continenten ongeacht het eerder gekozen continent, waardoor gebruikers te lang moesten zoeken naar hun bestemming (P1, P13).
+
+\textbf{Verbetering:} De landenlijst wordt nu dynamisch gefilterd op basis van het eerder gekozen continent. Alleen landen die tot het geselecteerde continent behoren, worden getoond. Binnen de gefilterde lijst worden landen alfabetisch gesorteerd weergegeven.
+
+\textbf{Verwacht effect:} Kortere zoektijd bij het selecteren van een bestemming en minder verwarring door irrelevante opties.
+
+\subsection{\IfLanguageName{dutch}{Toelichting bij domeinspecifieke terminologie}{Clarification of Domain-specific Terminology}}
+
+\textbf{Probleem:} De term ``transfer'' bij de luchthavenkeuze was voor niet-reizigers onduidelijk, wat leidde tot verwarring bij het invullen van die stap (P3).
+
+\textbf{Verbetering:} Bij velden met domeinspecifieke termen werd een informatieve tooltip of omschrijving toegevoegd. Voor ``transfer'' werd een korte uitleg opgenomen: ``Een overstap waarbij je van vliegtuig wisselt op een tussenliggende luchthaven.''
+
+\textbf{Verwacht effect:} Minder verwarring bij gebruikers zonder reiservaring en kortere invultijd op die stap.
+
+\subsection{\IfLanguageName{dutch}{Consistente validatie bij kamerkeuze}{Consistent Room Validation}}
+
+\textbf{Probleem:} De validatieregel bij de kamerkeuze hield geen rekening met het eerder ingegeven aantal reizigers. Een gebruiker die vier reizigers opgaf, ontving een foutmelding bij het selecteren van één kamer, wat logisch correct is maar als onterecht werd ervaren (P7).
+
+\textbf{Verbetering:} De validatielogica werd uitgebreid zodat de minimale kamervereiste wordt berekend op basis van het eerder ingegeven aantal reizigers en de geselecteerde kamerindeling. De foutmelding werd herschreven om expliciet te verwijzen naar het eerder opgegeven reisgezelschap.
+
+\textbf{Verwacht effect:} Gebruikers begrijpen de validatieregel beter en ervaren minder frustratie bij het invullen van de kamerstap.
+
+\subsection{\IfLanguageName{dutch}{Context bij het kortingscodeveld}{Context for the Discount Code Field}}
+
+\textbf{Probleem:} Het veld voor de kortingscode miste toelichting over wanneer dit ingevuld diende te worden, wat leidde tot onzekerheid bij gebruikers zonder kortingscode (P11).
+
+\textbf{Verbetering:} Het kortingscodeveld werd voorzien van een duidelijk label (``Heb je een kortingscode? Vul deze hier in. Laat leeg als je geen kortingscode hebt.'') en werd optioneel gemarkeerd.
+
+\textbf{Verwacht effect:} Gebruikers zonder kortingscode slaan het veld zonder verwarring over.
+
+\subsection{\IfLanguageName{dutch}{Uitbreiding van keuzelijsten}{Extension of Choice Lists}}
+
+\textbf{Probleem:} Relevante opties ontbraken bij meerdere keuzelijsten: de optie ``rondreis'' ontbrak bij reistypen, ``vakantiehuis'' ontbrak bij verblijfstypes, en gebruikers konden slechts één reistype selecteren terwijl combinaties gewenst zijn (P7, P11, P13).
+
+\textbf{Verbetering:} De keuzelijsten werden aangevuld met de ontbrekende opties. De enkelvoudige selectie voor reistype werd vervangen door een meervoudige selectie, zodat gebruikers combinaties zoals ``vakantie + avontuur'' kunnen aanduiden.
+
+\textbf{Verwacht effect:} Keuzelijsten sluiten beter aan bij de werkelijke behoeften van gebruikers, wat leidt tot minder frustratie en een hogere tevredenheid.
+
+\subsection{\IfLanguageName{dutch}{Correctie van de conditionale formulierlogica}{Correction of Conditional Form Logic}}
+
+\textbf{Probleem:} De conditionale logica paste de vervolgvragen niet correct aan op basis van eerdere antwoorden. Een gebruiker die koos voor een autovakantie, kreeg nog steeds een vraag over een airport shuttle (P14).
+
+\textbf{Verbetering:} De conditionale regels werden herzien en correct geïmplementeerd voor alle relevante stappencombinaties. Vragen die niet van toepassing zijn op het gekozen reistype, worden volledig verborgen.
+
+\textbf{Verwacht effect:} Gebruikers ontvangen enkel relevante vragen, wat de invultijd verkort en verwarring elimineert.
+
+\section{\IfLanguageName{dutch}{Verbeteringen op basis van Form B}{Improvements Based on Form B}}
+
+\subsection{\IfLanguageName{dutch}{Correctie van conditionale logica per evenementtype}{Correction of Conditional Logic per Event Type}}
+
+\textbf{Probleem:} Festival- en sportevenement-organisatoren ontvingen na een bepaald punt vragen die bedoeld waren voor conferentieorganisatoren. Opties zoals ``panelgesprekken'' en ``netwerkmomenten'' verschenen ongeacht het gekozen evenementtype (B1, B3).
+
+\textbf{Verbetering:} De conditionale logica per evenementtype werd volledig herzien. Elke tak van het formulier — festival, conferentie, sportevenement, bedrijfsevenement — beschikt nu over een eigen set vervolgvragen die uitsluitend worden getoond wanneer het overeenkomstige evenementtype is geselecteerd.
+
+\textbf{Verwacht effect:} Deelnemers ontvangen uitsluitend relevante vragen, wat de cognitieve belasting verlaagt en de invultijd verkort.
+
+\subsection{\IfLanguageName{dutch}{Consistente waarschuwingslogica}{Consistent Warning Logic}}
+
+\textbf{Probleem:} De waarschuwingen bij tegenstrijdige antwoordcombinaties waren inconsistent: sommige niet-passende opties toonden een waarschuwing, andere niet (B1).
+
+\textbf{Verbetering:} De waarschuwingsregels werden uitgebreid zodat alle opties die niet passen bij het eerder gekozen evenementtype een waarschuwing tonen. De tekst van de waarschuwingen werd verduidelijkt om aan te geven waarom een combinatie tegenstrijdig is.
+
+\textbf{Verwacht effect:} Gebruikers krijgen consistent en begrijpelijk feedback bij problematische combinaties, wat het vertrouwen in het formulier vergroot.
+
+\subsection{\IfLanguageName{dutch}{Verduidelijking van het formulierperspectief}{Clarification of Form Perspective}}
+
+\textbf{Probleem:} Het was voor gebruikers onduidelijk of het formulier gericht was op het organiseren of het bijwonen van een evenement. Dit leidde tot verwarring bij de ticketstap, waarbij de grens tussen organisator en bezoeker onduidelijk was (B4, B10).
+
+\textbf{Verbetering:} De introductietekst en stapomschrijvingen werden herschreven vanuit een eenduidig organisatorperspectief. Bij de ticketstap werd een duidelijke toelichting toegevoegd: ``Hier definieer je de ticketcategorieën en prijzen die bezoekers kunnen aankopen.''
+
+\textbf{Verwacht effect:} Gebruikers begrijpen direct voor wie en waarvoor het formulier bedoeld is, wat de verwarring bij de ticketstap elimineert.
+
+\subsection{\IfLanguageName{dutch}{Verbetering van de datumvalidatie}{Improvement of Date Validation}}
+
+\textbf{Probleem:} De datumvalidatie blokkeerde geldige combinaties (inchecktijd meer dan twee weken voor aanvang) zonder bevestigingsmogelijkheid, terwijl een ongeldige datum zoals het jaar 270200 zonder waarschuwing werd geaccepteerd (B5).
+
+\textbf{Verbetering:} De datumvalidatie werd op twee punten aangepast: (1) bij afwijkende maar geldige datumcombinaties wordt een bevestigingsvraag getoond in plaats van een harde blokkering, en (2) er werd een maximale datumgrens ingesteld om onrealistische waarden te blokkeren.
+
+\textbf{Verwacht effect:} Gebruikers worden niet langer onterecht geblokkeerd bij geldige datuminvoer, terwijl foute waarden wel worden onderschept.
+
+\subsection{\IfLanguageName{dutch}{Toevoeging van de optie ``niet van toepassing''}{Addition of a ``Not Applicable'' Option}}
+
+\textbf{Probleem:} Bij vragen die niet relevant zijn voor het gekozen evenementtype ontbrak een uitstapoptie, waardoor gebruikers een antwoord moesten kiezen dat niet op hun situatie van toepassing was (B3, B13).
+
+\textbf{Verbetering:} Bij keuzevelden waar de context afhankelijk is van het evenementtype werd een ``Niet van toepassing''-optie toegevoegd. Deze optie wordt enkel getoond wanneer de conditionele logica niet volledig de vraag kan verbergen.
+
+\textbf{Verwacht effect:} Gebruikers hoeven geen verkeerd antwoord te kiezen en kunnen vragen die niet op hen van toepassing zijn op een eerlijke manier overslaan.
+
+\subsection{\IfLanguageName{dutch}{Optimalisatie van de mobiele weergave}{Optimization of Mobile View}}
+
+\textbf{Probleem:} Op mobiele schermen verliepen formulierelementen hun kaders, waardoor de lay-out moeilijk leesbaar was (B4).
+
+\textbf{Verbetering:} De CSS van de formuliercomponenten werd aangepast zodat alle elementen correct binnen hun containers vallen op kleine schermformaten. De lay-out werd getest op gangbare mobiele resoluties.
+
+\textbf{Verwacht effect:} De applicatie is correct bruikbaar op mobiele toestellen, wat de toegankelijkheid voor een groter publiek vergroot.
+
+\section{\IfLanguageName{dutch}{Samenvatting van de verbeteringssprint}{Summary of the Improvement Sprint}}
+
+Tabel~\ref{tab:verbeteringen-overzicht} geeft een beknopt overzicht van alle doorgevoerde verbeteringen per formulier en het bijbehorende usability-probleem.
+
+\begin{table}[h]
+  \centering
+  \caption[Overzicht ontwerpverbeteringen]{Overzicht van de ontwerpverbeteringen na de vroege usability-test}
+  \label{tab:verbeteringen-overzicht}
+  \begin{tabular}{lp{5.5cm}p{5cm}}
+    \hline
+    \textbf{Form} & \textbf{Probleem} & \textbf{Verbetering} \\
+    \hline
+    A & Niet-alfabetische landenlijst & Gefilterd en alfabetisch gesorteerd op continent \\
+    A & Onduidelijke term ``transfer'' & Tooltip met uitleg toegevoegd \\
+    A & Inconsistente kamerkeuzevalidatie & Validatie gekoppeld aan reizigersaantal \\
+    A & Onduidelijk kortingscodeveld & Label en optioneel-markering toegevoegd \\
+    A & Onvolledige keuzelijsten & Opties aangevuld, meervoudige selectie mogelijk \\
+    A & Incorrecte conditionale logica & Regels herzien voor alle reistypecombinaties \\
+    \hline
+    B & Foutieve conditionale logica per evenementtype & Aparte vragenset per evenementtype \\
+    B & Inconsistente waarschuwingen & Waarschuwingsregels uitgebreid en verduidelijkt \\
+    B & Onduidelijk formulierperspectief & Tekst herschreven vanuit organisatorperspectief \\
+    B & Gebrekkige datumvalidatie & Bevestigingsvraag + maximumdatumgrens \\
+    B & Geen ``niet van toepassing''-optie & Optie toegevoegd waar relevant \\
+    B & Overflow op mobiel & CSS aangepast voor responsieve weergave \\
+    \hline
+  \end{tabular}
+\end{table}
+
+In totaal werden twaalf concrete verbeteringen doorgevoerd op basis van de vroege usability-test. Deze verbeteringen werden verwerkt in de versie van Form~B die in de late test werd geëvalueerd en vormen de basis van Form~C. In Hoofdstuk~\ref{ch:late-usability-test} worden de resultaten van de late test besproken, waarna in Hoofdstuk~\ref{ch:vergelijkende-analyse} wordt geanalyseerd of deze verbeteringen een meetbaar effect hebben gehad op de usabilitymetrics.

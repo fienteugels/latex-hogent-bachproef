@@ -1,0 +1,541 @@
+%%=============================================================================
+%% Vroege usability-test: uitvoering en resultaten
+%%=============================================================================
+
+\chapter{\IfLanguageName{dutch}{Vroege usability-test: uitvoering en resultaten}{Early Usability Test: Execution and Results}}%
+\label{ch:vroege-usability-test}
+
+\section{\IfLanguageName{dutch}{Uitvoering van de test}{Test Execution}}
+
+De vroege usability-test werd uitgevoerd met de initiële versie van de proof-of-concept React-applicatie, vóór het doorvoeren van ontwerpverbeteringen op basis van de testresultaten. Twee formulieren werden vroeg getest: Form~A (reisaanvraag, n=14) en Form~B (evenementregistratie, n=13). Alle deelnemers gaven voorafgaand hun toestemming voor deelname aan het onderzoek en de verwerking van hun gegevens.
+
+Elke deelnemer voerde de test zelfstandig uit. Tijdens de sessie werden de volgende gegevens geregistreerd via het in-app feedbackformulier:
+\begin{itemize}
+  \item de algemene beoordeling van het formulier (schaal 1–5);
+  \item de ervaren moeite bij het invullen;
+  \item de geschatte invultijd;
+  \item de duidelijkheid van de stapindicatie;
+  \item de beoordeling van waarschuwingen bij tegenstrijdige combinaties;
+  \item de beoordeling van conditionele velden;
+  \item de vlottheid van de navigatie;
+  \item kwalitatieve feedback over verwarrende onderdelen en verbeterpunten;
+  \item een aanbevelingsscore (NPS, schaal 0–10).
+\end{itemize}
+
+Naast deze in-app feedbackvragen werden gebruikersinteracties automatisch geregistreerd via Microsoft Application Insights.
+
+%%-----------------------------------------------------------------------------
+\section{\IfLanguageName{dutch}{Form A — Reisaanvraag}{Form A — Travel Request}}
+\label{sec:vroeg-forma}
+%%-----------------------------------------------------------------------------
+
+\subsection{\IfLanguageName{dutch}{Deelnemers}{Participants}}
+
+De steekproef voor Form~A bestond uit veertien deelnemers (P1–P14), gerekruteerd via een online oproep. Als inclusiecriterium gold voldoende beheersing van het Nederlands, aangezien de applicatie en instructies Nederlandstalig zijn.
+
+\subsection{\IfLanguageName{dutch}{Kwantitatieve resultaten}{Quantitative Results}}
+
+\subsubsection{\IfLanguageName{dutch}{Algemene beoordeling}{Overall Rating}}
+
+De deelnemers beoordeelden het formulier op een schaal van 1 tot 5. Tabel~\ref{tab:vroeg-ratings} geeft een overzicht van de scores per deelnemer.
+
+\begin{table}[h]
+  \centering
+  \caption[Algemene beoordelingsscores vroege test Form A]{Algemene beoordelingsscores per deelnemer — Form A (schaal 1–5)}
+  \label{tab:vroeg-ratings}
+  \begin{tabular}{ll}
+    \hline
+    \textbf{Deelnemer} & \textbf{Score} \\
+    \hline
+    P1  & 4 \\
+    P2  & 5 \\
+    P3  & 5 \\
+    P4  & 4 \\
+    P5  & 4 \\
+    P6  & 4 \\
+    P7  & 3 \\
+    P8  & 4 \\
+    P9  & 5 \\
+    P10 & 4 \\
+    P11 & 4 \\
+    P12 & 5 \\
+    P13 & 4 \\
+    P14 & 3 \\
+    \hline
+    \textbf{Gemiddelde} & \textbf{4,14} \\
+    \hline
+  \end{tabular}
+\end{table}
+
+De gemiddelde beoordeling bedroeg 4,14 op 5. Twee deelnemers (P7 en P14) gaven de laagste score van 3; vier deelnemers (P2, P3, P9, P12) gaven een maximumscore van 5.
+
+\subsubsection{\IfLanguageName{dutch}{Ervaren moeite en invultijd}{Perceived Effort and Completion Time}}
+
+Tabel~\ref{tab:vroeg-moeite-duur} toont de verdeling van de ervaren moeite en de geschatte invultijd per deelnemer.
+
+\begin{table}[h]
+  \centering
+  \caption[Ervaren moeite en invultijd vroege test Form A]{Ervaren moeite en invultijd per deelnemer — Form A}
+  \label{tab:vroeg-moeite-duur}
+  \begin{tabular}{lll}
+    \hline
+    \textbf{Deelnemer} & \textbf{Moeite} & \textbf{Duur} \\
+    \hline
+    P1  & makkelijk       & $<$5 min    \\
+    P2  & zeer makkelijk  & $<$5 min    \\
+    P3  & makkelijk       & 10–15 min   \\
+    P4  & zeer makkelijk  & $<$5 min    \\
+    P5  & makkelijk       & 5–10 min    \\
+    P6  & zeer makkelijk  & $<$5 min    \\
+    P7  & zeer makkelijk  & 5–10 min    \\
+    P8  & makkelijk       & 5–10 min    \\
+    P9  & zeer makkelijk  & $<$5 min    \\
+    P10 & zeer makkelijk  & $<$5 min    \\
+    P11 & makkelijk       & 5–10 min    \\
+    P12 & zeer makkelijk  & $<$5 min    \\
+    P13 & makkelijk       & $<$5 min    \\
+    P14 & zeer makkelijk  & $<$5 min    \\
+    \hline
+  \end{tabular}
+\end{table}
+
+Van de veertien deelnemers ervoer 57,1\% (n=8) het invullen als \textit{zeer makkelijk} en 42,9\% (n=6) als \textit{makkelijk}. Geen enkele deelnemer gaf aan het formulier moeilijk of zeer moeilijk te vinden. Wat de invultijd betreft, voltooide 64,3\% (n=9) het formulier in minder dan vijf minuten, 28,6\% (n=4) had vijf tot tien minuten nodig en één deelnemer (P3) had tien tot vijftien minuten nodig.
+
+\subsubsection{\IfLanguageName{dutch}{Duidelijkheid van stappen en foutmeldingen}{Clarity of Steps and Error Messages}}
+
+Alle veertien deelnemers (100\%) gaven aan dat het duidelijk was hoeveel stappen het formulier telde. Dit wijst op een effectieve stapindicatie in de initiële versie van de applicatie.
+
+Met betrekking tot foutmeldingen maakten tien deelnemers (71,4\%) geen fouten tijdens het invullen. Van de vier deelnemers die wel een foutmelding te zien kregen, vonden drie (21,4\%) deze duidelijk. Één deelnemer (P11) gaf aan de foutmeldingen slechts gedeeltelijk duidelijk te vinden.
+
+\subsubsection{\IfLanguageName{dutch}{NPS-score}{NPS Score}}
+
+De aanbevelingsscore (NPS) werd gemeten op een schaal van 0 tot 10. Tabel~\ref{tab:vroeg-nps} geeft de scores per deelnemer weer.
+
+\begin{table}[h]
+  \centering
+  \caption[NPS-scores vroege test Form A]{NPS-scores per deelnemer — Form A (schaal 0–10)}
+  \label{tab:vroeg-nps}
+  \begin{tabular}{ll}
+    \hline
+    \textbf{Deelnemer} & \textbf{NPS-score} \\
+    \hline
+    P1  & 9  \\
+    P2  & 7  \\
+    P3  & 9  \\
+    P4  & 10 \\
+    P5  & 7  \\
+    P6  & 9  \\
+    P7  & 6  \\
+    P8  & 9  \\
+    P9  & 10 \\
+    P10 & 8  \\
+    P11 & 9  \\
+    P12 & 10 \\
+    P13 & 10 \\
+    P14 & 6  \\
+    \hline
+    \textbf{Gemiddelde} & \textbf{8,50} \\
+    \hline
+  \end{tabular}
+\end{table}
+
+Op basis van de NPS-methodologie worden deelnemers ingedeeld in drie categorieën: promotors (9–10), passieven (7–8) en criticasters (0–6). Van de veertien deelnemers waren er negen promotors (64,3\%), drie passieven (21,4\%) en twee criticasters (14,3\%): P7 en P14, beide met een score van 6. De berekende NPS bedraagt $(9/14 - 2/14) \times 100 = +50$, wat als een positief resultaat wordt beschouwd.
+
+\subsubsection{\IfLanguageName{dutch}{Waarschuwingen bij tegenstrijdige combinaties}{Warnings for Conflicting Combinations}}
+
+Deelnemers werden gevraagd hoe zij de waarschuwingen bij tegenstrijdige antwoordcombinaties ervoeren. Tabel~\ref{tab:vroeg-waarschuwingen} toont de verdeling.
+
+\begin{table}[h]
+  \centering
+  \caption[Beoordeling waarschuwingen vroege test Form A]{Beoordeling van waarschuwingen bij tegenstrijdige combinaties — Form A}
+  \label{tab:vroeg-waarschuwingen}
+  \begin{tabular}{ll}
+    \hline
+    \textbf{Antwoord} & \textbf{Aantal deelnemers} \\
+    \hline
+    Nuttig      & 8 (57,1\%) \\
+    Niet gezien & 5 (35,7\%) \\
+    Verwarrend  & 1 (7,1\%)  \\
+    \hline
+  \end{tabular}
+\end{table}
+
+De meerderheid van de deelnemers (57,1\%) ervoer de waarschuwingen als nuttig. Vijf deelnemers (35,7\%) hadden de waarschuwingen niet opgemerkt, wat erop wijst dat de visuele presentatie ervan voor een deel van de gebruikers onvoldoende opviel. Eén deelnemer (P5) vond de waarschuwingen verwarrend.
+
+\subsubsection{\IfLanguageName{dutch}{Conditionele velden}{Conditional Fields}}
+
+Deelnemers beoordeelden hoe zij de extra velden ervoeren die verschenen op basis van eerdere antwoorden. Tabel~\ref{tab:vroeg-conditioneel} toont de verdeling.
+
+\begin{table}[h]
+  \centering
+  \caption[Beoordeling conditionele velden vroege test Form A]{Beoordeling van conditionele velden — Form A}
+  \label{tab:vroeg-conditioneel}
+  \begin{tabular}{ll}
+    \hline
+    \textbf{Antwoord} & \textbf{Aantal deelnemers} \\
+    \hline
+    Handig         & 7 (50,0\%) \\
+    Niet opgemerkt & 5 (35,7\%) \\
+    Verwarrend     & 1 (7,1\%)  \\
+    Niet gezien    & 1 (7,1\%)  \\
+    \hline
+  \end{tabular}
+\end{table}
+
+De helft van de deelnemers (50,0\%) waardeerde de conditionele velden als handig. Vijf deelnemers (35,7\%) hadden de dynamische aanpassing niet opgemerkt. Eén deelnemer (P3) vond dit verwarrend en één deelnemer (P14) had de conditionele velden helemaal niet waargenomen.
+
+\subsubsection{\IfLanguageName{dutch}{Navigatie}{Navigation}}
+
+Deelnemers gaven aan hoe vlot de navigatie door het formulier verliep. Tabel~\ref{tab:vroeg-navigatie} toont de verdeling.
+
+\begin{table}[h]
+  \centering
+  \caption[Beoordeling navigatie vroege test Form A]{Beoordeling van de navigatie — Form A}
+  \label{tab:vroeg-navigatie}
+  \begin{tabular}{ll}
+    \hline
+    \textbf{Antwoord} & \textbf{Aantal deelnemers} \\
+    \hline
+    Vlot      & 8 (57,1\%) \\
+    Zeer vlot & 4 (28,6\%) \\
+    Neutraal  & 2 (14,3\%) \\
+    \hline
+  \end{tabular}
+\end{table}
+
+Bijna alle deelnemers (85,7\%) ervoeren de navigatie als vlot of zeer vlot. Twee deelnemers (P9 en P10) stonden neutraal tegenover de navigatie. Geen enkele deelnemer vond de navigatie traag of moeilijk.
+
+\subsection{\IfLanguageName{dutch}{Kwalitatieve resultaten}{Qualitative Results}}
+
+\subsubsection{\IfLanguageName{dutch}{Verwarrende onderdelen}{Confusing Elements}}
+
+Vier deelnemers rapporteerden verwarring over specifieke onderdelen van het formulier. De overige deelnemers ervoeren geen verwarring of gaven expliciet aan dat alles duidelijk was.
+
+\begin{itemize}
+  \item \textbf{Inconsistentie bij kamerkeuze (P7):} ``Ik vond het raar dat ik een melding kreeg toen ik 1 kamer wou selecteren terwijl ik aangegeven heb dat we met 4 reizigers zijn als gezin.'' Dit wijst op een logicaprobleem in de validatieregels: het formulier houdt geen rekening met het eerder ingegeven aantal reizigers.
+  \item \textbf{Kortingscode onduidelijk (P11):} Het veld voor de kortingscode miste context over wanneer en waarom dit ingevuld diende te worden.
+  \item \textbf{Landenkeuze niet gefilterd op continent (P13):} ``Je moest continent aanduiden maar de landen stonden wat door elkaar, niet alfabetisch en ook van andere continenten.'' Daarnaast merkte P13 op dat het slechts mogelijk was één reistype aan te duiden, terwijl meerdere combinaties (bv.\ vakantie + avontuur) wenselijk zouden zijn.
+  \item \textbf{Conditionale stappen werken niet correct (P14):} ``Bij bepaalde stappen paste het formulier zich niet goed aan aan mijn keuze. Zo koos ik voor een autovakantie maar werd er nog steeds gevraagd of ik een airport shuttle nodig had.'' Dit wijst op een fout in de conditionale logica van het meerstapsformulier.
+\end{itemize}
+
+\subsubsection{\IfLanguageName{dutch}{Verbeterpunten}{Improvement Suggestions}}
+
+De deelnemers formuleerden de volgende concrete verbeterpunten:
+
+\begin{itemize}
+  \item \textbf{Alfabetische sortering van landen (P1, P13):} De landenlijst was niet alfabetisch gesorteerd en toonde ook landen van andere continenten, waardoor het zoeken naar een specifiek land meer tijd in beslag nam.
+  \item \textbf{Uitleg bij de term ``transfer'' (P3):} De term ``transfer'' bij de luchthavenkeuze was niet voor alle gebruikers duidelijk en behoeft een toelichting of alternatieve formulering.
+  \item \textbf{Onderverdeling bij interessecategorieën en ontbrekende reisoptie (P7):} Bij het selecteren van een voorkeur zoals ``musea en cultuur'' werd een verdere onderverdeling gemist. Tevens ontbrak de optie ``rondreis'' in de keuzelijst.
+  \item \textbf{Bijkomende reizigersgegevens (P9):} Het formulier vroeg enkel naar de leeftijd van kinderen en de naam van de aanvrager. Een uitbreiding met bijkomende gegevens van alle reizigers werd als wenselijk beschouwd.
+  \item \textbf{Ontbrekende verblijfsoptie (P11):} De optie ``vakantiehuis'' ontbrak in de keuzelijst voor verblijfstype.
+  \item \textbf{Meerdere reistypen selecteren (P13):} Gebruikers wilden meerdere reistypen kunnen combineren (bv.\ vakantie en avontuur), wat met de huidige enkelvoudige selectie niet mogelijk was.
+  \item \textbf{Conditionale formulierstappen (P14):} De vervolgvragen dienden zich aan te passen op basis van eerdere antwoorden (bv.\ geen shuttlevraag bij autovakantie).
+\end{itemize}
+
+\subsection{\IfLanguageName{dutch}{Geïdentificeerde usability-problemen}{Identified Usability Issues}}
+
+Op basis van de kwantitatieve en kwalitatieve resultaten worden de volgende usability-problemen geïdentificeerd in de vroege versie van Form~A:
+
+\begin{enumerate}
+  \item \textbf{Niet-alfabetische landenlijst met incorrecte continentfiltering:} verhoogde zoektijd en verwarring bij het selecteren van een bestemming (P1, P13).
+  \item \textbf{Onduidelijke terminologie (``transfer''):} domeinspecifieke term zonder toelichting leidt tot verwarring bij minder ervaren gebruikers (P3).
+  \item \textbf{Inconsistente validatie bij kamerkeuze:} de validatieregel houdt geen rekening met het eerder ingegeven aantal reizigers (P7).
+  \item \textbf{Onduidelijk kortingscodeveld:} ontbrekende context bij het veld voor de kortingscode (P11).
+  \item \textbf{Onvolledige keuzelijsten:} relevante opties ontbreken bij interessecategorieën (rondreis), verblijfstypes (vakantiehuis) en reistypen (meerdere selectie) (P7, P11, P13).
+  \item \textbf{Incorrecte conditionale formulierlogica:} vervolgvragen passen zich niet aan op basis van eerdere antwoorden, wat leidt tot irrelevante vragen (P14).
+\end{enumerate}
+
+%%-----------------------------------------------------------------------------
+\section{\IfLanguageName{dutch}{Form B — Evenementregistratie}{Form B — Event Registration}}
+\label{sec:vroeg-formb}
+%%-----------------------------------------------------------------------------
+
+\subsection{\IfLanguageName{dutch}{Deelnemers}{Participants}}
+
+De steekproef voor Form~B bestond uit dertien deelnemers (B1–B13), gerekruteerd via dezelfde online oproep als Form~A.
+
+\subsection{\IfLanguageName{dutch}{Kwantitatieve resultaten}{Quantitative Results}}
+
+\subsubsection{\IfLanguageName{dutch}{Algemene beoordeling}{Overall Rating}}
+
+Tabel~\ref{tab:vroeg-formb-ratings} toont de beoordelingsscores van de dertien deelnemers van Form~B.
+
+\begin{table}[h]
+  \centering
+  \caption[Algemene beoordelingsscores vroege test Form B]{Algemene beoordelingsscores per deelnemer — Form B (schaal 1–5)}
+  \label{tab:vroeg-formb-ratings}
+  \begin{tabular}{ll}
+    \hline
+    \textbf{Deelnemer} & \textbf{Score} \\
+    \hline
+    B1  & 3 \\
+    B2  & 4 \\
+    B3  & 3 \\
+    B4  & 3 \\
+    B5  & 2 \\
+    B6  & 3 \\
+    B7  & 3 \\
+    B8  & 4 \\
+    B9  & 3 \\
+    B10 & 4 \\
+    B11 & 4 \\
+    B12 & 4 \\
+    B13 & 3 \\
+    \hline
+    \textbf{Gemiddelde} & \textbf{3,31} \\
+    \hline
+  \end{tabular}
+\end{table}
+
+De gemiddelde beoordeling bedroeg 3,31 op 5. Geen enkele deelnemer gaf een score hoger dan 4; één deelnemer (B5) gaf de laagste score van 2. Vier deelnemers scoorden 4; acht deelnemers scoorden 3 of lager. Dit lagere gemiddelde in vergelijking met de verwachte baseline duidt op merkbare usability-problemen in de vroege versie van het evenementformulier.
+
+\subsubsection{\IfLanguageName{dutch}{Ervaren moeite en invultijd}{Perceived Effort and Completion Time}}
+
+Tabel~\ref{tab:vroeg-formb-moeite} toont de ervaren moeite en de geschatte invultijd per deelnemer van Form~B.
+
+\begin{table}[h]
+  \centering
+  \caption[Ervaren moeite en invultijd vroege test Form B]{Ervaren moeite en invultijd per deelnemer — Form B}
+  \label{tab:vroeg-formb-moeite}
+  \begin{tabular}{lll}
+    \hline
+    \textbf{Deelnemer} & \textbf{Moeite} & \textbf{Duur} \\
+    \hline
+    B1  & makkelijk  & $<$5 min    \\
+    B2  & makkelijk  & $<$5 min    \\
+    B3  & neutraal   & $<$5 min    \\
+    B4  & neutraal   & $<$5 min    \\
+    B5  & neutraal   & 10–15 min   \\
+    B6  & makkelijk  & 5–10 min    \\
+    B7  & makkelijk  & $<$5 min    \\
+    B8  & makkelijk  & 5–10 min    \\
+    B9  & moeilijk   & $>$15 min   \\
+    B10 & neutraal   & 10–15 min   \\
+    B11 & makkelijk  & 5–10 min    \\
+    B12 & makkelijk  & $<$5 min    \\
+    B13 & neutraal   & $<$5 min    \\
+    \hline
+  \end{tabular}
+\end{table}
+
+Van de dertien deelnemers ervoer 53,8\% (n=7) het invullen als \textit{makkelijk}, 38,5\% (n=5) stond neutraal tegenover de moeite en één deelnemer (B9, 7,7\%) vond het invullen \textit{moeilijk}. Wat de invultijd betreft, voltooide 53,8\% (n=7) het formulier in minder dan vijf minuten. Drie deelnemers (23,1\%) hadden vijf tot tien minuten nodig, twee deelnemers (15,4\%) tien tot vijftien minuten en één deelnemer (B9) meer dan vijftien minuten.
+
+\subsubsection{\IfLanguageName{dutch}{NPS-score}{NPS Score}}
+
+Tabel~\ref{tab:vroeg-formb-nps} toont de NPS-scores van de dertien deelnemers van Form~B.
+
+\begin{table}[h]
+  \centering
+  \caption[NPS-scores vroege test Form B]{NPS-scores per deelnemer — Form B (schaal 0–10)}
+  \label{tab:vroeg-formb-nps}
+  \begin{tabular}{ll}
+    \hline
+    \textbf{Deelnemer} & \textbf{NPS-score} \\
+    \hline
+    B1  & 6 \\
+    B2  & 8 \\
+    B3  & 3 \\
+    B4  & 6 \\
+    B5  & 6 \\
+    B6  & 6 \\
+    B7  & 6 \\
+    B8  & 8 \\
+    B9  & 4 \\
+    B10 & 7 \\
+    B11 & 8 \\
+    B12 & 8 \\
+    B13 & 8 \\
+    \hline
+    \textbf{Gemiddelde} & \textbf{6,46} \\
+    \hline
+  \end{tabular}
+\end{table}
+
+Van de dertien deelnemers waren er geen promotors (score 9–10), zes passieven (46,2\%): B2, B8, B10, B11, B12 en B13, en zeven criticasters (53,8\%): B1, B3, B4, B5, B6, B7 en B9. De berekende NPS bedraagt $(0/13 - 7/13) \times 100 = -53{,}8$. Dit sterk negatieve resultaat wijst op ernstige usability-problemen in de vroege versie van het evenementformulier.
+
+\subsubsection{\IfLanguageName{dutch}{Waarschuwingen bij tegenstrijdige combinaties}{Warnings for Conflicting Combinations}}
+
+Tabel~\ref{tab:vroeg-formb-waarschuwingen} toont hoe Form~B-deelnemers de waarschuwingen ervoeren.
+
+\begin{table}[h]
+  \centering
+  \caption[Beoordeling waarschuwingen vroege test Form B]{Beoordeling van waarschuwingen bij tegenstrijdige combinaties — Form B}
+  \label{tab:vroeg-formb-waarschuwingen}
+  \begin{tabular}{ll}
+    \hline
+    \textbf{Antwoord} & \textbf{Aantal deelnemers} \\
+    \hline
+    Nuttig      & 7 (53,8\%) \\
+    Niet gezien & 4 (30,8\%) \\
+    Verwarrend  & 2 (15,4\%) \\
+    \hline
+  \end{tabular}
+\end{table}
+
+Hoewel de meerderheid (53,8\%) de waarschuwingen als nuttig beschouwde, vonden twee deelnemers (B1 en B5) ze verwarrend. In de kwalitatieve feedback werd verduidelijkt dat dit te wijten is aan inconsistente waarschuwingslogica: sommige niet-passende opties toonden geen waarschuwing terwijl andere dat wel deden.
+
+\subsubsection{\IfLanguageName{dutch}{Conditionele velden}{Conditional Fields}}
+
+Tabel~\ref{tab:vroeg-formb-conditioneel} toont de beoordeling van de conditionele velden door Form~B-deelnemers.
+
+\begin{table}[h]
+  \centering
+  \caption[Beoordeling conditionele velden vroege test Form B]{Beoordeling van conditionele velden — Form B}
+  \label{tab:vroeg-formb-conditioneel}
+  \begin{tabular}{ll}
+    \hline
+    \textbf{Antwoord} & \textbf{Aantal deelnemers} \\
+    \hline
+    Handig         & 7 (53,8\%) \\
+    Niet opgemerkt & 4 (30,8\%) \\
+    Verwarrend     & 2 (15,4\%) \\
+    \hline
+  \end{tabular}
+\end{table}
+
+Twee deelnemers (B3 en B10) ervoeren de conditionele velden als verwarrend. In de kwalitatieve feedback gaven zij aan dat de vragen die verschenen niet aansloten bij het eerder gekozen evenementtype, wat de kernfout van het formulier illustreert.
+
+\subsubsection{\IfLanguageName{dutch}{Navigatie}{Navigation}}
+
+Tabel~\ref{tab:vroeg-formb-navigatie} toont de beoordeling van de navigatie door Form~B-deelnemers.
+
+\begin{table}[h]
+  \centering
+  \caption[Beoordeling navigatie vroege test Form B]{Beoordeling van de navigatie — Form B}
+  \label{tab:vroeg-formb-navigatie}
+  \begin{tabular}{ll}
+    \hline
+    \textbf{Antwoord} & \textbf{Aantal deelnemers} \\
+    \hline
+    Vlot      & 6 (46,2\%) \\
+    Zeer vlot & 4 (30,8\%) \\
+    Neutraal  & 2 (15,4\%) \\
+    Traag     & 1 (7,7\%)  \\
+    \hline
+  \end{tabular}
+\end{table}
+
+De meeste deelnemers (77,0\%) ervoeren de navigatie als vlot of zeer vlot. Één deelnemer (B3) vond de navigatie traag, wat mogelijks samenhangt met de verwarring door de verkeerde conditionele vragen.
+
+\subsection{\IfLanguageName{dutch}{Kwalitatieve resultaten}{Qualitative Results}}
+
+\subsubsection{\IfLanguageName{dutch}{Verwarrende onderdelen}{Confusing Elements}}
+
+Verschillende deelnemers rapporteerden verwarring over specifieke onderdelen van Form~B.
+
+\begin{itemize}
+  \item \textbf{Foutieve conditionale logica voor festivaldoelgroep (B1):} ``Ik koos voor een muziekfestival, maar vanaf een bepaald moment gingen de vragen meer over een conferentie. Op een bepaald moment kon ik dan enkel uit opties kiezen die bij een conferentie hoorden, en als ik `workshop' koos kwam er wel een waarschuwing dat dit niet bij festivals paste, maar bij de andere opties kwam die waarschuwing niet, terwijl die er ook niet bij pasten (netwerken, panelgesprekken, etc.).'' Dit wijst op een fundamenteel probleem in de conditionale logica: het formulier schakelt na een bepaald punt over naar conferentievragen ongeacht het gekozen evenementtype.
+  \item \textbf{Sportevenement krijgt conferentievragen (B3):} ``Ik moest ergens kiezen wat ik op mijn evenement wou aanbieden (workshops, panelgesprekken, keynotes), maar ik koos voor een sportevenement waarbij dit niet van toepassing is. Ik vulde workshops in omdat dit dan het beste leek te passen.'' De deelnemer werd gedwongen een antwoord te kiezen dat niet overeenkwam met haar situatie.
+  \item \textbf{Verwarrende ticketstap (B4):} ``Stap rond tickets is verwarrend. Waarom moet ik tickets kiezen rond mijn eigen event? Ik zou eerder denken dat ik kan kiezen welk soort tickets ik wil aanbieden en aan welke prijs. Betalingen is onduidelijk want ik weet niet eens over welke tarieven we spreken.'' Het formulier maakt het verschil tussen organisator- en bezoekersperspectief niet duidelijk.
+  \item \textbf{Gebrekkige datumvalidatie (B5):} Het formulier vroeg de inchecktijdtijd te herbekijken omdat die meer dan twee weken voor de aanvang van het evenement lag, maar de deelnemer kon nergens aangeven dat dit opzettelijk correct was. Tegelijkertijd werd een einddatum in het jaar 270200 zonder waarschuwing geaccepteerd.
+  \item \textbf{Onduidelijk formulierdoel (B10):} ``Ik vond het wat verwarrend of het ging over het maken van een evenement of het bijwonen van een evenement. In een stap gingen de vragen over zaken zoals keynote speakers, maar ik had nooit eerder aangeduid dat dit aanwezig zou zijn op het evenement.''
+  \item \textbf{Ontbrekende ``niet van toepassing''-optie (B13):} De deelnemer gaf aan dat een optie ``niet van toepassing'' nodig is bij vragen die niet relevant zijn voor het gekozen evenementtype.
+\end{itemize}
+
+\subsubsection{\IfLanguageName{dutch}{Verbeterpunten}{Improvement Suggestions}}
+
+De deelnemers formuleerden de volgende concrete verbeterpunten:
+
+\begin{itemize}
+  \item \textbf{Consistente conditionale logica per evenementtype (B1, B3):} De vragen en keuzeopties dienen consistent te corresponderen met het eerder gekozen evenementtype. Festival- en sportevenement-organisatoren mogen geen conferentievragen krijgen.
+  \item \textbf{Ticketstap verduidelijken (B4):} Het onderscheid tussen het aanmaken van tickettypes voor de organisator en het selecteren van een ticket als bezoeker dient duidelijk te worden gemaakt.
+  \item \textbf{Datumvalidatie herzien (B5):} Valide combinaties die als afwijkend worden gemarkeerd, dienen bevestigd te kunnen worden. Onrealistische datumwaarden (bv.\ jaar 270200) dienen te worden geblokkeerd.
+  \item \textbf{Optie ``anders'' bij vervoersmiddelen (B5):} Voeg een vrij invulveld of ``andere'' optie toe bij de keuze van vervoersmiddel.
+  \item \textbf{Mobiele weergave optimaliseren (B4):} Velden verlopen de kaders op mobiele schermen (bv.\ de betaalopties). De lay-out dient responsief te worden aangepast.
+  \item \textbf{``Niet van toepassing''-optie toevoegen (B13):} Bij vragen die niet relevant zijn voor het gekozen evenementtype dient een uitstapoptie beschikbaar te zijn.
+  \item \textbf{Meer vrije tekstvelden (B10, B11):} Deelnemers prefereren de mogelijkheid om eigen antwoorden in te typen boven de beperkte selectieopties.
+\end{itemize}
+
+\subsection{\IfLanguageName{dutch}{Geïdentificeerde usability-problemen}{Identified Usability Issues}}
+
+Op basis van de kwantitatieve en kwalitatieve resultaten worden de volgende usability-problemen geïdentificeerd in de vroege versie van Form~B:
+
+\begin{enumerate}
+  \item \textbf{Foutieve conditionale logica voor evenementtype:} festival- en sportevenement-deelnemers ontvangen vragen die bedoeld zijn voor conferentieorganisatoren (B1, B3).
+  \item \textbf{Inconsistente waarschuwingslogica:} sommige niet-passende opties genereren geen waarschuwing, andere wel, waardoor het systeem onbetrouwbaar overkomt (B1).
+  \item \textbf{Verwarring over formulierperspectief:} het is onduidelijk of het formulier gericht is op een organisator of een bezoeker, met name bij de ticketstap (B4, B10).
+  \item \textbf{Gebrekkige datumvalidatie:} geldige datumcombinaties worden geblokkeerd zonder bevestigingsmogelijkheid; ongeldige datums (jaar 270200) worden geaccepteerd (B5).
+  \item \textbf{Ontbrekende ``niet van toepassing''-optie:} deelnemers worden gedwongen een antwoord te kiezen dat niet op hun situatie van toepassing is (B3, B13).
+  \item \textbf{Overflow op mobiele weergave:} formulierelementen verlopen hun kaders op mobiele schermen, wat de leesbaarheid bemoeilijkt (B4).
+  \item \textbf{Beperkte keuzeopties:} te weinig antwoordmogelijkheden bij vervoer, betaalwijze en andere velden (B4, B5, B10).
+\end{enumerate}
+
+%%-----------------------------------------------------------------------------
+\section{\IfLanguageName{dutch}{Telemetry-resultaten via Application Insights}{Telemetry Results via Application Insights}}
+%%-----------------------------------------------------------------------------
+
+Naast de in-app feedbackvragen werden alle gebruikersinteracties automatisch geregistreerd via Microsoft Application Insights. De telemetry-data werd geëxporteerd via Kusto-queries en omvat voltooiingsratio's, stap-doorlooptijden en validatiefouten voor zowel Form~A (reisaanvraag) als Form~B (evenementregistratie), die beide vroeg werden getest.
+
+\subsection{\IfLanguageName{dutch}{Voltooiingsratio en drop-off}{Completion Rate and Drop-off}}
+
+Tabel~\ref{tab:vroeg-voltooiing} toont het aantal sessies dat het formulier startte en voltooide per form.
+
+\begin{table}[h]
+  \centering
+  \caption[Voltooiingsratio vroege tests]{Voltooiingsratio per form — vroege test}
+  \label{tab:vroeg-voltooiing}
+  \begin{tabular}{lccc}
+    \hline
+    \textbf{Form} & \textbf{Starters} & \textbf{Voltooid} & \textbf{Voltooiingsratio} \\
+    \hline
+    Form A (reisaanvraag)       & 26 & 12 & 46,2\% \\
+    Form B (evenementregistratie) & 26 & 15 & 57,7\% \\
+    \hline
+  \end{tabular}
+\end{table}
+
+Bij beide forms vond de drop-off vrijwel uitsluitend plaats na stap~1. Deelnemers die stap~2 bereikten, voltooiden het formulier in alle gevallen volledig. Dit patroon wijst erop dat de initiële drempel — het invullen van persoonlijke gegevens in stap~1 — het voornaamste afhaakmechanisme is.
+
+\subsection{\IfLanguageName{dutch}{Gemiddelde stap-doorlooptijden}{Average Step Duration}}
+
+Tabel~\ref{tab:vroeg-stapduur} toont de gemiddelde doorlooptijd per stap in seconden, berekend op basis van de \texttt{StepComplete}-events in Application Insights.
+
+\begin{table}[h]
+  \centering
+  \caption[Gemiddelde stap-doorlooptijden vroege test]{Gemiddelde stap-doorlooptijd in seconden per form — vroege test}
+  \label{tab:vroeg-stapduur}
+  \begin{tabular}{lcc}
+    \hline
+    \textbf{Stap} & \textbf{Form A (sec)} & \textbf{Form B (sec)} \\
+    \hline
+    1  & 59,2 & 90,8 \\
+    2  & 30,6 & 87,4 \\
+    3  & 69,7 & 50,9 \\
+    4  & 41,6 & 28,4 \\
+    5  & 34,7 & 17,8 \\
+    6  & 24,5 & 47,1 \\
+    7  & 51,3 & 39,9 \\
+    8  & 18,1 & 16,7 \\
+    9  & 29,8 & 16,4 \\
+    10 & —    & 68,2 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+Bij Form~A duurden stap~3 (bestemming, 69,7~sec) en stap~1 (persoonsgegevens, 59,2~sec) het langst. Bij Form~B namen stap~1 (90,8~sec) en stap~2 (87,4~sec) de meeste tijd in beslag, wat wijst op moeite bij de initiële registratiestappen van het evenementformulier.
+
+\subsection{\IfLanguageName{dutch}{Validatiefouten}{Validation Errors}}
+
+Tabel~\ref{tab:vroeg-fouten} geeft een overzicht van de validatiefouten per sessie voor beide forms.
+
+\begin{table}[h]
+  \centering
+  \caption[Validatiefouten vroege test]{Validatiefouten per sessie — vroege test}
+  \label{tab:vroeg-fouten}
+  \begin{tabular}{lccc}
+    \hline
+    \textbf{Form} & \textbf{Sessies met fouten} & \textbf{Totaal fouten} & \textbf{Gemiddeld per sessie} \\
+    \hline
+    Form A & 4 van 12 (33,3\%) & 11  & 0,92 \\
+    Form B & 13 van 14 (92,9\%) & 52 & 3,71 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+Form~B genereerde aanzienlijk meer validatiefouten dan Form~A. Terwijl slechts een derde van de Form~A-sessies fouten bevatte, maakten bijna alle Form~B-deelnemers validatiefouten, met een gemiddelde van 3,71 fouten per sessie. Dit is consistent met de lagere beoordelingsscores en NPS voor Form~B, en met de kwalitatieve problemen rond de incorrecte conditionale logica.
+
+%%-----------------------------------------------------------------------------
+\section{\IfLanguageName{dutch}{Samenvatting}{Summary}}
+%%-----------------------------------------------------------------------------
+
+De vroege usability-test werd uitgevoerd op twee forms. Form~A (reisaanvraag, n=14) leverde overwegend positieve resultaten op: gemiddelde beoordeling 4,14 op 5, NPS $+50$ en gemiddeld 0,92 validatiefouten per sessie. De navigatie werd door 85,7\% als vlot of zeer vlot beoordeeld. Zes concrete usability-problemen werden geïdentificeerd op basis van de kwalitatieve feedback, waaronder incorrecte conditionale logica en een niet-alfabetische landenlijst. Form~B (evenementregistratie, n=13) toonde in zijn vroege versie ernstige usability-problemen: gemiddelde beoordeling 3,31 op 5, NPS $-53{,}8$ en gemiddeld 3,71 validatiefouten per sessie. Zeven usability-problemen werden geïdentificeerd, waarvan foutieve conditionale logica per evenementtype en onduidelijkheid over het formulierperspectief als meest impactvol naar voren kwamen. De resultaten van beide forms vormen elk een afzonderlijke baseline die in Hoofdstuk~\ref{ch:vergelijkende-analyse} verder wordt geanalyseerd. De ontwerpverbeteringen op basis van deze bevindingen worden besproken in Hoofdstuk~\ref{ch:ontwerpverbeteringen}.

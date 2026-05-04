@@ -1,0 +1,155 @@
+%%=============================================================================
+%% Vergelijkende analyse
+%%=============================================================================
+
+\chapter{\IfLanguageName{dutch}{Vergelijkende analyse}{Comparative Analysis}}%
+\label{ch:vergelijkende-analyse}
+
+\section{\IfLanguageName{dutch}{Onderzoekshypothesen}{Research Hypotheses}}
+
+Dit hoofdstuk toetst of het tijdstip van usability-testen — vroeg, laat of gecombineerd — een meetbaar effect heeft op de gebruiksvriendelijkheid van de applicatie. De drie testgroepen zijn:
+
+\begin{itemize}
+  \item \textbf{Vroeg (n=14):} Form A (reisaanvraag), enkel vroeg getest vóór de ontwerpverbeteringen.
+  \item \textbf{Laat (n=13):} Form C (verblijfsaanvraag), enkel laat getest na de ontwerpverbeteringen.
+  \item \textbf{Beide (n=13):} Form B (evenementregistratie), vroeg én laat getest.
+\end{itemize}
+
+Per afhankelijke variabele worden de volgende hypothesen getoetst via een eenweg-ANOVA bij significantieniveau $\alpha = 0{,}05$:
+
+\paragraph{H\textsubscript{0,1} — Algemene beoordeling}
+\begin{quote}
+  Er is geen significant verschil in de gemiddelde beoordeling (schaal 1–5) tussen de drie testgroepen: $\mu_{\text{vroeg}} = \mu_{\text{laat}} = \mu_{\text{beide}}$.
+\end{quote}
+\paragraph{H\textsubscript{1,1}}
+\begin{quote}
+  Er is een significant verschil in de gemiddelde beoordeling tussen minstens twee testgroepen.
+\end{quote}
+
+\paragraph{H\textsubscript{0,2} — Net Promoter Score}
+\begin{quote}
+  Er is geen significant verschil in de NPS tussen de drie testgroepen: $\mu_{\text{vroeg}} = \mu_{\text{laat}} = \mu_{\text{beide}}$.
+\end{quote}
+\paragraph{H\textsubscript{1,2}}
+\begin{quote}
+  Er is een significant verschil in de NPS tussen minstens twee testgroepen.
+\end{quote}
+
+\paragraph{H\textsubscript{0,3} — Validatiefouten}
+\begin{quote}
+  Er is geen significant verschil in het gemiddeld aantal validatiefouten per sessie tussen de drie testgroepen: $\mu_{\text{vroeg}} = \mu_{\text{laat}} = \mu_{\text{beide}}$.
+\end{quote}
+\paragraph{H\textsubscript{1,3}}
+\begin{quote}
+  Er is een significant verschil in het gemiddeld aantal validatiefouten per sessie tussen minstens twee testgroepen.
+\end{quote}
+
+\paragraph{H\textsubscript{0,4} — Gemiddelde invultijd}
+\begin{quote}
+  Er is geen significant verschil in de gemiddelde totale invultijd (ms) tussen de drie testgroepen: $\mu_{\text{vroeg}} = \mu_{\text{laat}} = \mu_{\text{beide}}$.
+\end{quote}
+\paragraph{H\textsubscript{1,4}}
+\begin{quote}
+  Er is een significant verschil in de gemiddelde totale invultijd tussen minstens twee testgroepen.
+\end{quote}
+
+Bij een significant ANOVA-resultaat ($p < 0{,}05$) wordt een Tukey HSD post-hoc test uitgevoerd om te bepalen tussen welke specifieke groepen de verschillen zich bevinden \autocite{Field2018}.
+
+\section{\IfLanguageName{dutch}{Groepsverdeling}{Group Distribution}}
+
+In totaal namen 40 deelnemers deel aan het onderzoek. Via willekeurige toewijzing werden zij verdeeld over drie testgroepen: de vroege testgroep (n=14), de late testgroep (n=13) en de gecombineerde testgroep (n=13). Tabel~\ref{tab:groepsverdeling} geeft een overzicht van de achtergrondkenmerken per groep.
+
+\begin{table}[h]
+  \centering
+  \caption[Achtergrondkenmerken per testgroep]{Gemiddelde leeftijd en technische score per testgroep}
+  \label{tab:groepsverdeling}
+  \begin{tabular}{lccc}
+    \hline
+    \textbf{Kenmerk} & \textbf{Vroeg (n=14)} & \textbf{Laat (n=13)} & \textbf{Beide (n=13)} \\
+    \hline
+    Gemiddelde leeftijd     & 40,07 & 40,46 & 37,38 \\
+    Gemiddelde tech score   & 6,71  & 6,46  & 7,15  \\
+    \% vrouwelijk           & 78,6\% & 92,3\% & 53,8\% \\
+    \hline
+  \end{tabular}
+\end{table}
+
+De drie groepen zijn vergelijkbaar qua gemiddelde leeftijd en technische achtergrond, wat de interne validiteit van de vergelijking ondersteunt.
+
+\section{\IfLanguageName{dutch}{Verificatie van assumpties}{Assumption Verification}}
+
+Alvorens een eenweg-ANOVA uit te voeren, worden de drie vereiste assumpties gecontroleerd: normaliteit van de residuen, homogeniteit van varianties en onafhankelijkheid van de residuen.
+
+\subsection{\IfLanguageName{dutch}{Normaliteit}{Normality}}
+
+% TODO: Shapiro-Wilk test uitvoeren op de SUS-scores en taakvoltooiingstijden per groep en resultaten hier verwerken.
+
+\subsection{\IfLanguageName{dutch}{Homogeniteit van varianties}{Homogeneity of Variances}}
+
+% TODO: Levene-test uitvoeren en resultaten hier verwerken.
+
+\subsection{\IfLanguageName{dutch}{Onafhankelijkheid van residuen: Durbin-Watson}{Independence of Residuals: Durbin-Watson}}
+
+Om te controleren of de inschrijfvolgorde een systematische invloed heeft gehad op de groepstoewijzing, werd een Durbin-Watson-test uitgevoerd op twee achtergrondvariabelen: de technische score en de leeftijd van de deelnemers. De test gaat na of de residuen van een lineaire regressie op de inschrijfvolgorde onafhankelijk zijn. Een DW-waarde dicht bij 2 wijst op afwezigheid van autocorrelatie; waarden onder 1,5 duiden op positieve autocorrelatie, waarden boven 2,5 op negatieve autocorrelatie \autocite{Field2018}.
+
+\paragraph{Technische score}
+
+De regressielijn voor de technische score bedraagt:
+
+\[
+\widehat{\text{Techscore}} = 6{,}7220 + 0{,}0027 \times \text{volgorde}
+\]
+
+De helling van 0,0027 is vrijwel nul, wat erop wijst dat de technische score nauwelijks varieert met de inschrijfvolgorde. De Durbin-Watson-statistiek werd berekend als:
+
+\[
+DW = \frac{\sum_{t=2}^{n}(e_t - e_{t-1})^2}{\sum_{t=1}^{n}e_t^2} = \frac{155{,}9894}{78{,}9356} = 1{,}9762
+\]
+
+Een waarde van $DW = 1{,}9762$ ligt vrijwel exact op de ideale waarde van 2 en valt ruim boven de kritieke ondergrens $d_L = 1{,}44$ voor $n=40$ en $k=1$. Er is bijgevolg geen autocorrelatie vastgesteld in de residuen van de technische score.
+
+\paragraph{Leeftijd}
+
+De regressielijn voor de leeftijd bedraagt:
+
+\[
+\widehat{\text{Leeftijd}} = 30{,}2427 + 0{,}4658 \times \text{volgorde}
+\]
+
+De Durbin-Watson-statistiek werd berekend als:
+
+\[
+DW = \frac{\sum_{t=2}^{n}(e_t - e_{t-1})^2}{\sum_{t=1}^{n}e_t^2} = \frac{15008{,}6658}{8698{,}5262} = 1{,}7254
+\]
+
+Een waarde van $DW = 1{,}7254$ valt eveneens boven de kritieke ondergrens en binnen het aanvaardbare bereik. Er is geen significante autocorrelatie vastgesteld in de residuen van de leeftijd.
+
+\paragraph{Conclusie}
+
+Beide Durbin-Watson-tests bevestigen dat de inschrijfvolgorde geen systematische invloed heeft uitgeoefend op de verdeling van technische achtergrond of leeftijd over de drie testgroepen. De assumptie van onafhankelijkheid is daarmee voldaan, en de verdere statistische analyse via ANOVA is gerechtvaardigd. Tabel~\ref{tab:dw-resultaten} vat de resultaten samen.
+
+\begin{table}[h]
+  \centering
+  \caption[Durbin-Watson testresultaten]{Overzicht van de Durbin-Watson-testresultaten}
+  \label{tab:dw-resultaten}
+  \begin{tabular}{lcccc}
+    \hline
+    \textbf{Variabele} & \textbf{Teller} & \textbf{Noemer} & \textbf{DW-waarde} & \textbf{Conclusie} \\
+    \hline
+    Technische score & 155,99 & 78,94 & 1,9762 & Geen autocorrelatie \\
+    Leeftijd         & 15008,67 & 8698,53 & 1,7254 & Geen autocorrelatie \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\section{\IfLanguageName{dutch}{Eenweg-ANOVA}{One-Way ANOVA}}
+
+% TODO: ANOVA uitvoeren op SUS-scores, taakvoltooiingstijd, foutfrequentie en Application Insights-metrics. Resultaten hier verwerken.
+
+\section{\IfLanguageName{dutch}{Post-hoc analyse: Tukey HSD}{Post-hoc Analysis: Tukey HSD}}
+
+% TODO: Indien ANOVA significant (p < 0,05): Tukey HSD uitvoeren om te bepalen tussen welke groepen de verschillen zich bevinden.
+
+\section{\IfLanguageName{dutch}{Interpretatie van de resultaten}{Interpretation of Results}}
+
+% TODO: Resultaten interpreteren in het licht van de onderzoeksvraag.
