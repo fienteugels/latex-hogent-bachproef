@@ -45,12 +45,10 @@
 
 \chapter*{\IfLanguageName{dutch}{Samenvatting}{Abstract}}
 
-% TODO: Schrijf de samenvatting (~1 blz.) nadat alle resultaten bekend zijn.
-% Beantwoord de volgende vragen kernachtig:
-%   1. Waarover gaat de bachelorproef? (onderwerp + context)
-%   2. Waarom is dit relevant? (probleemstelling)
-%   3. Hoe werd het onderzoek uitgevoerd? (methodologie: 3 forms, 40 deelnemers,
-%      vroege/late/gecombineerde testgroep, Application Insights, ANOVA)
-%   4. Wat zijn de resultaten? (beoordeling, NPS, validatiefouten per groep,
-%      ANOVA p-waarde, Tukey HSD conclusie)
-%   5. Wat betekenen de resultaten? (aanbeveling voor het werkveld)
+Webapplicaties met meerstapsformulieren kampen regelmatig met usability-problemen die gebruikers doen afhaken. Hoewel er brede consensus bestaat over het nut van usability-testing, is er nauwelijks empirisch onderzoek naar de impact van het \textit{tijdstip} waarop deze tests worden uitgevoerd. Vroeg testen laat toe problemen goedkoop te detecteren, maar ook late tests voegen waarde toe door de uiteindelijke gebruikservaring te valideren. Deze bachelorproef onderzoekt empirisch of het moment van usability-testen - vroeg, laat of gecombineerd - een meetbaar effect heeft op de gebruiksvriendelijkheid van een React-webapplicatie.
+
+Hiervoor werd een proof-of-concept React-applicatie ontwikkeld met drie meerstapsformulieren: een reisaanvraagformulier (Form~A), een evenementregistratieformulier (Form~B) en een verblijfsaanvraagformulier (Form~C). Microsoft Application Insights werd geïntegreerd om gebruikersinteracties automatisch te registreren. Veertig deelnemers werden willekeurig verdeeld over drie testgroepen: een vroege testgroep die enkel de vroege versie van Form~A doorliep ($n=14$), een late testgroep die enkel Form~C na de ontwerpverbeteringen testte ($n=13$), en een gecombineerde testgroep die Form~B zowel vroeg als laat testte ($n=13$). Na de vroege test werden zes categorieën van usability-problemen geïdentificeerd en verwerkt in een ontwerpverbeteringssprint. De uitkomstmaten omvatten een in-app beoordeling op een vijfpuntschaal, de Net Promoter Score, het aantal validatiefouten per sessie, de totale invultijd en de voltooiingsratio. Statistische toetsing gebeurde via de Kruskal-Wallis-toets bij een significantieniveau van $\alpha = 0{,}05$, aangevuld met de eenweg-ANOVA, Shapiro-Wilk-normaliteitstest, Levene-variantietest en Durbin-Watson-autocorrelatietest.
+
+De statistische analyse leverde geen significante verschillen op tussen de drie testgroepen voor beoordeling ($H = 1{,}611$, $p = 0{,}447$), Net Promoter Score ($H = 3{,}936$, $p = 0{,}140$), validatiefouten ($H = 6{,}009$, $p = 0{,}050$) of invultijd ($H = 0{,}662$, $p = 0{,}718$). Geen van de vijf nulhypothesen kon worden verworpen. Toch wijzen de middelgrote effectgroottes voor NPS ($R^2 = 0{,}103$) en validatiefouten ($R^2 = 0{,}080$) erop dat de studie mogelijk ondervermogen heeft door de beperkte steekproefgrootte. De longitudinale vergelijking binnen Form~B toonde wel een aantoonbare praktische verbetering van vroeg naar laat: de mediane beoordeling steeg van 3 naar 4 op 5, de NPS verbeterde van $-53{,}8$ naar $-7{,}7$ en het mediaan aantal validatiefouten daalde van 4 naar 1{,}5 per sessie.
+
+Op basis van deze bevindingen wordt geconcludeerd dat het tijdstip van usability-testen in dit onderzoek geen statistisch aantoonbaar effect heeft op de eindgebruiksvriendelijkheid, maar dat iteratief testen met tussenliggende verbeteringen wel degelijk een praktische meerwaarde biedt. Ontwikkelteams worden aanbevolen om vroege en late usability-tests te combineren en telemetry-data via Application Insights als objectief aanvullend meetinstrument in te zetten. Vervolgonderzoek met een grotere steekproef ($n \geq 30$ per groep) is nodig om de geobserveerde effecten statistisch betrouwbaar te kunnen aantonen.

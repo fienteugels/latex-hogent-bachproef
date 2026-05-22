@@ -5,36 +5,71 @@
 \chapter{Conclusie}%
 \label{ch:conclusie}
 
-% TODO: Trek een duidelijke conclusie, in de vorm van een antwoord op de
-% onderzoeksvra(a)g(en). Wat was jouw bijdrage aan het onderzoeksdomein en
-% hoe biedt dit meerwaarde aan het vakgebied/doelgroep? 
-% Reflecteer kritisch over het resultaat. In Engelse teksten wordt deze sectie
-% ``Discussion'' genoemd. Had je deze uitkomst verwacht? Zijn er zaken die nog
-% niet duidelijk zijn?
-% Heeft het onderzoek geleid tot nieuwe vragen die uitnodigen tot verder 
-%onderzoek?
+\section{\IfLanguageName{dutch}{Antwoord op de onderzoeksvraag}{Answer to the Research Question}}
 
-% TODO: Schrijf de conclusie nadat alle resultaten en de vergelijkende analyse
-% (ch:vergelijkende-analyse) zijn afgerond. Behandel de volgende punten:
-%
-%   1. Antwoord op de centrale onderzoeksvraag:
-%      Wat is het effect van vroeg, laat of gecombineerd testen op de
-%      gebruiksvriendelijkheid van een React-applicatie?
-%
-%   2. Bespreking van de vier hypothesen (H0,1 t/m H0,4):
-%      Welke werden verworpen? Welke niet? Wat betekent dit?
-%
-%   3. Praktische aanbevelingen voor het werkveld:
-%      Wanneer is usability-testing het meest effectief?
-%      Wat levert telemetry toe bovenop klassieke tests?
-%
-%   4. Beperkingen van het onderzoek:
-%      - Kleine steekproefgroottes (n=13-14 per groep)
-%      - Drie verschillende formulierthema's (niet volledig equivalent)
-%      - Zelfselectie van deelnemers
-%
-%   5. Suggesties voor vervolgonderzoek:
-%      - Grotere steekproef
-%      - Andere types applicaties (niet enkel formulieren)
-%      - Longitudinaal onderzoek over meerdere sprints
+De centrale onderzoeksvraag luidde: \textit{Wat is het effect van usability-tests die vroeg, laat of zowel vroeg als laat in het ontwikkelingsproces worden uitgevoerd op de gebruiksvriendelijkheid van een React-applicatie, gemeten via Application Insights-data, taakvoltooiingstijd, fouten en beoordelingsscores?}
 
+Op basis van de statistische analyse - een Kruskal-Wallis-toets per afhankelijke variabele bij significantieniveau $\alpha = 0{,}05$ - kon geen van de nulhypothesen verworpen worden. Er zijn geen statistisch significante verschillen vastgesteld in de algemene beoordeling ($H = 1{,}611$, $p = 0{,}447$), de Net Promoter Score ($H = 3{,}936$, $p = 0{,}140$), het mediaan aantal validatiefouten per sessie ($H = 6{,}009$, $p = 0{,}050$) of de totale invultijd ($H = 0{,}662$, $p = 0{,}718$) tussen de vroege testgroep (Form~A), de late testgroep (Form~C) en de gecombineerde testgroep (Form~B). Het antwoord op de onderzoeksvraag luidt bijgevolg dat het tijdstip van usability-testen in dit onderzoek geen statistisch aantoonbaar effect had op de gebruiksvriendelijkheid van de applicatie.
+
+Dit resultaat dient echter genuanceerd te worden. Ten eerste zijn de middelgrote effectgroottes voor de NPS ($R^2 = 0{,}103$) en voor de validatiefouten ($R^2 = 0{,}080$) praktisch relevant: zij wijzen op een praktisch onderscheid dat bij de huidige steekproefgrootte ($n \approx 13$) niet de drempel van statistische significantie haalt. Ten tweede toont de evolutie binnen Form~B een concreet verbetertraject: de mediane beoordeling steeg van 3 (vroege test) naar 4 (late test), de NPS verbeterde van $-53{,}8$ naar $-7{,}7$ en het mediaan aantal fouten per sessie daalde van 4 naar 1{,}5. Deze cijfers tonen aan dat iteratief testen - vroegtijdig problemen identificeren, gerichte verbeteringen doorvoeren en opnieuw toetsen - wel degelijk een meetbare impact heeft op de gebruikservaring, ook al is het groepsverschil statistisch niet aantoonbaar.
+
+\section{\IfLanguageName{dutch}{Bespreking van de hypothesen}{Discussion of the Hypotheses}}
+
+\paragraph{H\textsubscript{0,1} - Algemene beoordeling}
+De nulhypothese wordt niet verworpen. De drie groepen behaalden nagenoeg identieke mediane beoordelingsscores van 4,0 op 5, met kleine interkwartielafstanden. De kleine effectgrootte ($R^2 = 0{,}042$) bevestigt dat de testgroep geen substantieel verschil verklaart in de perceptie van het formulier.
+
+\paragraph{H\textsubscript{0,2} - Net Promoter Score}
+De nulhypothese wordt niet verworpen, maar de middelgrote effectgrootte ($R^2 = 0{,}103$) is opvallend. De vroeg geteste groep (Form~A) had een mediane NPS van 9,0, tegenover 8,0 voor zowel de laat geteste (Form~C) als de gecombineerde groep (Form~B). Het ontbreken van statistische significantie is vermoedelijk te wijten aan de beperkte steekproefgrootte, niet aan de afwezigheid van een effect.
+
+\paragraph{H\textsubscript{0,3} - Validatiefouten}
+De nulhypothese kan niet eenduidig verworpen worden: de Kruskal-Wallis-toets bereikte precies de drempelwaarde ($p = 0{,}050$) en de post-hocanalyse met Bonferroni-correctie liet geen enkel significant patroon zien. De beschrijvende data toont wel een trend: de vroeg geteste groep (Form~A) had de laagste mediane foutentelling (0,0/sessie), gevolgd door de laat geteste groep (Form~C, 1,0/sessie) en de gecombineerde groep (Form~B laat, 1,5/sessie). De aanwezigheid van één sessie met 14 fouten beïnvloedt het gemiddelde sterk; de mediaan geeft een robuuster beeld.
+
+\paragraph{H\textsubscript{0,4} - Mediane invultijd}
+De nulhypothese wordt niet verworpen. De mediane invultijd bedroeg 571 seconden voor de vroege groep, 579 seconden voor de late groep en 458 seconden voor de gecombineerde groep ($H = 0{,}662$, $p = 0{,}718$). De effectgrootte is verwaarloosbaar ($R^2 = 0{,}004$), wat aangeeft dat het testmoment geen enkel verband heeft met de tijd die deelnemers nodig hadden om het formulier te voltooien.
+
+\paragraph{H\textsubscript{0,5} - Voltooiingsratio}
+De chi-kwadraattoets is niet betrouwbaar wegens te lage verwachte celfrequenties ($< 1{,}0$). De voltooiingspercentages waren vergelijkbaar (85,7\% vroeg, 92,3\% beide, 76,5\% laat voor Form~C en 66,7\% voor Form~B laat), maar het geringe aantal uitvallers laat geen statistische conclusie toe.
+
+\section{\IfLanguageName{dutch}{Praktische aanbevelingen}{Practical Recommendations}}
+
+Ondanks het ontbreken van statistisch significante groepsverschillen biedt dit onderzoek een aantal concrete aanbevelingen voor ontwikkelteams die werken aan React-webapplicaties met meerstapsformulieren.
+
+\begin{enumerate}
+  \item \textbf{Combineer vroege en late usability-testing.} De evolutie van Form~B illustreert dat iteratief testen - met een tussenliggende verbeteringssprint - leidt tot hogere gebruikerswaardering, lagere foutenaantallen en een betere NPS. Vroege tests brengen structurele problemen aan het licht; late tests toetsen of de verbeteringen effectief waren.
+
+  \item \textbf{Investeer vroeg in usability.} De bevindingen van de vroege test (Form~A en Form~B) identificeerden zes categorieën van usability-problemen die tijdig konden worden aangepakt. Vroegere detectie verlaagt de aanpassingskost en vermijdt dat problemen pas in de productiefase zichtbaar worden \autocite{Boehm1981}.
+
+  \item \textbf{Gebruik telemetry als aanvullend instrument.} Microsoft Application Insights maakte het mogelijk om voltooiingsratio's, validatiefouten en drop-offpunten objectief te meten, onafhankelijk van de zelfreportage van gebruikers. Telemetry-data biedt inzicht in gedragspatronen die bij klassieke usability-tests mogelijk niet naar voren komen. De combinatie van kwantitatieve telemetry en kwalitatieve gebruikersfeedback levert een rijker beeld van de gebruikservaring.
+
+  \item \textbf{Houd rekening met formuliercomplexiteit.} Form~C (verblijfsaanvraag) scoorde systematisch het beste op alle uitkomstmaten, maar had ook de eenvoudigste instructieteksten en een duidelijker perspectief dan Form~B (evenementregistratie). Formulierontwerp - structuur, perspectief, conditionele logica - heeft een zelfstandig effect op de gebruiksvriendelijkheid, los van het testmoment.
+\end{enumerate}
+
+\section{\IfLanguageName{dutch}{Beperkingen van het onderzoek}{Limitations}}
+
+Dit onderzoek kent een aantal beperkingen die de interpretatie van de resultaten beïnvloeden.
+
+\textbf{Kleine steekproefgrootten.} Met $n = 14$ (vroeg), $n = 13$ (laat) en $n = 13$ (beide) was de statistische power van de studie ontoereikend om middelgrote effecten betrouwbaar te detecteren. Post-hoc vermogensanalyse bij $\alpha = 0{,}05$ en $R^2 = 0{,}103$ suggereert dat een steekproef van minstens 30 à 35 deelnemers per groep nodig is om voldoende power te bereiken.
+
+\textbf{Niet-equivalente formulierthema's.} De drie formulieren (reisaanvraag, evenementregistratie en verblijfsaanvraag) verschilden in onderwerp, toon en context. Hoewel ze qua structuur en stappenverdeling vergelijkbaar waren, is het niet uit te sluiten dat themaspecifieke factoren - zoals de verwarring over het organisator- vs.\ bezoekersdperspectief bij Form~B - een zelfstandig effect hadden op de uitkomstmaten, onafhankelijk van het testmoment.
+
+\textbf{Zelfselectie van deelnemers.} Deelnemers meldden zich vrijwillig via een online wervingsoproep. Dit vergroot de kans op een niet-representatieve steekproef: gemotiveerde gebruikers met een positieve basishouding tegenover digitale formulieren zijn oververtegenwoordigd, wat de beoordelingsscores opwaarts kan vertekenen.
+
+\textbf{Beperktere kwalitatieve data voor Form~C.} De kwalitatieve feedback voor Form~C werd verzameld via een feedbackformulier (n=12) na de late test. Vergeleken met Form~B - dat zowel een vroege als een late kwalitatieve ronde doorliep - biedt dit een minder longitudinaal beeld. De eenmalige meting laat geen directe vergelijking toe van voor en na verbeteringen voor Form~C.
+
+\textbf{Chi-kwadraattoets onbetrouwbaar.} Door het lage aantal niet-voltooiingen waren de verwachte celfrequenties voor de chi-kwadraattoets op voltooiingsratio kleiner dan 5, waardoor de toets statistisch niet valide is.
+
+\section{\IfLanguageName{dutch}{Suggesties voor vervolgonderzoek}{Suggestions for Future Research}}
+
+Op basis van de bevindingen en beperkingen van dit onderzoek worden de volgende aanbevelingen voor vervolgonderzoek geformuleerd.
+
+\textbf{Grotere steekproef.} Een replicatiestudie met minimaal 30 deelnemers per testconditie zou voldoende statistische power bieden om de geobserveerde middelgrote effecten ($R^2 \approx 0{,}08$–$0{,}10$) betrouwbaar te toetsen. Met zeven tot tien keer de huidige steekproefgrootte zou de NPS-trend vermoedelijk significant worden.
+
+\textbf{Equivalente formulierthema's.} Toekomstig onderzoek kan beter gebruikmaken van één enkel formuliertype dat in drie varianten wordt aangeboden, of van thematisch identieke formulieren, om het confoundingeffect van het onderwerp te elimineren.
+
+\textbf{Longitudinaal onderzoek over meerdere sprints.} In plaats van één vroege en één late test zou een longitudinale opzet met drie of meer testmomenten - verspreid over de volledige ontwikkelingscyclus - inzicht geven in de cumulatieve impact van iteratief testen op de gebruiksvriendelijkheid.
+
+\textbf{Correcte telemetry voor stapsduur.} In een vervolgopzet dient de Application Insights-integratie zo te worden geconfigureerd dat de duur per stap wordt geregistreerd via tijdsverschillen tussen opeenvolgende stap-events, of als expliciet veld in de telemetry-payload. Dit maakt analyse van tijdsgebonden usability-knelpunten mogelijk.
+
+\textbf{Uitbreiding naar andere applicatietypes.} De bevindingen zijn gebaseerd op meerstapsformulieren in een React-applicatie. Vervolgonderzoek kan nagaan in hoeverre dezelfde conclusies gelden voor andere types webapplicaties, zoals dashboards, e-commerceflows of onboardingprocessen, waarbij het tijdstip van usability-testen andere effecten kan hebben.
+
+\textbf{Kwalitatieve verdieping.} Een mixed-methods aanpak waarbij kwantitatieve telemetry wordt gecombineerd met diepte-interviews of think-aloud-protocollen voor alle testgroepen, zou rijkere inzichten opleveren en de interpretatie van de statistisch grenswaardige resultaten (zoals de validatiefouten) onderbouwen.

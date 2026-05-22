@@ -3,6 +3,15 @@
 *~
 *.sav
 
+## Persoonsgegevens deelnemers (namen, e-mail, telefoon)
+data/*.xlsx
+data/*.xls
+
+## Python
+__pycache__/
+*.pyc
+*.pyo
+
 ## R
 .RData
 .Rhistory

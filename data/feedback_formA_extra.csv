@@ -1,0 +1,3 @@
+timestamp [UTC],session_Id,form,rating,nps
+13-5-2026 00:00:00.000,P13-extra,FormA,4,10
+13-5-2026 00:00:00.000,P14-extra,FormA,3,6

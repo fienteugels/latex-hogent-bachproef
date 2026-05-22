@@ -7,7 +7,7 @@
 
 \section{\IfLanguageName{dutch}{Onderzoekshypothesen}{Research Hypotheses}}
 
-Dit hoofdstuk toetst of het tijdstip van usability-testen — vroeg, laat of gecombineerd — een meetbaar effect heeft op de gebruiksvriendelijkheid van de applicatie. De drie testgroepen zijn:
+Dit hoofdstuk toetst of het tijdstip van usability-testen - vroeg, laat of gecombineerd - een meetbaar effect heeft op de gebruiksvriendelijkheid van de applicatie. De drie testgroepen zijn:
 
 \begin{itemize}
   \item \textbf{Vroeg (n=14):} Form A (reisaanvraag), enkel vroeg getest vóór de ontwerpverbeteringen.
@@ -15,45 +15,54 @@ Dit hoofdstuk toetst of het tijdstip van usability-testen — vroeg, laat of gec
   \item \textbf{Beide (n=13):} Form B (evenementregistratie), vroeg én laat getest.
 \end{itemize}
 
-Per afhankelijke variabele worden de volgende hypothesen getoetst via een eenweg-ANOVA bij significantieniveau $\alpha = 0{,}05$:
+Per afhankelijke variabele worden de volgende hypothesen getoetst bij significantieniveau $\alpha = 0{,}05$. Continuë variabelen worden getoetst via een eenweg-ANOVA; bij significante resultaten wordt tevens $R^2$ ($\eta^2$) gerapporteerd als maatstaf voor de effectgrootte. Voor de voltooiingsratio als categorische uitkomst wordt een chi-kwadraattoets ($\chi^2$) toegepast.
 
-\paragraph{H\textsubscript{0,1} — Algemene beoordeling}
+\paragraph{H\textsubscript{0,1} - Algemene beoordeling}
 \begin{quote}
-  Er is geen significant verschil in de gemiddelde beoordeling (schaal 1–5) tussen de drie testgroepen: $\mu_{\text{vroeg}} = \mu_{\text{laat}} = \mu_{\text{beide}}$.
+  Er is geen significant verschil in de mediane beoordeling (schaal 1–5) tussen de drie testgroepen: $M_{\text{vroeg}} = M_{\text{laat}} = M_{\text{beide}}$.
 \end{quote}
 \paragraph{H\textsubscript{1,1}}
 \begin{quote}
-  Er is een significant verschil in de gemiddelde beoordeling tussen minstens twee testgroepen.
+  Er is een significant verschil in de mediane beoordeling tussen minstens twee testgroepen.
 \end{quote}
 
-\paragraph{H\textsubscript{0,2} — Net Promoter Score}
+\paragraph{H\textsubscript{0,2} - Net Promoter Score}
 \begin{quote}
-  Er is geen significant verschil in de NPS tussen de drie testgroepen: $\mu_{\text{vroeg}} = \mu_{\text{laat}} = \mu_{\text{beide}}$.
+  Er is geen significant verschil in de NPS-score tussen de drie testgroepen: $M_{\text{vroeg}} = M_{\text{laat}} = M_{\text{beide}}$.
 \end{quote}
 \paragraph{H\textsubscript{1,2}}
 \begin{quote}
   Er is een significant verschil in de NPS tussen minstens twee testgroepen.
 \end{quote}
 
-\paragraph{H\textsubscript{0,3} — Validatiefouten}
+\paragraph{H\textsubscript{0,3} - Validatiefouten}
 \begin{quote}
-  Er is geen significant verschil in het gemiddeld aantal validatiefouten per sessie tussen de drie testgroepen: $\mu_{\text{vroeg}} = \mu_{\text{laat}} = \mu_{\text{beide}}$.
+  Er is geen significant verschil in het mediaan aantal validatiefouten per sessie tussen de drie testgroepen: $M_{\text{vroeg}} = M_{\text{laat}} = M_{\text{beide}}$.
 \end{quote}
 \paragraph{H\textsubscript{1,3}}
 \begin{quote}
-  Er is een significant verschil in het gemiddeld aantal validatiefouten per sessie tussen minstens twee testgroepen.
+  Er is een significant verschil in het mediaan aantal validatiefouten per sessie tussen minstens twee testgroepen.
 \end{quote}
 
-\paragraph{H\textsubscript{0,4} — Gemiddelde invultijd}
+\paragraph{H\textsubscript{0,4} - Mediane invultijd}
 \begin{quote}
-  Er is geen significant verschil in de gemiddelde totale invultijd (ms) tussen de drie testgroepen: $\mu_{\text{vroeg}} = \mu_{\text{laat}} = \mu_{\text{beide}}$.
+  Er is geen significant verschil in de mediane totale invultijd (s) tussen de drie testgroepen: $M_{\text{vroeg}} = M_{\text{laat}} = M_{\text{beide}}$.
 \end{quote}
 \paragraph{H\textsubscript{1,4}}
 \begin{quote}
-  Er is een significant verschil in de gemiddelde totale invultijd tussen minstens twee testgroepen.
+  Er is een significant verschil in de mediane totale invultijd tussen minstens twee testgroepen.
 \end{quote}
 
-Bij een significant ANOVA-resultaat ($p < 0{,}05$) wordt een Tukey HSD post-hoc test uitgevoerd om te bepalen tussen welke specifieke groepen de verschillen zich bevinden \autocite{Field2018}.
+Primaire toetsing gebeurt via de Kruskal-Wallis-toets (niet-parametrisch, bij geschonden normaliteit) en als aanvulling ook via de eenweg-ANOVA. Bij een significant resultaat ($p < 0{,}05$) wordt een paargewijze Mann-Whitney-U-toets met Bonferroni-correctie uitgevoerd als post-hoc analyse \autocite{Field2018}. Per analyse wordt ook $R^2$ gerapporteerd om de praktische effectgrootte te kwantificeren.
+
+\paragraph{H\textsubscript{0,5} - Voltooiingsratio}
+\begin{quote}
+  Er is geen significant verband tussen het testmoment en de voltooiingsratio (formulier wel of niet succesvol ingediend): de verdeling van voltooide en niet-voltooide sessies is gelijk over de drie testgroepen.
+\end{quote}
+\paragraph{H\textsubscript{1,5}}
+\begin{quote}
+  Er is een significant verband tussen het testmoment en de voltooiingsratio ($\chi^2$-toets, $\alpha = 0{,}05$).
+\end{quote}
 
 \section{\IfLanguageName{dutch}{Groepsverdeling}{Group Distribution}}
 
@@ -76,17 +85,82 @@ In totaal namen 40 deelnemers deel aan het onderzoek. Via willekeurige toewijzin
 
 De drie groepen zijn vergelijkbaar qua gemiddelde leeftijd en technische achtergrond, wat de interne validiteit van de vergelijking ondersteunt.
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.75\textwidth]{groepskenmerken}
+  \caption[Achtergrondkenmerken per testgroep]{Gemiddelde leeftijd, technische score en aandeel vrouwelijke deelnemers per testgroep}
+  \label{fig:groepskenmerken}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.72\textwidth]{leeftijd-heatmap}
+  \caption[Leeftijdsverdeling per testgroep]{Aantal deelnemers per leeftijdscategorie en testgroep}
+  \label{fig:leeftijd-heatmap}
+\end{figure}
+
 \section{\IfLanguageName{dutch}{Verificatie van assumpties}{Assumption Verification}}
 
 Alvorens een eenweg-ANOVA uit te voeren, worden de drie vereiste assumpties gecontroleerd: normaliteit van de residuen, homogeniteit van varianties en onafhankelijkheid van de residuen.
 
 \subsection{\IfLanguageName{dutch}{Normaliteit}{Normality}}
 
-% TODO: Shapiro-Wilk test uitvoeren op de SUS-scores en taakvoltooiingstijden per groep en resultaten hier verwerken.
+De Shapiro-Wilk-test werd uitgevoerd per afhankelijke variabele en per testgroep. Tabel~\ref{tab:shapiro-wilk} toont de resultaten.
+
+\begin{table}[h]
+  \centering
+  \caption[Shapiro-Wilk normaliteitstest per variabele en groep]{Shapiro-Wilk-test op normaliteit ($n < 50$; $\alpha = 0{,}05$)}
+  \label{tab:shapiro-wilk}
+  \begin{tabular}{llccc}
+    \hline
+    \textbf{Variabele} & \textbf{Groep} & \textbf{W} & \textbf{p} & \textbf{Normaal?} \\
+    \hline
+    \multirow{3}{*}{Beoordeling (1–5)}
+      & Vroeg (A)  & 0,8014 & 0,005 & Nee \\
+      & Laat (C)   & 0,7656 & 0,003 & Nee \\
+      & Beide (B)  & 0,7945 & 0,006 & Nee \\
+    \hline
+    \multirow{3}{*}{NPS (0–10)}
+      & Vroeg (A)  & 0,8483 & 0,021 & Nee \\
+      & Laat (C)   & 0,9087 & 0,176 & Ja  \\
+      & Beide (B)  & 0,9289 & 0,330 & Ja  \\
+    \hline
+    \multirow{3}{*}{Validatiefouten/sessie}
+      & Vroeg (A)  & 0,5325 & \textless 0,001 & Nee \\
+      & Laat (C)   & 0,8123 & 0,010 & Nee \\
+      & Beide (B)  & 0,6277 & \textless 0,001 & Nee \\
+    \hline
+    \multirow{3}{*}{Invultijd (s)}
+      & Vroeg (A)  & 0,9539 & 0,694 & Ja  \\
+      & Laat (C)   & 0,9010 & 0,138 & Ja  \\
+      & Beide (B)  & 0,8410 & 0,029 & Nee \\
+    \hline
+  \end{tabular}
+\end{table}
+
+De normaliteitsassumptie is geschonden voor de beoordelingsscores in alle drie de groepen. Voor de NPS is de assumptie enkel geschonden in de vroege testgroep. De validatiefouten zijn in geen enkele groep normaal verdeeld, wat te verwachten is bij teldata met veel nullen en enkele uitschieters. Omdat de normaliteitsassumptie bij meerdere variabelen en groepen niet voldaan is, worden medianen en IQR gerapporteerd als beschrijvende statistieken en wordt de eenweg-ANOVA aangevuld met de niet-parametrische Kruskal-Wallis-toets; waar normaliteit geschonden is, geldt de Kruskal-Wallis-uitkomst als primaire toets.
 
 \subsection{\IfLanguageName{dutch}{Homogeniteit van varianties}{Homogeneity of Variances}}
 
-% TODO: Levene-test uitvoeren en resultaten hier verwerken.
+De Levene-test werd uitgevoerd voor alle afhankelijke variabelen. Tabel~\ref{tab:levene} toont de resultaten.
+
+\begin{table}[h]
+  \centering
+  \caption[Levene-test homogeniteit van varianties]{Levene-test op homogeniteit van varianties ($\alpha = 0{,}05$)}
+  \label{tab:levene}
+  \begin{tabular}{lccc}
+    \hline
+    \textbf{Variabele} & \textbf{F} & \textbf{p} & \textbf{Homogeen?} \\
+    \hline
+    Beoordeling (1–5)     & 0,034 & 0,967 & Ja \\
+    NPS (0–10)            & 0,091 & 0,913 & Ja \\
+    Validatiefouten/sessie & 0,924 & 0,407 & Ja \\
+    Invultijd (s)         & 1,058 & 0,358 & Ja \\
+    \hline
+  \end{tabular}
+\end{table}
+
+De homogeniteitsassumptie is voor alle variabelen voldaan ($p > 0{,}05$).
 
 \subsection{\IfLanguageName{dutch}{Onafhankelijkheid van residuen: Durbin-Watson}{Independence of Residuals: Durbin-Watson}}
 
@@ -142,14 +216,139 @@ Beide Durbin-Watson-tests bevestigen dat de inschrijfvolgorde geen systematische
   \end{tabular}
 \end{table}
 
-\section{\IfLanguageName{dutch}{Eenweg-ANOVA}{One-Way ANOVA}}
+\section{\IfLanguageName{dutch}{Statistische toetsing}{Statistical Testing}}
 
-% TODO: ANOVA uitvoeren op SUS-scores, taakvoltooiingstijd, foutfrequentie en Application Insights-metrics. Resultaten hier verwerken.
+Tabel~\ref{tab:beschrijvend} geeft een beschrijvend overzicht van de drie afhankelijke variabelen per testgroep.
 
-\section{\IfLanguageName{dutch}{Post-hoc analyse: Tukey HSD}{Post-hoc Analysis: Tukey HSD}}
+\begin{table}[h]
+  \centering
+  \caption[Beschrijvende statistieken per testgroep]{Mediaan en interkwartielafstand (IQR) per variabele en testgroep}
+  \label{tab:beschrijvend}
+  \begin{tabular}{llccc}
+    \hline
+    \textbf{Variabele} & \textbf{Groep} & \textbf{n} & \textbf{Mediaan} & \textbf{IQR (Q1–Q3)} \\
+    \hline
+    \multirow{3}{*}{Beoordeling (1–5)}
+      & Vroeg (A)  & 14 & 4,0 & 0,75 (4,0–4,75) \\
+      & Laat (C)   & 13 & 4,0 & 1,00 (4,0–5,0)  \\
+      & Beide (B)  & 13 & 4,0 & 0,00 (4,0–4,0)  \\
+    \hline
+    \multirow{3}{*}{NPS (0–10)}
+      & Vroeg (A)  & 14 & 9,0 & 2,50 (7,25–9,75) \\
+      & Laat (C)   & 13 & 8,0 & 1,00 (7,0–8,0)   \\
+      & Beide (B)  & 13 & 8,0 & 1,00 (7,0–8,0)   \\
+    \hline
+    \multirow{3}{*}{Validatiefouten/sessie}
+      & Vroeg (A)  & 12 & 0,0 & 1,00 (0,0–1,0)  \\
+      & Laat (C)   & 13 & 1,0 & 1,00 (1,0–2,0)  \\
+      & Beide (B)  & 12 & 1,5 & 1,50 (1,0–2,5)  \\
+    \hline
+    \multirow{3}{*}{Invultijd (s)}
+      & Vroeg (A)  & 12 & 571 & 231 (443–674) \\
+      & Laat (C)   & 13 & 579 & 382 (280–662) \\
+      & Beide (B)  & 12 & 458 & 240 (374–613) \\
+    \hline
+  \end{tabular}
+\end{table}
 
-% TODO: Indien ANOVA significant (p < 0,05): Tukey HSD uitvoeren om te bepalen tussen welke groepen de verschillen zich bevinden.
+Omdat de normaliteitsassumptie voor meerdere groepen en variabelen geschonden is (zie Tabel~\ref{tab:shapiro-wilk}), worden de resultaten van zowel de eenweg-ANOVA als de Kruskal-Wallis-toets gerapporteerd. Bij geschonden normaliteit geldt de Kruskal-Wallis-uitkomst als primaire toets. Tabel~\ref{tab:toetsresultaten} vat de toetsresultaten samen.
+
+\begin{table}[h]
+  \centering
+  \caption[Toetsresultaten per afhankelijke variabele]{Eenweg-ANOVA en Kruskal-Wallis per afhankelijke variabele ($\alpha = 0{,}05$)}
+  \label{tab:toetsresultaten}
+  \begin{tabular}{lcccccc}
+    \hline
+    \textbf{Variabele} & \textbf{F} & \textbf{p\textsubscript{ANOVA}} & \textbf{H} & \textbf{p\textsubscript{KW}} & \textbf{$R^2$ ($\eta^2$)} & \textbf{Sig.?} \\
+    \hline
+    Beoordeling (1–5)      & 0,811 & 0,452 & 1,611 & 0,447 & 0,042 & Nee \\
+    NPS (0–10)             & 2,119 & 0,135 & 3,936 & 0,140 & 0,103 & Nee \\
+    Validatiefouten/sessie & 1,483 & 0,241 & 6,009 & 0,050 & 0,080 & Grens \\
+    Invultijd (s)          & 0,070 & 0,932 & 0,662 & 0,718 & 0,004 & Nee \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\paragraph{Beoordeling (H\textsubscript{0,1})}
+De Kruskal-Wallis-toets toont geen significant verschil in de algemene beoordeling tussen de drie testgroepen ($H = 1{,}611$, $p = 0{,}447$). De effectgrootte is klein ($R^2 = 0{,}042$). H\textsubscript{0,1} wordt \textbf{niet verworpen}.
+
+\paragraph{NPS (H\textsubscript{0,2})}
+Ook voor de NPS is er geen significant verschil ($H = 3{,}936$, $p = 0{,}140$). De effectgrootte is middelmatig ($R^2 = 0{,}103$), wat erop wijst dat er een praktisch relevante trend aanwezig is ondanks het ontbreken van statistisch bewijs bij deze steekproefgrootte. H\textsubscript{0,2} wordt \textbf{niet verworpen}.
+
+\paragraph{Validatiefouten (H\textsubscript{0,3})}
+De Kruskal-Wallis-toets geeft een grenswaarde van $H = 6{,}009$, $p = 0{,}050$, precies op de drempel van $\alpha = 0{,}05$. Vanwege de sterk scheve verdeling (veel nullen, uitschieters zoals één sessie met 14 fouten) en de beperkte steekproefgrootte is voorzichtigheid geboden. De effectgrootte is middelmatig ($R^2 = 0{,}080$). H\textsubscript{0,3} kan \textbf{niet eenduidig verworpen} worden.
+
+\paragraph{Mediane invultijd (H\textsubscript{0,4})}
+De Kruskal-Wallis-toets toont geen significant verschil in de totale invultijd tussen de drie testgroepen ($H = 0{,}662$, $p = 0{,}718$). De medianen liggen dicht bij elkaar: 571 seconden voor de vroege groep (ca.\ 9,5 min), 579 seconden voor de late groep (ca.\ 9,7 min) en 458 seconden voor de gecombineerde groep (ca.\ 7,6 min). De effectgrootte is verwaarloosbaar ($R^2 = 0{,}004$). H\textsubscript{0,4} wordt \textbf{niet verworpen}.
+
+\paragraph{Voltooiingsratio (H\textsubscript{0,5})}
+De chi-kwadraattoets levert $\chi^2 = 1{,}984$, $df = 2$, $p = 0{,}371$. Omdat de minimale verwachte celfrequentie onder 5 ligt ($< 1{,}0$), is de chi-kwadraattoets niet betrouwbaar. De voltooiingspercentages zijn vergelijkbaar: 85,7\% (vroeg), 92,3\% (beide) en 100\% (laat), maar het gering aantal niet-voltooiingen laat geen betrouwbare toetsing toe. H\textsubscript{0,5} wordt \textbf{niet verworpen} bij gebrek aan voldoende statistische power.
+
+\section{\IfLanguageName{dutch}{Post-hoc analyse}{Post-hoc Analysis}}
+
+Omdat alleen de validatiefouten een grenswaarde bereiken ($p = 0{,}050$), werd een paargewijze Mann-Whitney-U-toets met Bonferroni-correctie uitgevoerd. Tabel~\ref{tab:posthoc-fouten} toont de resultaten.
+
+\begin{table}[h]
+  \centering
+  \caption[Post-hoc analyse validatiefouten]{Paargewijze Mann-Whitney-U met Bonferroni-correctie - validatiefouten/sessie}
+  \label{tab:posthoc-fouten}
+  \begin{tabular}{llccc}
+    \hline
+    \textbf{Groep 1} & \textbf{Groep 2} & \textbf{p (ongecorrigeerd)} & \textbf{p (Bonferroni)} & \textbf{Sig.?} \\
+    \hline
+    Vroeg (A) & Laat (C)  & 0,077 & 0,232 & Nee \\
+    Vroeg (A) & Beide (B) & 0,025 & 0,075 & Nee \\
+    Laat (C)  & Beide (B) & 0,380 & 1,000 & Nee \\
+    \hline
+  \end{tabular}
+\end{table}
+
+Na Bonferroni-correctie zijn geen van de paargewijze verschillen significant. De trend wijst in de richting van meer fouten in de gecombineerde groep (Beide: $M = 1{,}5$) ten opzichte van de vroege groep (Vroeg: $M = 0{,}0$), maar dit effect is niet statistisch aantoonbaar bij $\alpha = 0{,}05$.
+
+\section{\IfLanguageName{dutch}{Visuele vergelijking}{Visual Comparison}}
+
+Figuur~\ref{fig:boxplots-vergelijking} toont de verdeling van de vier uitkomstmaten per testgroep als boxplots. De mediaan (zwarte lijn), de interkwartielafstand (box) en de uitschieters zijn zichtbaar voor de beoordelingsscores, NPS, validatiefouten en invultijd.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{boxplots-vergelijking}
+  \caption[Boxplots uitkomstmaten per testgroep]{Verdeling van beoordeling, NPS, validatiefouten en invultijd per testgroep}
+  \label{fig:boxplots-vergelijking}
+\end{figure}
+
+Figuur~\ref{fig:nps-verdeling} toont de evolutie van de NPS-verdeling over alle testmomenten. De sterke verschuiving van criticasters naar passieven tussen de vroege en late test van Form~B is duidelijk zichtbaar, evenals het positieve profiel van Form~C.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.85\textwidth]{nps-verdeling}
+  \caption[NPS-verdeling per form en testmoment]{Procentuele verdeling van promotors, passieven en criticasters per form en testmoment, met NPS-waarde}
+  \label{fig:nps-verdeling}
+\end{figure}
+
+Figuur~\ref{fig:formb-voor-na} toont de evolutie van Form~B van vroege naar late test op drie uitkomstmaten: mediane beoordeling, mediaan NPS-score en mediaan validatiefouten. De stijging in beoordeling en NPS-score en de daling in fouten illustreren het concrete effect van de ontwerpverbeteringen.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{formb-voor-na}
+  \caption[Form B: evolutie vroege naar late test]{Mediane beoordeling, NPS-score en validatiefouten voor Form~B bij de vroege en late test}
+  \label{fig:formb-voor-na}
+\end{figure}
+
+Figuur~\ref{fig:fouten-per-groep} toont de mediaan validatiefouten per testgroep. De vroeg geteste groep (Form~A) had de laagste mediaanwaarde van 0,0, gevolgd door de laat geteste groep (Form~C, 1,0) en de gecombineerde groep (Form~B laat, 1,5).
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.75\textwidth]{fouten-per-groep}
+  \caption[Mediaan validatiefouten per testgroep]{Mediaan validatiefouten per sessie voor de drie testgroepen}
+  \label{fig:fouten-per-groep}
+\end{figure}
 
 \section{\IfLanguageName{dutch}{Interpretatie van de resultaten}{Interpretation of Results}}
 
-% TODO: Resultaten interpreteren in het licht van de onderzoeksvraag.
+De statistische analyse levert geen significante verschillen op tussen de drie testgroepen (vroeg, laat, beide) voor de primaire uitkomstmaten beoordeling en NPS. Dit impliceert dat het \textit{tijdstip} van usability-testen - vroeg, laat of gecombineerd - in deze studie geen statistisch aantoonbaar effect heeft op de subjectieve gebruikservaring zoals gemeten via de algemene beoordeling en de aanbevelingsscore.
+
+Voor de validatiefouten is er een grenswaardige indicatie ($p = 0{,}050$, $R^2 = 0{,}080$) dat de testgroepen van elkaar verschillen, maar na post-hoc correctie zijn geen specifieke paren significant. De beschrijvende data toont wel een opvallend patroon: de vroeg-geteste groep (Form~A) had de laagste mediane foutentelling (0,0/sessie), de laat-geteste groep (Form~C) iets meer (1,0/sessie) en de gecombineerde groep (Form~B laat) de meeste (1,5/sessie). Dit patroon is robuuster dan het gemiddelde suggereert: de mediaan filtert de invloed weg van één sessie met een uitzonderlijk hoog foutenantal (14 fouten), die het groepsgemiddelde van de gecombineerde groep sterk optrekt naar 2,67.
+
+De NPS vertoont een middelgrote effectgrootte ($R^2 = 0{,}103$) ondanks het ontbreken van statistische significantie, wat erop wijst dat de studie mogelijk ondervermogen heeft om dit effect te detecteren bij de huidige steekproefgrootte ($n \approx 13$ per groep). Een grotere steekproef zou nodig zijn om dit te bevestigen of weerleggen.
+
+Samengevat biedt deze studie geen statistisch bewijs dat het moment van usability-testen de uiteindelijke gebruiksvriendelijkheid significant beïnvloedt, maar de descriptieve resultaten en de middelgrote effectgroottes bij NPS en fouten suggereren dat een grotere steekproef mogelijk wel significante effecten zou aantonen.

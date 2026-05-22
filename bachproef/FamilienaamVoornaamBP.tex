@@ -12,6 +12,7 @@
 %   explicit approval!), remove the option "dutch," or replace with "english".
 
 \usepackage{lipsum} % For blind text, can be removed after adding actual content
+\usepackage{multirow}
 
 %% Pictures to include in the text can be put in the graphics/ folder
 \graphicspath{{../graphics/}}
@@ -114,7 +115,7 @@
 % lines.
 \listoftables
 
-\listoflistings
+%\listoflistings
 
 % Als je een lijst van afkortingen of termen wil toevoegen, dan hoort die
 % hier thuis. Gebruik bijvoorbeeld de ``glossaries'' package.
@@ -171,43 +172,43 @@ De volgende pagina's tonen het online wervingsformulier zoals deelnemers dit te 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.85\textwidth]{form-1}
-  \caption[Wervingsformulier pagina 1]{Wervingsformulier — pagina 1}
+  \caption[Wervingsformulier pagina 1]{Wervingsformulier - pagina 1}
 \end{figure}
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.85\textwidth]{form-2}
-  \caption[Wervingsformulier pagina 2]{Wervingsformulier — pagina 2}
+  \caption[Wervingsformulier pagina 2]{Wervingsformulier - pagina 2}
 \end{figure}
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.85\textwidth]{form-3}
-  \caption[Wervingsformulier pagina 3]{Wervingsformulier — pagina 3}
+  \caption[Wervingsformulier pagina 3]{Wervingsformulier - pagina 3}
 \end{figure}
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.85\textwidth]{form-4}
-  \caption[Wervingsformulier pagina 4]{Wervingsformulier — pagina 4}
+  \caption[Wervingsformulier pagina 4]{Wervingsformulier - pagina 4}
 \end{figure}
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.85\textwidth]{form-5}
-  \caption[Wervingsformulier pagina 5]{Wervingsformulier — pagina 5}
+  \caption[Wervingsformulier pagina 5]{Wervingsformulier - pagina 5}
 \end{figure}
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.85\textwidth]{form-6}
-  \caption[Wervingsformulier pagina 6]{Wervingsformulier — pagina 6}
+  \caption[Wervingsformulier pagina 6]{Wervingsformulier - pagina 6}
 \end{figure}
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.85\textwidth]{form-7}
-  \caption[Wervingsformulier pagina 7]{Wervingsformulier — pagina 7}
+  \caption[Wervingsformulier pagina 7]{Wervingsformulier - pagina 7}
 \end{figure}
 
 \chapter{Broncode}
@@ -223,6 +224,23 @@ De volledige broncode van de proof-of-concept React-applicatie met geïntegreerd
   \includegraphics[width=0.3\textwidth]{qrcode-git}
   \caption[QR-code GitHub-repository]{QR-code naar de GitHub-repository van de proof-of-concept}
   \label{fig:qrcode}
+\end{figure}
+
+\chapter{Statistische analyse}
+
+De Python-notebooks waarmee alle statistische analyses uit deze bachelorproef gereproduceerd kunnen worden, zijn beschikbaar via onderstaande GitHub-repository:
+
+\begin{center}
+  \url{https://github.com/fienteugels/bap-statistiek}
+\end{center}
+
+De repository bevat drie Jupyter-notebooks: beschrijvende statistieken, assumptieverificatie en hypothesetoetsing, samen met alle ruwe databestanden en een script voor het genereren van de figuren.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.3\textwidth]{QR-code-stat}
+  \caption[QR-code statistiekrepository]{QR-code naar de GitHub-repository met Python-notebooks voor de statistische analyse}
+  \label{fig:qrcode-stat}
 \end{figure}
 
 %%---------- Backmatter, referentielijst ---------------------------------------

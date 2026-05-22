@@ -13,97 +13,523 @@
 
 \section{\IfLanguageName{dutch}{Uitvoering van de test}{Test Execution}}
 
-% TODO: Beschrijf de uitvoering van de late test. Zelfde opzet als vroege test.
-% Vermeld dat de test werd uitgevoerd na de verbeteringssprint (zie ch:ontwerpverbeteringen).
+De late usability-test werd uitgevoerd na de ontwerpverbeteringssprint (zie Hoofdstuk~\ref{ch:ontwerpverbeteringen}), met de verbeterde versie van de proof-of-concept React-applicatie. Twee formulieren werden laat getest: Form~B (evenementregistratie, n=13) en Form~C (verblijfsaanvraag, n=13). De deelnemers van Form~B waren dezelfde personen die ook de vroege test doorliepen en konden daardoor een directe vergelijking maken. De deelnemers van Form~C namen enkel deel aan de late test. De testopzet, instructies en meetinstrumenten waren identiek aan die van de vroege test.
 
 %%-----------------------------------------------------------------------------
-\section{\IfLanguageName{dutch}{Form B — Evenementregistratie (late test)}{Form B — Event Registration (Late Test)}}
+\section{\IfLanguageName{dutch}{Form B - Evenementregistratie (late test)}{Form B - Event Registration (Late Test)}}
 \label{sec:laat-formb}
 %%-----------------------------------------------------------------------------
 
-% TODO: Vul aan met de resultaten van de late test van Form B.
-
 \subsection{\IfLanguageName{dutch}{Deelnemers}{Participants}}
 
-% TODO: Beschrijf de deelnemers (n=13).
+De steekproef voor de late test van Form~B bestond uit dezelfde dertien deelnemers (B1–B13) die ook de vroege test doorliepen. Omdat zij het formulier eerder al hadden ingevuld, konden zij een directe vergelijking maken met de verbeterde versie.
 
 \subsection{\IfLanguageName{dutch}{Kwantitatieve resultaten}{Quantitative Results}}
 
-% TODO: Voeg tabellen toe voor:
-%   - Algemene beoordeling (schaal 1-5) per deelnemer
-%   - Ervaren moeite en invultijd per deelnemer
-%   - NPS-score per deelnemer
-%   - Waarschuwingen bij tegenstrijdige combinaties
-%   - Conditionele velden
-%   - Navigatie
+\subsubsection{\IfLanguageName{dutch}{Algemene beoordeling}{Overall Rating}}
+
+Tabel~\ref{tab:laat-formb-ratings} toont de beoordelingsscores van de dertien deelnemers.
+
+\begin{table}[h]
+  \centering
+  \caption[Algemene beoordelingsscores late test Form B]{Algemene beoordelingsscores per deelnemer - Form B late test (schaal 1–5)}
+  \label{tab:laat-formb-ratings}
+  \begin{tabular}{ll}
+    \hline
+    \textbf{Deelnemer} & \textbf{Score} \\
+    \hline
+    B1  & 5 \\
+    B2  & 4 \\
+    B3  & 3 \\
+    B4  & 4 \\
+    B5  & 4 \\
+    B6  & 4 \\
+    B7  & 4 \\
+    B8  & 4 \\
+    B9  & 3 \\
+    B10 & 5 \\
+    B11 & 3 \\
+    B12 & 4 \\
+    B13 & 4 \\
+    \hline
+    \textbf{Mediaan} & \textbf{4} \\
+    \hline
+  \end{tabular}
+\end{table}
+
+De mediane beoordeling bedroeg 4 op 5, een stijging van 1 punt ten opzichte van de vroege test (3). Twee deelnemers (B1 en B10) gaven een maximumscore van 5; drie deelnemers (B3, B9 en B11) gaven de laagste score van 3.
+
+\subsubsection{\IfLanguageName{dutch}{Ervaren moeite en invultijd}{Perceived Effort and Completion Time}}
+
+Tabel~\ref{tab:laat-formb-moeite} toont de ervaren moeite en de geschatte invultijd per deelnemer.
+
+\begin{table}[h]
+  \centering
+  \caption[Ervaren moeite en invultijd late test Form B]{Ervaren moeite en invultijd per deelnemer - Form B late test}
+  \label{tab:laat-formb-moeite}
+  \begin{tabular}{lll}
+    \hline
+    \textbf{Deelnemer} & \textbf{Moeite} & \textbf{Duur} \\
+    \hline
+    B1  & zeer makkelijk & $<$5 min  \\
+    B2  & makkelijk      & $<$5 min  \\
+    B3  & neutraal       & $<$5 min  \\
+    B4  & makkelijk      & $<$5 min  \\
+    B5  & neutraal       & 5–10 min  \\
+    B6  & makkelijk      & $<$5 min  \\
+    B7  & makkelijk      & 5–10 min  \\
+    B8  & makkelijk      & $<$5 min  \\
+    B9  & makkelijk      & $<$5 min  \\
+    B10 & makkelijk      & $<$5 min  \\
+    B11 & makkelijk      & $<$5 min  \\
+    B12 & makkelijk      & 5–10 min  \\
+    B13 & makkelijk      & $<$5 min  \\
+    \hline
+  \end{tabular}
+\end{table}
+
+Van de dertien deelnemers ervoer 76,9\% (n=10) het invullen als \textit{makkelijk}, 7,7\% (n=1) als \textit{zeer makkelijk} en 15,4\% (n=2) als \textit{neutraal}. Geen enkele deelnemer gaf aan het formulier moeilijk te vinden. Tien deelnemers (76,9\%) voltooiden het formulier in minder dan vijf minuten; drie deelnemers (23,1\%) hadden vijf tot tien minuten nodig.
+
+\subsubsection{\IfLanguageName{dutch}{NPS-score}{NPS Score}}
+
+Tabel~\ref{tab:laat-formb-nps} toont de NPS-scores van de dertien deelnemers.
+
+\begin{table}[h]
+  \centering
+  \caption[NPS-scores late test Form B]{NPS-scores per deelnemer - Form B late test (schaal 0–10)}
+  \label{tab:laat-formb-nps}
+  \begin{tabular}{ll}
+    \hline
+    \textbf{Deelnemer} & \textbf{NPS-score} \\
+    \hline
+    B1  & 10 \\
+    B2  & 7  \\
+    B3  & 6  \\
+    B4  & 8  \\
+    B5  & 7  \\
+    B6  & 9  \\
+    B7  & 8  \\
+    B8  & 7  \\
+    B9  & 5  \\
+    B10 & 8  \\
+    B11 & 5  \\
+    B12 & 8  \\
+    B13 & 8  \\
+    \hline
+    \textbf{Mediaan} & \textbf{8} \\
+    \hline
+  \end{tabular}
+\end{table}
+
+Van de dertien deelnemers waren er twee promotors (15,4\%): B1 en B6, acht passieven (61,5\%): B2, B4, B5, B7, B8, B10, B12 en B13, en drie criticasters (23,1\%): B3, B9 en B11. De berekende NPS bedraagt $(2/13 - 3/13) \times 100 = -7{,}7$. Dit is een aanzienlijke verbetering ten opzichte van de vroege test ($-53{,}8$), maar de score blijft licht negatief.
+
+\subsubsection{\IfLanguageName{dutch}{Waarschuwingen bij tegenstrijdige combinaties}{Warnings for Conflicting Combinations}}
+
+Tabel~\ref{tab:laat-formb-waarschuwingen} toont hoe de deelnemers de waarschuwingen ervoeren.
+
+\begin{table}[h]
+  \centering
+  \caption[Beoordeling waarschuwingen late test Form B]{Beoordeling van waarschuwingen bij tegenstrijdige combinaties - Form B late test}
+  \label{tab:laat-formb-waarschuwingen}
+  \begin{tabular}{ll}
+    \hline
+    \textbf{Antwoord} & \textbf{Aantal deelnemers} \\
+    \hline
+    Nuttig      & 6 (46,2\%) \\
+    Niet gezien & 4 (30,8\%) \\
+    Geen gehad  & 3 (23,1\%) \\
+    \hline
+  \end{tabular}
+\end{table}
+
+Geen enkele deelnemer vond de waarschuwingen verwarrend, wat een verbetering is ten opzichte van de vroege test (waar 2 deelnemers ze verwarrend vonden). Drie deelnemers gaven aan helemaal geen waarschuwing gekregen te hebben.
+
+\subsubsection{\IfLanguageName{dutch}{Conditionele velden}{Conditional Fields}}
+
+Tabel~\ref{tab:laat-formb-conditioneel} toont de beoordeling van de conditionele velden.
+
+\begin{table}[h]
+  \centering
+  \caption[Beoordeling conditionele velden late test Form B]{Beoordeling van conditionele velden - Form B late test}
+  \label{tab:laat-formb-conditioneel}
+  \begin{tabular}{ll}
+    \hline
+    \textbf{Antwoord} & \textbf{Aantal deelnemers} \\
+    \hline
+    Handig         & 9 (69,2\%) \\
+    Niet opgemerkt & 3 (23,1\%) \\
+    Verwarrend     & 1 (7,7\%)  \\
+    \hline
+  \end{tabular}
+\end{table}
+
+Het aandeel deelnemers dat de conditionele velden als handig ervoer, steeg van 53,8\% (vroege test) naar 69,2\%. Slechts één deelnemer (7,7\%) vond ze nog verwarrend, tegenover twee in de vroege test.
+
+\subsubsection{\IfLanguageName{dutch}{Navigatie}{Navigation}}
+
+Tabel~\ref{tab:laat-formb-navigatie} toont de beoordeling van de navigatie.
+
+\begin{table}[h]
+  \centering
+  \caption[Beoordeling navigatie late test Form B]{Beoordeling van de navigatie - Form B late test}
+  \label{tab:laat-formb-navigatie}
+  \begin{tabular}{ll}
+    \hline
+    \textbf{Antwoord} & \textbf{Aantal deelnemers} \\
+    \hline
+    Vlot      & 7 (53,8\%) \\
+    Zeer vlot & 5 (38,5\%) \\
+    Neutraal  & 1 (7,7\%)  \\
+    \hline
+  \end{tabular}
+\end{table}
+
+92,3\% van de deelnemers ervoer de navigatie als vlot of zeer vlot, een verbetering ten opzichte van de vroege test (77,0\%). Geen enkele deelnemer beoordeelde de navigatie als traag.
+
+\subsubsection{\IfLanguageName{dutch}{Gemerkte verbetering ten opzichte van vroege test}{Perceived Improvement Compared to Early Test}}
+
+Omdat dezelfde deelnemers eerder ook de vroege versie doorliepen, werd gevraagd of zij een verbetering hadden gemerkt. Tabel~\ref{tab:laat-formb-verbetering} toont de verdeling.
+
+\begin{table}[h]
+  \centering
+  \caption[Gemerkte verbetering late test Form B]{Gemerkte verbetering ten opzichte van de vroege versie - Form B late test}
+  \label{tab:laat-formb-verbetering}
+  \begin{tabular}{ll}
+    \hline
+    \textbf{Antwoord} & \textbf{Aantal deelnemers} \\
+    \hline
+    Ja    & 3 (23,1\%) \\
+    Licht & 5 (38,5\%) \\
+    Nee   & 5 (38,5\%) \\
+    \hline
+  \end{tabular}
+\end{table}
+
+61,5\% van de deelnemers merkte een lichte tot duidelijke verbetering. Deelnemers die een verbetering opmerkten, verwezen naar meer logische opties, minder tegenstrijdige vragen en een vlottere doorlooptijd.
 
 \subsection{\IfLanguageName{dutch}{Kwalitatieve resultaten}{Qualitative Results}}
 
-% TODO: Verwerk de kwalitatieve feedback:
-%   - Verwarrende onderdelen
-%   - Verbeterpunten
+\subsubsection{\IfLanguageName{dutch}{Verwarrende onderdelen}{Confusing Elements}}
+
+Ondanks de verbeteringen rapporteerden meerdere deelnemers aanhoudende verwarring over het perspectief van het formulier (organisator vs.\ bezoeker).
+
+\begin{itemize}
+  \item \textbf{Overgang organisator naar bezoeker onduidelijk (B3, B5):} Deelnemers gaven aan niet goed te begrijpen hoe het formulier overstapte van het organiseren van een evenement naar het bijwonen ervan. Sommige vragen en teksten bleven gericht op het organisatorperspectief.
+  \item \textbf{Verplichte toestemming voor foto's (B4):} Het laatste veld vereiste verplicht toestemming voor het gebruik van foto's, wat als onverwacht en onwenselijk werd ervaren.
+  \item \textbf{Duur van het evenement (B7):} De tijdsinput voor een evenement van een maand lang bleek niet goed ondersteund te worden in de datumvelden.
+  \item \textbf{Onduidelijk formulierdoel (B9):} ``Ik vond het zeer raar dat ik in het begin info moest geven om in te schrijven voor een evenement en daarna dan ineens info alsof ik het evenement zelf ging organiseren. Het voelde niet alsof ik een aanvraag voor een evenement indiende.''
+  \item \textbf{Beperkte selectiemogelijkheden (B12):} De deelnemer wou meerdere opties kunnen aanduiden, bijvoorbeeld bij de keuze van contactmethode.
+\end{itemize}
+
+\subsubsection{\IfLanguageName{dutch}{Verbeterpunten}{Improvement Suggestions}}
+
+\begin{itemize}
+  \item \textbf{Inline validatie bij e-mailadressen (B1):} De waarschuwing over niet-overeenkomende e-mailadressen verschijnt pas bij het navigeren naar de volgende stap; een directe inline melding zou sneller feedback geven.
+  \item \textbf{Verberg dieetvoorkeur bij geen catering (B1):} Deelnemers die aangeven geen gebruik te maken van catering, worden toch gevraagd naar hun dieetvoorkeur, wat verwarrend is.
+  \item \textbf{Consistent perspectief doorheen het formulier (B3, B5, B9, B12):} Alle vragen en instructieteksten dienen eenduidig gericht te zijn op het aanvragers- of bezoekerssperspectief.
+  \item \textbf{Geen tijdslimiet voor invullen (B7):} Een tijdsindicatie of de mogelijkheid om de sessie op te slaan werd als wenselijk beschouwd.
+  \item \textbf{Promotiecode validatie (B3):} Elke ingevoerde promotiecode wordt momenteel geaccepteerd zonder validatie.
+  \item \textbf{Meer vrije invoer naast vaste keuzes (B3, B12):} Voor bepaalde vragen waarbij een vaste keuzelijst te beperkend is, zou een vrij tekstveld of de optie ``anders'' een meerwaarde bieden.
+\end{itemize}
 
 \subsection{\IfLanguageName{dutch}{Geïdentificeerde usability-problemen}{Identified Usability Issues}}
 
-% TODO: Lijst resterende usability-problemen na de verbeteringssprint.
+Op basis van de kwantitatieve en kwalitatieve resultaten worden de volgende resterende usability-problemen geïdentificeerd in de verbeterde versie van Form~B:
+
+\begin{enumerate}
+  \item \textbf{Onduidelijk formulierperspectief (organisator vs.\ bezoeker):} de overgang tussen organisator- en bezoekersvragen blijft verwarrend voor een deel van de deelnemers (B3, B5, B9, B12).
+  \item \textbf{Verplichte toestemming voor foto's:} het laatste veld vereist verplicht akkoord, wat als onaangenaam werd ervaren (B4).
+  \item \textbf{Beperkte datumondersteuning voor langdurige evenementen:} een evenement van een maand kan niet correct worden ingevoerd (B7).
+  \item \textbf{Late inline validatie bij e-mailadressen:} de foutmelding verschijnt pas bij stap-navigatie in plaats van direct bij het veld (B1).
+  \item \textbf{Inconsistentie catering vs.\ dieetvoorkeur:} het dieetveld blijft zichtbaar ook als geen catering is geselecteerd (B1).
+  \item \textbf{Ontbrekende promotiecode-validatie:} elke waarde wordt geaccepteerd zonder controle (B3).
+\end{enumerate}
 
 %%-----------------------------------------------------------------------------
-\section{\IfLanguageName{dutch}{Form C — Verblijfsaanvraag}{Form C — Accommodation Request}}
+\section{\IfLanguageName{dutch}{Form C - Verblijfsaanvraag}{Form C - Accommodation Request}}
 \label{sec:laat-formc}
 %%-----------------------------------------------------------------------------
 
-% TODO: Vul aan met de resultaten van de late test van Form C.
-
 \subsection{\IfLanguageName{dutch}{Deelnemers}{Participants}}
 
-% TODO: Beschrijf de deelnemers (n=13).
+De steekproef voor Form~C bestond uit dertien deelnemers (C1–C13), gerekruteerd via dezelfde online oproep. Zij namen uitsluitend deel aan de late test en hadden het formulier niet eerder ingevuld.
 
 \subsection{\IfLanguageName{dutch}{Kwantitatieve resultaten}{Quantitative Results}}
 
-% TODO: Voeg tabellen toe voor:
-%   - Algemene beoordeling (schaal 1-5) per deelnemer
-%   - Ervaren moeite en invultijd per deelnemer
-%   - NPS-score per deelnemer
-%   - Waarschuwingen bij tegenstrijdige combinaties
-%   - Conditionele velden
-%   - Navigatie
+\subsubsection{\IfLanguageName{dutch}{Algemene beoordeling}{Overall Rating}}
+
+Tabel~\ref{tab:laat-formc-ratings} toont de beoordelingsscores van de dertien deelnemers.
+
+\begin{table}[h]
+  \centering
+  \caption[Algemene beoordelingsscores late test Form C]{Algemene beoordelingsscores per deelnemer - Form C (schaal 1–5)}
+  \label{tab:laat-formc-ratings}
+  \begin{tabular}{ll}
+    \hline
+    \textbf{Deelnemer} & \textbf{Score} \\
+    \hline
+    C1  & 5 \\
+    C2  & 4 \\
+    C3  & 5 \\
+    C4  & 5 \\
+    C5  & 4 \\
+    C6  & 4 \\
+    C7  & 4 \\
+    C8  & 4 \\
+    C9  & 3 \\
+    C10 & 5 \\
+    C11 & 4 \\
+    C12 & 4 \\
+    C13 & 4 \\
+    \hline
+    \textbf{Mediaan} & \textbf{4} \\
+    \hline
+  \end{tabular}
+\end{table}
+
+De mediane beoordeling bedroeg 4 op 5. Vier deelnemers (C1, C3, C4 en C10) gaven een maximumscore van 5; één deelnemer (C9) gaf de laagste score van 3.
+
+\subsubsection{\IfLanguageName{dutch}{NPS-score}{NPS Score}}
+
+Tabel~\ref{tab:laat-formc-nps} toont de NPS-scores van de dertien deelnemers.
+
+\begin{table}[h]
+  \centering
+  \caption[NPS-scores late test Form C]{NPS-scores per deelnemer - Form C (schaal 0–10)}
+  \label{tab:laat-formc-nps}
+  \begin{tabular}{ll}
+    \hline
+    \textbf{Deelnemer} & \textbf{NPS-score} \\
+    \hline
+    C1  & 5  \\
+    C2  & 8  \\
+    C3  & 8  \\
+    C4  & 10 \\
+    C5  & 8  \\
+    C6  & 8  \\
+    C7  & 7  \\
+    C8  & 7  \\
+    C9  & 7  \\
+    C10 & 9  \\
+    C11 & 10 \\
+    C12 & 8  \\
+    C13 & 7  \\
+    \hline
+    \textbf{Mediaan} & \textbf{8} \\
+    \hline
+  \end{tabular}
+\end{table}
+
+Van de dertien deelnemers waren er drie promotors (23,1\%): C4, C10 en C11, negen passieven (69,2\%) en één criticaster (7,7\%): C1 met een score van 5. De berekende NPS bedraagt $(3/13 - 1/13) \times 100 = +15{,}4$, wat een positief resultaat is.
+
+\subsubsection{\IfLanguageName{dutch}{Ervaren moeite en invultijd}{Perceived Effort and Completion Time}}
+
+Tabel~\ref{tab:laat-formc-moeite} toont de ervaren moeite en de geschatte invultijd per deelnemer.
+
+\begin{table}[h]
+  \centering
+  \caption[Ervaren moeite en invultijd late test Form C]{Ervaren moeite en invultijd per deelnemer - Form C}
+  \label{tab:laat-formc-moeite}
+  \begin{tabular}{lll}
+    \hline
+    \textbf{Deelnemer} & \textbf{Moeite} & \textbf{Duur} \\
+    \hline
+    C1  & makkelijk      & $<$5 min   \\
+    C2  & zeer makkelijk & $<$5 min   \\
+    C3  & makkelijk      & $<$5 min   \\
+    C4  & zeer makkelijk & $<$5 min   \\
+    C5  & makkelijk      & 10–15 min  \\
+    C6  & makkelijk      & 5–10 min   \\
+    C7  & makkelijk      & $<$5 min   \\
+    C8  & zeer makkelijk & $<$5 min   \\
+    C9  & zeer makkelijk & $<$5 min   \\
+    C10 & zeer makkelijk & $<$5 min   \\
+    C11 & neutraal       & 5–10 min   \\
+    C12 & makkelijk      & $<$5 min   \\
+    C13 & makkelijk      & $<$5 min   \\
+    \hline
+  \end{tabular}
+\end{table}
+
+Van de dertien deelnemers ervoer 53,8\% (n=7) het invullen als \textit{makkelijk} en 38,5\% (n=5) als \textit{zeer makkelijk}. Eén deelnemer (7,7\%) beoordeelde de moeite als neutraal. Tien deelnemers (76,9\%) voltooiden het formulier in minder dan vijf minuten; twee deelnemers hadden vijf tot tien minuten nodig en één deelnemer tien tot vijftien minuten.
+
+\subsubsection{\IfLanguageName{dutch}{Navigatie}{Navigation}}
+
+Tabel~\ref{tab:laat-formc-navigatie} toont de beoordeling van de navigatie.
+
+\begin{table}[h]
+  \centering
+  \caption[Beoordeling navigatie Form C]{Beoordeling van de navigatie - Form C}
+  \label{tab:laat-formc-navigatie}
+  \begin{tabular}{ll}
+    \hline
+    \textbf{Antwoord} & \textbf{Aantal deelnemers} \\
+    \hline
+    Vlot      & 5 (41,7\%) \\
+    Zeer vlot & 5 (41,7\%) \\
+    Neutraal  & 2 (16,7\%) \\
+    \hline
+  \end{tabular}
+\end{table}
+
+83,4\% van de deelnemers ervoer de navigatie als vlot of zeer vlot. Geen enkele deelnemer beoordeelde de navigatie als traag.
+
+\subsubsection{\IfLanguageName{dutch}{Conditionele velden}{Conditional Fields}}
+
+\begin{table}[h]
+  \centering
+  \caption[Beoordeling conditionele velden Form C]{Beoordeling van conditionele velden - Form C}
+  \label{tab:laat-formc-conditioneel}
+  \begin{tabular}{ll}
+    \hline
+    \textbf{Antwoord} & \textbf{Aantal deelnemers} \\
+    \hline
+    Handig         & 9 (75,0\%) \\
+    Verwarrend     & 2 (16,7\%) \\
+    Niet opgemerkt & 1 (8,3\%)  \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\subsubsection{\IfLanguageName{dutch}{Waarschuwingen bij tegenstrijdige combinaties}{Warnings for Conflicting Combinations}}
+
+\begin{table}[h]
+  \centering
+  \caption[Beoordeling waarschuwingen Form C]{Beoordeling van waarschuwingen bij tegenstrijdige combinaties - Form C}
+  \label{tab:laat-formc-waarschuwingen}
+  \begin{tabular}{ll}
+    \hline
+    \textbf{Antwoord} & \textbf{Aantal deelnemers} \\
+    \hline
+    Geen gehad   & 5 (41,7\%) \\
+    Nuttig       & 5 (41,7\%) \\
+    Verwarrend   & 2 (16,7\%) \\
+    \hline
+  \end{tabular}
+\end{table}
 
 \subsection{\IfLanguageName{dutch}{Kwalitatieve resultaten}{Qualitative Results}}
 
-% TODO: Verwerk de kwalitatieve feedback:
-%   - Verwarrende onderdelen
-%   - Verbeterpunten
+\subsubsection{\IfLanguageName{dutch}{Verwarrende onderdelen}{Confusing Elements}}
+
+\begin{itemize}
+  \item \textbf{Onduidelijk formulierdoel bij aanvang (C5):} De deelnemer ging er aanvankelijk van uit een vastgoedformulier in te vullen en begreep pas na enkele vragen dat het een verblijfsaanvraag betrof. De introductietekst bood onvoldoende context over het doel en de aard van de aanvraag.
+  \item \textbf{Landenlijst ongeordend en ongefilterd (C6):} De landen werden niet alfabetisch weergegeven en bevatten ook landen van niet-geselecteerde continenten. Bovendien blokkeerde de afwezigheid van een regiovoorkeur de verdere doorstroom in het formulier. Hoewel alfabetische sortering en continentfiltering reeds als verbeterpunt uit Form~A waren geïdentificeerd, werd Form~C als volledig nieuw formulier ontwikkeld met een afzonderlijke instantie van het landselectiecomponent; deze component ontving de fix nog niet, waardoor C6 dezelfde melding rapporteerde.
+  \item \textbf{Naamveld en boekingstermijn onduidelijk (C12):} Het invoeren van enkel een voornaam was verwarrend; daarnaast was de vereiste vooruitboekingstermijn van twee weken niet duidelijk gecommuniceerd.
+  \item \textbf{Waarschuwing chalet + luxe als incorrect ervaren (C5):} De mismatch-waarschuwing voor de combinatie chalet en luxe werd als foutief beschouwd, omdat dergelijke accommodaties wel degelijk bestaan.
+\end{itemize}
+
+\subsubsection{\IfLanguageName{dutch}{Verbeterpunten}{Improvement Suggestions}}
+
+\begin{itemize}
+  \item \textbf{Duidelijkere introductietekst (C5):} Een korte uitleg over het doel en het niet-bindend karakter van de aanvraag aan het begin van het formulier zou de drempel verlagen.
+  \item \textbf{Alfabetische en gefilterde landenlijst (C6):} Landen sorteren op alfabet en beperken tot het geselecteerde continent verbetert de doorzoekbaarheid.
+  \item \textbf{Facultatieve regioselectie (C6):} De regioselectie zou optioneel moeten zijn zodat deelnemers zonder voorkeur toch verder kunnen.
+  \item \textbf{Extra comfortfilters (C2):} Meer filteropties voor het comfortniveau (bv.\ type vakantiepark) zouden de precisie van de aanvraag verhogen.
+  \item \textbf{Verduidelijking bindend karakter (C6):} Communiceer expliciet of het indienen van het formulier een bindende reservering of een vrijblijvende informatieaanvraag betreft.
+\end{itemize}
 
 \subsection{\IfLanguageName{dutch}{Geïdentificeerde usability-problemen}{Identified Usability Issues}}
 
-% TODO: Lijst de usability-problemen die bij Form C worden vastgesteld.
+Op basis van de kwalitatieve en kwantitatieve resultaten worden de volgende usability-problemen geïdentificeerd voor Form~C:
+
+\begin{enumerate}
+  \item \textbf{Ontbrekende introductiecontext:} het formulierdoel is niet duidelijk bij aanvang, waardoor deelnemers het formulier verkeerd interpreteren (C5).
+  \item \textbf{Ongeordende en ongefilterde landenlijst:} landen staan niet alfabetisch en worden niet gefilterd op het geselecteerde continent (C6).
+  \item \textbf{Blokkerende regioselectie:} deelnemers zonder regiovoorkeur kunnen niet verder in het formulier (C6).
+  \item \textbf{Onduidelijke naamvalidatie en boekingstermijn:} het naamveld accepteert alleen een voornaam zonder duidelijke melding; de vereiste vooruitboekingstermijn is niet zichtbaar (C12).
+  \item \textbf{Incorrecte mismatch-waarschuwing chalet + luxe:} de waarschuwing suggereert een combinatie die in de praktijk wel bestaat, wat vertrouwen in het systeem ondermijnt (C5).
+\end{enumerate}
 
 %%-----------------------------------------------------------------------------
 \section{\IfLanguageName{dutch}{Telemetry-resultaten via Application Insights}{Telemetry Results via Application Insights}}
 %%-----------------------------------------------------------------------------
 
-% TODO: Verwerk de Application Insights data voor de late test:
-%   - Voltooiingsratio en drop-off (funnel.csv of equivalent voor late test)
-%   - Gemiddelde stap-doorlooptijden per form (stapduur.csv equivalent)
-%   - Validatiefouten per sessie (fouten.csv equivalent)
+Naast de in-app feedbackvragen werden alle gebruikersinteracties automatisch geregistreerd via Microsoft Application Insights. De telemetry-data voor de late test omvat voltooiingsratio's, validatiefouten en invultijden voor Form~B (late test) en Form~C.
 
 \subsection{\IfLanguageName{dutch}{Voltooiingsratio en drop-off}{Completion Rate and Drop-off}}
 
-% TODO: Tabel met starters/voltooid/voltooiingsratio voor Form B (laat) en Form C.
+Tabel~\ref{tab:laat-voltooiing} toont het aantal gestarte en voltooide sessies per form.
+
+\begin{table}[h]
+  \centering
+  \caption[Voltooiingsratio late tests]{Voltooiingsratio per form - late test}
+  \label{tab:laat-voltooiing}
+  \begin{tabular}{lccc}
+    \hline
+    \textbf{Form} & \textbf{Starters} & \textbf{Voltooid} & \textbf{Voltooiingsratio} \\
+    \hline
+    Form B laat (evenementregistratie) & 18 & 12 & 66,7\% \\
+    Form C (verblijfsaanvraag)         & 17 & 13 & 76,5\% \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.9\textwidth]{funnel-laat}
+  \caption[Voltooiingsfunnel per stap - late test]{Aantal actieve sessies per stap voor Form~B laat en Form~C}
+  \label{fig:funnel-laat}
+\end{figure}
+
+Bij Form~B vond drop-off hoofdzakelijk plaats bij stap~1: van 18 starters bereikten 12 deelnemers stap~2, waarna alle sessies consistent bleven tot stap~8. Bij stap~9 vielen nog 2 sessies weg. Bij Form~C was er een vergelijkbaar patroon: van 17 starters bereikten 14 deelnemers stap~2 en 13 deelnemers stap~3, waarna alle sessies consistent bleven tot stap~10.
 
 \subsection{\IfLanguageName{dutch}{Gemiddelde stap-doorlooptijden}{Average Step Duration}}
 
-% TODO: Tabel met gemiddelde doorlooptijd per stap voor Form B (laat) en Form C.
+Tabel~\ref{tab:laat-stapduur} toont de gemiddelde doorlooptijd per stap voor Form~B (laat) en Form~C, berekend op basis van de tijdsverschillen tussen opeenvolgende StepView-events per sessie in Application Insights. Stap-doorlooptijden zijn continue, objectief gemeten tijdswaarden en worden daarom als gemiddelde gerapporteerd, conform de aanbeveling van \textcite{SauroLewis2016} om gemiddelden te hanteren voor objectieve tijdsmaten en medianen voor ordinale beoordelingsschalen.
+
+\begin{table}[h]
+  \centering
+  \caption[Gemiddelde stap-doorlooptijden late tests]{Gemiddelde doorlooptijd per stap in seconden - late test}
+  \label{tab:laat-stapduur}
+  \begin{tabular}{lcc}
+    \hline
+    \textbf{Stap} & \textbf{Form B laat (s)} & \textbf{Form C (s)} \\
+    \hline
+    2  & 198 & 291 \\
+    3  & 265 & 241 \\
+    4  &  25 & 117 \\
+    5  &  20 &  58 \\
+    6  &  13 &  36 \\
+    7  &  21 &  35 \\
+    8  &  22 &  25 \\
+    9  &  11 &  24 \\
+    10 &   9 &  48 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.9\textwidth]{stapduur-laat}
+  \caption[Gemiddelde doorlooptijd per stap - late test]{Gemiddelde doorlooptijd per stap voor Form~B laat en Form~C}
+  \label{fig:stapduur-laat}
+\end{figure}
+
+Bij beide formulieren zijn de eerste stappen (2 en 3) verreweg de tijdsintensiefst: gebruikers lezen de introductieteksten aandachtig en vullen persoonlijke gegevens in, wat resulteert in doorlooptijden van 198–291 seconden. Vanaf stap 4 daalt de gemiddelde duur sterk, wat erop wijst dat gebruikers het formulier sneller doorlopen naarmate ze vertrouwd raken met de structuur. Form~C vertoont bij stap 10 een licht verhoogde doorlooptijd (48 seconden) ten opzichte van Form~B laat (9 seconden), wat overeenkomt met een uitgebreidere bevestigings- en overzichtsstap in de verblijfsaanvraag.
 
 \subsection{\IfLanguageName{dutch}{Validatiefouten}{Validation Errors}}
 
-% TODO: Tabel met validatiefouten per sessie voor Form B (laat) en Form C.
+Tabel~\ref{tab:laat-fouten} geeft een overzicht van de validatiefouten per sessie voor beide late test-forms.
+
+\begin{table}[h]
+  \centering
+  \caption[Validatiefouten late tests]{Validatiefouten per sessie - late test}
+  \label{tab:laat-fouten}
+  \begin{tabular}{lccc}
+    \hline
+    \textbf{Form} & \textbf{Sessies met fouten} & \textbf{Totaal fouten} & \textbf{Mediaan per sessie} \\
+    \hline
+    Form B laat & 10 van 12 (83,3\%) & 32 & 1,5 \\
+    Form C      & 11 van 13 (84,6\%) & 19 & 1,0 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+Form~B laat had een mediaan van 1,5 validatiefouten per sessie, een daling ten opzichte van de vroege test (mediaan 4,0). Form~C toonde het laagste mediaan foutenantal van alle forms met 1,0 fout per sessie.
 
 %%-----------------------------------------------------------------------------
 \section{\IfLanguageName{dutch}{Samenvatting}{Summary}}
 %%-----------------------------------------------------------------------------
 
-% TODO: Vat de resultaten samen:
-%   - Form B (laat): gemiddelde beoordeling, NPS, validatiefouten
-%   - Form C: gemiddelde beoordeling, NPS, validatiefouten
-%   - Verwijs naar ch:vergelijkende-analyse voor de statistische vergelijking
+De late usability-test werd uitgevoerd op twee forms. Form~B (evenementregistratie, n=13) toonde ten opzichte van de vroege test duidelijke verbeteringen: de mediane beoordeling steeg van 3 naar 4 op 5, de NPS verbeterde van $-53{,}8$ naar $-7{,}7$ en het mediaan aantal validatiefouten per sessie daalde van 4 naar 1,5. De voltooiingsratio bedroeg 66,7\%. Zes resterende usability-problemen werden geïdentificeerd, waarvan het onduidelijke formulierperspectief (organisator vs.\ bezoeker) als meest impactvol naar voren kwam. Form~C (verblijfsaanvraag, n=13) behaalde de sterkste resultaten van alle forms: mediane beoordeling 4 op 5, NPS $+15{,}4$ en mediaan 1,0 validatiefouten per sessie. De voltooiingsratio bedroeg 76,5\%. De resultaten van de late test worden in Hoofdstuk~\ref{ch:vergelijkende-analyse} statistisch vergeleken met die van de vroege test.

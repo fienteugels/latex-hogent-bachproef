@@ -12,9 +12,9 @@ Als basis voor dit onderzoek werd een proof-of-concept React-applicatie ontwikke
 De applicatie bestaat uit drie onafhankelijke formulieren, elk met een eigen thema en doelgroep:
 
 \begin{itemize}
-  \item \textbf{Form A — Reisaanvraag:} een meerstapsformulier waarmee gebruikers een reisaanvraag kunnen indienen. Het formulier omvat negen stappen en bevat conditionele logica op basis van het gekozen reistype, continent en vervoersmiddel.
-  \item \textbf{Form B — Evenementregistratie:} een meerstapsformulier voor het registreren van een evenement. Het formulier telt tien stappen en past de vragen aan op basis van het gekozen evenementtype (festival, conferentie, sportevenement, \ldots).
-  \item \textbf{Form C — Verblijfsaanvraag:} een meerstapsformulier voor een verblijfsaanvraag. Het formulier telt tien stappen en 65 invulvelden, waarvan een deel conditioneel is op basis van het gekozen verblijfstype.
+  \item \textbf{Form A - Reisaanvraag:} een meerstapsformulier waarmee gebruikers een reisaanvraag kunnen indienen. Het formulier omvat negen stappen en bevat conditionele logica op basis van het gekozen reistype, continent en vervoersmiddel.
+  \item \textbf{Form B - Evenementregistratie:} een meerstapsformulier voor het registreren van een evenement. Het formulier telt tien stappen en past de vragen aan op basis van het gekozen evenementtype (festival, conferentie, sportevenement, \ldots).
+  \item \textbf{Form C - Verblijfsaanvraag:} een meerstapsformulier voor een verblijfsaanvraag. Het formulier telt tien stappen en 65 invulvelden, waarvan een deel conditioneel is op basis van het gekozen verblijfstype.
 \end{itemize}
 
 Elk formulier is bereikbaar via een afzonderlijke route binnen de applicatie en maakt gebruik van een gedeelde formuliercomponent.
@@ -86,3 +86,18 @@ Na het indienen van elk formulier krijgt de gebruiker automatisch een kort feedb
 \end{itemize}
 
 De antwoorden worden via het \texttt{FormX\_FeedbackSubmitted}-event als JSON opgeslagen in Application Insights en zijn opvraagbaar via dezelfde KQL-interface. Dit zorgt ervoor dat kwantitatieve telemetry en subjectieve feedback aan dezelfde sessie kunnen worden gekoppeld.
+
+\section{\IfLanguageName{dutch}{Verantwoord gebruik van AI bij de ontwikkeling}{Responsible Use of AI in Development}}
+
+Bij de ontwikkeling van de proof-of-concept werd gebruikgemaakt van Claude Code (Anthropic) als AI-ondersteunde coding-assistent. Het gebruik hiervan was ondersteunend van aard: Claude Code stelde codefragmenten en implementatiepatronen voor, maar alle gegenereerde code werd door de ontwikkelaar zelf beoordeeld, aangepast en getest. De uiteindelijke architectuurkeuzes, componentstructuur en integratie met Application Insights werden zelfstandig bepaald en zijn niet het resultaat van automatisch gegenereerde output.
+
+Bij het gebruik van AI-tools werd rekening gehouden met een aantal principes voor verantwoord gebruik:
+
+\begin{itemize}
+  \item \textbf{Geen persoonsgegevens als input:} Er werden nooit deelnemersgegevens of ruwe onderzoeksdata ingegeven in AI-tools. Enkel anonieme, technische codevragen werden gesteld.
+  \item \textbf{Kritische verificatie:} Alle AI-suggesties werden gecontroleerd op correctheid, veiligheid en overeenstemming met de vereisten van het onderzoek. Foutieve of ongeschikte voorstellen werden manueel gecorrigeerd of verworpen.
+  \item \textbf{Transparantie:} Het gebruik van AI-assistentie wordt hier expliciet vermeld, zodat de lezer een correct beeld heeft van het ontwikkelingsproces.
+  \item \textbf{Eigenaarschap:} De ontwikkelaar behoudt volledige verantwoordelijkheid voor de correctheid en kwaliteit van de code. AI-tools werden ingezet als productiviteitshulpmiddel, niet als vervanger van technisch inzicht.
+\end{itemize}
+
+Dit gebruik sluit aan bij de richtlijnen van HOGENT rond academische integriteit en het verantwoord inzetten van AI-hulpmiddelen bij bachelorproeven.
